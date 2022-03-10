@@ -15,6 +15,7 @@ namespace LawyerbackEnd.Models
         public DbSet<Practise> Practises{ get; set; }
         public DbSet<IndexChoose> IndexChooses{ get; set; }
         public DbSet<Teams> Teams{ get; set; }
+        public DbSet<Category> Categories{ get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);

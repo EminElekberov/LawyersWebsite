@@ -27,7 +27,8 @@ namespace LawyerbackEnd.Controllers
                 holders = _dbcontext.Holders.ToList(),
                 practises = _dbcontext.Practises.ToList(),
                 indexChooses = _dbcontext.IndexChooses.ToList(),
-                teams=_dbcontext.Teams.ToList()
+                teams=_dbcontext.Teams.ToList(),
+                categories=_dbcontext.Categories.ToList()
             };
             return View(homeVM);
         }

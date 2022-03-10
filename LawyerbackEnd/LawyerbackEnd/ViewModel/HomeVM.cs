@@ -13,6 +13,7 @@ namespace LawyerbackEnd.ViewModel
         public List<Practise> practises { get; set; }
         public List<IndexChoose> indexChooses { get; set; }
         public List<Teams> teams { get; set; }
+        public List<Category> categories { get; set; }
 
     }
 }
