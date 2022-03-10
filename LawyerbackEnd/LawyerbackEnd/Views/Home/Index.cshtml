@@ -1,0 +1,187 @@
+﻿@model HomeVM
+
+<div class="home-slider slide-animate owl-carousel owl-theme show-nav-hover nav-big">
+    @foreach (var item in Model.sliders)
+    {
+        <div class="home-slide home-slide1 banner d-flex align-items-center">
+            <img class="img-fluid" src="~/images/home/@item.Image" alt="">
+            <div class="slider-caption">
+                <div class="slider-text">
+                    <h2>@item.Name</h2>
+                    <h4>@item.Description</h4>
+                    <a class="btn-white" href="practice-image-3-cols.html">Find More</a>
+                </div>
+            </div>
+        </div><!-- End .home-slide -->
+    }
+
+</div>
+<section class="section-holder">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2">
+                <div class="intro-msg margin-b108">
+                    <div class="intro-normal">Our firm recovered</div>
+                    <div class="intro-2"><span class="intro-small-italic">over</span> <span class="intro-big-italic">$100.000.000</span></div>
+                    <div class="intro-year">Since 1970</div>
+                </div>
+            </div>
+        </div>
+        <!-- /row -->
+        <div class="row">
+            <div class="col-lg-4 margin-bm32">
+                <p><span class="dropcap">W</span>e are passionate advocates for victims of serious accidents. Donec suscipit lobortis ornare. Aenean vel varius odio. Cras ligula odio, congue vel adipiscing non, congue vitae neque. Pellentesque adipiscing ultricies risus, auctor ullamcorper.</p>
+            </div>
+            <div class="col-lg-4 margin-bm32">
+                <p>Sed elit nulla, varius vitae lacus hendrerit, pulvinar tincidunt lacus. Suspendisse quis purus ultrices, convallis felis ac, pulvinar tortor. Etiam adipiscing enim diam, vitae lacinia ipsum volutpat id. Sed varius nisl quis justo feugiat, a tempor enim pellentesque.</p>
+            </div>
+            <div class="col-lg-4">
+                <p>Nullam at ligula at velit adipiscing malesuada et venenatis enim. Praesent lacinia volutpat imperdiet. Integer ultricies aliquam auctor. Etiam gravida sagittis ipsum nec dictum. Nunc pretium est quis placerat congue. Nam dui lectus, pretium get elit.</p>
+            </div>
+        </div>
+        <!-- /row -->
+    </div>
+    <!-- /container -->
+</section>
+<section class="section-holder">
+    @*@foreach (var item in Model.holders)
+        {*@
+    <div class="row no-gutters">
+
+        <div class="col-md-6">
+            <img class="img-fluid" src="~/images/holder/night.jpg" alt="" />
+        </div>
+        <div class="col-md-6">
+            <img class="img-fluid" src="~/images/holder/ohlala.jpg" alt="" />
+        </div>
+
+    </div>
+    @*}*@
+</section>
+
+<section class="section-holder">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2 alignc">
+                <span class="heading-subtitle">Legal Help</span>
+                <h2 class="section-heading-title">Practice Areas</h2>
+            </div>
+        </div>
+        <!-- /row -->
+        <div class="row practice-items-holder">
+            @foreach (var item in Model.practises)
+            {
+                <div class="col-md-6 col-lg-3 practice-item-4cols">
+                    <a href="practice-single-page.html">
+                        <div class="practice-item">
+                            <div class="practice-icon">@Html.Raw(item.Link)</div>
+                            <h3 class="practice-title">@item.Description</h3>
+                        </div>
+                    </a>
+                </div>
+            }
+        </div>
+        <div class="view-more alignc margin-t72"><a href="practice-areas.html">View More</a></div>
+    </div>
+</section>
+
+
+<section class="parallax section-holder" style="background-image:url('images/home/home-bkg-1.jpg');">
+    @foreach (var item in Model.indexChooses)
+    {
+        <div class="container parallax-content">
+
+            <div class="row">
+                <div class="col-lg-8">
+                    <span class="heading-subtitle white">Legal Help</span>
+                    <h2 class="section-heading-title">Why Choose Us?</h2>
+                </div>
+            </div>
+
+            <div class="row margin-b72">
+                <div class="col-lg-6 margin-bm32">
+                    <p>@item.Textone </p>
+                </div>
+                <div class="col-lg-6">
+                    <p>@item.TextTwo</p>
+                </div>
+            </div>
+            <!-- /row -->
+            <div class="row alignc">
+                <div class="col-sm-6 col-lg-3 margin-bm32">
+                    <div class="facts-title">@item.numberOne</div>
+                    <p class="pcolor">@item.numbroneDesc</p>
+                </div>
+                <div class="col-sm-6 col-lg-3 margin-bm32">
+                    <div class="facts-title">@item.numberTwo</div>
+                    <p class="pcolor">@item.numbrTWoDesc</p>
+                </div>
+                <div class="col-sm-6 col-lg-3 margin-bm32">
+                    <div class="facts-title">@item.numberThree</div>
+                    <p class="pcolor">@item.numbrThreeDesc</p>
+                </div>
+                <div class="col-sm-6 col-lg-3 margin-bm32">
+                    <div class="facts-title">@item.numberFour</div>
+                    <p class="pcolor">@item.numbFourDesc</p>
+                </div>
+            </div>
+
+
+            <!-- /row -->
+            <!-- /row -->
+        </div>
+    }
+    <!-- /container -->
+</section>
+
+
+<section class="section-holder">
+    <div class="container">
+
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2 alignc">
+                <span class="heading-subtitle">Our Attorneys</span>
+                <h2 class="section-heading-title">Professional Team</h2>
+            </div>
+        </div>
+        <!-- /row -->
+
+        <div class="row">
+
+            @foreach (var item in Model.teams)
+            {
+                <div class="col-lg-4 col-md-6">
+
+                    <div class="lawyer-holder lawyer-3col">
+                        <a href="attorneys-single-page.html"><img src="~/images/team/@item.Image" style="height:500px" class="img-fluid" alt=""></a>
+                        <div class="lawyer-position">@item.Job</div>
+                        <h2 class="lawyer-title"><a href="attorneys-single-page.html">@item.Name</a></h2>
+                        <div class="lawyer-excerpt">@item.Description</div>
+                        <ul class="lawyer-social">
+                            @if (item.SocialNetworkLink != null)
+                            {
+                                <li><a href="#" target="_blank">@Html.Raw(item.SocialNetworkLink)</a></li>
+                            }
+                            @if (item.SocialNetworkLink2 != null)
+                            {
+                                <li><a href="#" target="_blank">@Html.Raw(item.SocialNetworkLink2)</a></li>
+                            }
+                            @if (item.SocialNetworkLink3 != null)
+                            {
+                                <li><a href="#" target="_blank">@Html.Raw(item.SocialNetworkLink3)</a></li>
+                            }
+                            @if (item.SocialNetworkLink4 != null)
+                            {
+                                <li><a href="mailto:" target="_blank">@Html.Raw(item.SocialNetworkLink4)</a></li>
+                            }
+                        </ul>
+                    </div>
+                </div>
+            }
+        </div>
+        <!-- /row -->
+        <div class="view-more alignc"><a href="about-us.html">View More</a></div>
+    </div>
+    <!-- /container -->
+</section>
+

@@ -1,0 +1,44 @@
+﻿
+@model IndexChoose
+
+<div style="overflow-x:scroll">
+
+
+    <table class="table table-bordered" style="width:1500px;">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Text One</th>
+                <th scope="col">Text Two</th>
+                <th scope="col">Number One</th>
+                <th scope="col">Number Two</th>
+                <th scope="col">Number Three</th>
+                <th scope="col">Number Four</th>
+                <th scope="col">Number one Description</th>
+                <th scope="col">Number two Description</th>
+                <th scope="col">Number three Description</th>
+                <th scope="col">Number four Description</th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+                <tr>
+                    <th scope="row">@Model.Id</th>
+                    <td>@Model.Textone</td>
+                    <td>@Model.TextTwo</td>
+                    <td>@Model.numberOne</td>
+                    <td>@Model.numberTwo</td>
+                    <td>@Model.numberThree</td>
+                    <td>@Model.numberFour</td>
+                    <td>@Model.numbroneDesc</td>
+                    <td>@Model.numbrTWoDesc</td>
+                    <td>@Model.numbrThreeDesc</td>
+                    <td>@Model.numbFourDesc</td>
+
+                    
+                </tr>
+
+        </tbody>
+    </table>
+</div>

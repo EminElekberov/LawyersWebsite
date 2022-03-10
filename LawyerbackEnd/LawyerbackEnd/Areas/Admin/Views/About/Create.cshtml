@@ -1,0 +1,65 @@
+﻿@model IndexChoose
+
+
+@section styles{ @*bunu ona gore yazdiqki burda yazilan css shared papkasinda loayout.cshtml icerisinde render ede bilek*@
+<style>
+    label {
+        color: red;
+    }
+</style>
+}
+<form method="post" enctype="multipart/form-data">
+    <div class="mb-3">
+        <label>Text One</label>
+        <input type="text" class="form-control" asp-for="Textone">
+        <span asp-validation-for="Textone" style="color:red"></span>
+    </div>
+    <div class="mb-3">
+        <label>Text Two</label>
+        <input type="text" class="form-control" asp-for="TextTwo">
+        <span asp-validation-for="TextTwo" style="color:red"></span>
+    </div>
+    <div class="mb-3">
+        <label>Number One</label>
+        <input type="text" class="form-control" asp-for="numberOne">
+        <span asp-validation-for="numberOne" style="color:red"></span>
+    </div>
+    <div class="mb-3">
+        <label>Number Two</label>
+        <input type="text" class="form-control" asp-for="numberTwo">
+        <span asp-validation-for="numberTwo" style="color:red"></span>
+    </div>
+    <div class="mb-3">
+        <label>Number Three</label>
+        <input type="text" class="form-control" asp-for="numberThree">
+        <span asp-validation-for="numberThree" style="color:red"></span>
+    </div>
+    <div class="mb-3">
+        <label>Number Four</label>
+        <input type="text" class="form-control" asp-for="numberFour">
+        <span asp-validation-for="numberFour" style="color:red"></span>
+    </div>
+    <div class="mb-3">
+        <label>Number One Description</label>
+        <input type="text" class="form-control" asp-for="numbroneDesc">
+        <span asp-validation-for="numbroneDesc" style="color:red"></span>
+    </div>
+    <div class="mb-3">
+        <label>Number Two Description</label>
+        <input type="text" class="form-control" asp-for="numbrTWoDesc">
+        <span asp-validation-for="numbrTWoDesc" style="color:red"></span>
+    </div>
+    <div class="mb-3">
+        <label>Number Three Description</label>
+        <input type="text" class="form-control" asp-for="numbrThreeDesc">
+        <span asp-validation-for="numbrThreeDesc" style="color:red"></span>
+    </div>
+    <div class="mb-3">
+        <label>Number Four Description</label>
+        <input type="text" class="form-control" asp-for="numbFourDesc">
+        <span asp-validation-for="numbFourDesc" style="color:red"></span>
+    </div>
+    
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

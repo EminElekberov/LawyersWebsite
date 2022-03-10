@@ -1,0 +1,22 @@
+﻿@model Slider
+
+<table class="table table-bordered">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Photo</th>
+            <th scope="col">Name</th>
+            <th scope="col">Descripton</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>@Model.Id</td>
+            <th width="300px">
+                <img width="200" height="150" src="~/images/home/@Model.Image" />
+            </th>
+            <td>@Model.Name</td>
+            <td>@Model.Description</td>
+        </tr>
+    </tbody>
+</table>

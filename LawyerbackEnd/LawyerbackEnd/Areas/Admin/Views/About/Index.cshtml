@@ -1,0 +1,62 @@
+﻿
+@model IList<IndexChoose>
+
+@if (TempData["Success"] != null)
+{
+    <div class="alert alert-primary" role="alert">
+        @TempData["Success"]
+    </div>
+}
+<div style="overflow-x:scroll">
+
+    <div>
+        <a href="/Admin/About/Create" class="btn btn-success" style="width:1500px">Add new slider</a>
+    </div>
+
+    <table class="table table-bordered" style="width:1500px;">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Text One</th>
+                <th scope="col">Text Two</th>
+                <th scope="col">Number One</th>
+                <th scope="col">Number Two</th>
+                <th scope="col">Number Three</th>
+                <th scope="col">Number Four</th>
+                <th scope="col">Number one Description</th>
+                <th scope="col">Number two Description</th>
+                <th scope="col">Number three Description</th>
+                <th scope="col">Number four Description</th>
+                <th>Edit/Delete</th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <th scope="row">@item.Id</th>
+                    <td>@item.Textone</td>
+                    <td>@item.TextTwo</td>
+                    <td>@item.numberOne</td>
+                    <td>@item.numberTwo</td>
+                    <td>@item.numberThree</td>
+                    <td>@item.numberFour</td>
+                    <td>@item.numbroneDesc</td>
+                    <td>@item.numbrTWoDesc</td>
+                    <td>@item.numbrThreeDesc</td>
+                    <td>@item.numbFourDesc</td>
+
+                    <td>
+                        <a href="/Admin/About/Edit/@item.Id" style="color:red"><i class="fas fa-edit"></i></a>
+                        <a href="/Admin/About/Delete/@item.Id" onclick="return confirm('Silmek isdediyinizden eminsinizmi?')" style="color:red"><i class="fas fa-trash-alt"></i></a>
+                        <br />
+                        <a href="/Admin/About/Details/@item.Id" style="color:red">Etrafli</a>
+                    </td>
+                </tr>
+
+            }
+        </tbody>
+    </table>
+</div>
