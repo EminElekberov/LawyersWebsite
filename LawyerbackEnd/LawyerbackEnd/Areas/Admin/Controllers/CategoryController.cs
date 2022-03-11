@@ -61,7 +61,8 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
             }
             _dbcontext.Categories.Remove(category);
             _dbcontext.SaveChanges();
-            return Redirect("Index");
+            TempData["Success"] = "Slider silindi";
+            return Redirect("/Admin/Category/Index");
         }
         public IActionResult Details(int? id)
         {

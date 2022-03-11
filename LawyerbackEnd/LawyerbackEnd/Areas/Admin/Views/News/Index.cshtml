@@ -1,0 +1,57 @@
+﻿
+@model IList<News>
+
+@if (TempData["Success"] != null)
+{
+    <div class="alert alert-primary" role="alert">
+        @TempData["Success"]
+    </div>
+}
+
+<div>
+    <a href="/Admin/News/Create" class="btn btn-success" style="width:100%">Add new slider</a>
+</div>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Image</th>
+            <th scope="col">Date</th>
+            <th scope="col">Button One Text</th>
+            <th scope="col">Button One Link</th>
+            <th scope="col">Button Two Text</th>
+            <th scope="col">Button Two Link</th>
+            <th scope="col">Title</th>
+            <th scope="col">Description</th>
+            <th>Edit/Delete</th>
+        </tr>
+    </thead>
+
+    <tbody>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <th scope="row">@item.Id</th>
+                <td>
+                    <img width="200" height="150" src="~/images/blog/@item.Image" alt="Alternate Text" />
+                </td>
+                <td>@item.Dates</td>
+                <td>@item.ButtonOnetext</td>
+                <td>@item.ButtonOneLink</td>
+                <td>@item.ButtonTwotext</td>
+                <td>@item.ButtonTwoLink</td>
+                <td>@item.Title</td>
+                <td>@item.Description</td>
+                <td>
+                    <a href="/Admin/News/Edit/@item.Id" style="color:red"><i class="fas fa-edit"></i></a>
+                    <a href="/Admin/News/Delete/@item.Id" onclick="return confirm('Silmek isdediyinizden eminsinizmi?')" style="color:red"><i class="fas fa-trash-alt"></i></a>
+                    <br />
+                    <a href="/Admin/News/Details/@item.Id" style="color:red">Etrafli</a>
+                </td>
+            </tr>
+
+        }
+    </tbody>
+</table>

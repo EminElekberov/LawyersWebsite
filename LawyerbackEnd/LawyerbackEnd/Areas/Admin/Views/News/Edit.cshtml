@@ -1,0 +1,65 @@
+﻿@model News
+
+@section styles{ @*bunu ona gore yazdiqki burda yazilan css shared papkasinda loayout.cshtml icerisinde render ede bilek*@
+<style>
+    label {
+        color: red;
+    }
+</style>
+}
+<form method="post" enctype="multipart/form-data">
+    <div class="mb-3">
+        <label>Image</label>
+        <input type="file" class="form-control" asp-for="Photo">
+        <span asp-validation-for="Photo" style="color:red"></span>
+    </div>
+    <div class="form-group mt-3">
+        <label>Current Photo</label>
+        <img height="150" width="200" src="~/images/blog/@Model.Image" />
+        <input type="hidden" name="Image" value="@Model.Image" />
+    </div>
+    <div class="mb-3">
+        <label>Date</label>
+        <input type="text" class="form-control" asp-for="Dates">
+        <span asp-validation-for="Dates" style="color:red"></span>
+    </div>
+
+    <div class="mb-3">
+        <label>Button One Text</label>
+        <input type="text" class="form-control" asp-for="ButtonOnetext">
+        <span asp-validation-for="ButtonOnetext" style="color:red"></span>
+    </div>
+
+    <div class="mb-3">
+        <label>Button one Link</label>
+        <input type="text" class="form-control" asp-for="ButtonOneLink">
+        <span asp-validation-for="ButtonOneLink" style="color:red"></span>
+    </div>
+
+    <div class="mb-3">
+        <label>Button Two Text</label>
+        <input type="text" class="form-control" asp-for="ButtonTwotext">
+        <span asp-validation-for="ButtonTwotext" style="color:red"></span>
+    </div>
+
+    <div class="mb-3">
+        <label>Button Two Link</label>
+        <input type="text" class="form-control" asp-for="ButtonTwoLink">
+        <span asp-validation-for="ButtonTwoLink" style="color:red"></span>
+    </div>
+
+    <div class="mb-3">
+        <label>Title</label>
+        <input type="text" class="form-control" asp-for="Title">
+        <span asp-validation-for="Title" style="color:red"></span>
+    </div>
+
+
+    <div class="mb-3">
+        <label>Description</label>
+        <textarea asp-for="Description" class="form-control"></textarea>
+        <span asp-validation-for="Description" style="color:red"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

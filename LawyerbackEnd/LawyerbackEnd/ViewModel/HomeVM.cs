@@ -14,6 +14,8 @@ namespace LawyerbackEnd.ViewModel
         public List<IndexChoose> indexChooses { get; set; }
         public List<Teams> teams { get; set; }
         public List<Category> categories { get; set; }
+        public List<News> news { get; set; }
+        public List<Service> services { get; set; }
 
     }
 }

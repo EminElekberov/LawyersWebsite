@@ -195,7 +195,7 @@
 
                 <div class="testimonials-container">
 
-                    
+
                     <div class="owl-carousel owl-theme testimonials-slider">
                         @foreach (var item in Model.categories)
                         {
@@ -212,8 +212,8 @@
 
                             </div>
                         }
-                        </div>
-                    
+                    </div>
+
                 </div>
 
                 <!-- /testimonials-container -->
@@ -223,5 +223,66 @@
 
     </div>
 
+    <!-- /container -->
+</section>
+
+<section class="section-holder">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2 alignc">
+                <span class="heading-subtitle">Legal Help</span>
+                <h2 class="section-heading-title">Latest News</h2>
+            </div>
+        </div>
+        <!-- /row -->
+        <div class="row section-home-blog">
+            @foreach (var item in Model.news)
+            {
+                <div class="col-md-4">
+                    <article class="blog-item blog-item-2col-grid blog-item-3col-grid">
+                        <a href="blog-single-post.html">
+                            <div class="post-image"><img src="~/images/blog/@item.Image" style="height:400px" class="img-fluid" alt=""></div>
+                        </a>
+                        <ul class="blog-date">
+                            <li class="meta-date">@item.Dates</li>
+                            @if (item.ButtonOnetext != null)
+                            {
+                                <li class="meta-categ">
+                                    <a href="@item.ButtonOneLink">@item.ButtonOnetext</a>
+                                </li>
+                            }
+                            @if (item.ButtonTwotext != null)
+                            {
+                                <li class="meta-categ">
+                                    <a href="@item.ButtonTwoLink">@item.ButtonTwotext</a>
+                                </li>
+                            }
+                        </ul>
+                        <div class="post-holder">
+                            <h2 class="blog-title"><a href="blog-single-post.html">@item.Title</a></h2>
+                            <div class="article-excerpt">@item.Description</div>
+                        </div>
+                    </article>
+                </div>
+            }
+        </div>
+        <!-- /row -->
+    </div>
+    <!-- /container -->
+</section>
+
+
+<section class="parallax section-holder" style="background-image:url('images/blog/blog-7.jpg');">
+    <div class="container parallax-content">
+        <div class="row">
+            <div class="col-lg-10 offset-lg-1 alignc">
+                <span class="heading-subtitle white">Legal Services</span>
+                <h2 class="margin-b16">Did we mention first consultation is free?</h2>
+                <p>Appareat reformidans his te. Mundi erroribus ad eum, mea ut dicam nostro copiosae. Eligendi accusamus nec ex. Et usu ludus vitae tritani, suas deleniti pertinacia et quo. Duo veritus mediocrem ex, vidit fabellas vis ea.</p>
+                <div class="view-more view-more-white margin-t54 alignc"><a href="contact.html">Make an Appointment</a></div>
+            </div>
+        </div>
+        <!-- /row -->
+    </div>
     <!-- /container -->
 </section>
