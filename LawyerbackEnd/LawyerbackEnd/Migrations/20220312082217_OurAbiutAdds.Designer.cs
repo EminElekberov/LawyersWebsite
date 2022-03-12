@@ -3,14 +3,16 @@ using LawyerbackEnd.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace LawyerbackEnd.Migrations
 {
     [DbContext(typeof(LawyerDbcontext))]
-    partial class LawyerDbcontextModelSnapshot : ModelSnapshot
+    [Migration("20220312082217_OurAbiutAdds")]
+    partial class OurAbiutAdds
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -187,21 +189,6 @@ namespace LawyerbackEnd.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("OurAbouts");
-                });
-
-            modelBuilder.Entity("LawyerbackEnd.Models.PictureSlider", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Image")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("pictureSliders");
                 });
 
             modelBuilder.Entity("LawyerbackEnd.Models.Practise", b =>

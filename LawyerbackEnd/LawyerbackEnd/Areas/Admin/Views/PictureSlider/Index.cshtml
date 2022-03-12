@@ -1,0 +1,44 @@
+﻿
+@model IList<PictureSlider>
+
+@if (TempData["Success"] != null)
+{
+    <div class="alert alert-primary" role="alert">
+        @TempData["Success"]
+    </div>
+}
+
+<div>
+    <a href="/Admin/PictureSlider/Create" class="btn btn-success" style="width:100%">Add new slider</a>
+</div>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Image</th>
+            <th>Edit/Delete</th>
+        </tr>
+    </thead>
+
+    <tbody>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <th scope="row">@item.Id</th>
+                <td>
+                    <img width="200" height="150" src="~/images/holder/@item.Image" alt="Alternate Text" />
+                </td>
+
+                <td>
+                    <a href="/Admin/PictureSlider/Edit/@item.Id" style="color:red"><i class="fas fa-edit"></i></a>
+                    <a href="/Admin/PictureSlider/Delete/@item.Id" onclick="return confirm('Silmek isdediyinizden eminsinizmi?')" style="color:red"><i class="fas fa-trash-alt"></i></a>
+                    <br />
+                    <a href="/Admin/PictureSlider/Details/@item.Id" style="color:red">Etrafli</a>
+                </td>
+            </tr>
+
+        }
+    </tbody>
+</table>

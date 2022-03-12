@@ -9,6 +9,8 @@ namespace LawyerbackEnd.ViewModel
     public class HomeVM
     {
         public List<Slider> sliders { get; set; }
+        public List<OurAbout> ourAbouts { get; set; }
+        public List<PictureSlider> pictureSliders { get; set; }
         public List<Holder> holders { get; set; }
         public List<Practise> practises { get; set; }
         public List<IndexChoose> indexChooses { get; set; }

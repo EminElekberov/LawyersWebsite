@@ -6,18 +6,20 @@ using System.Threading.Tasks;
 
 namespace LawyerbackEnd.Models
 {
-    public class Service
+    public class OurAbout
     {
         public int Id { get; set; }
         [Required]
         public string Header { get; set; }
         [Required]
-        public string Title { get; set; }
+        public string headerUndeer { get; set; }
+        [Required]
+        public string Price { get; set; }
+        [Required]
+        public string Dates { get; set; }
         [Required]
         public string Description { get; set; }
-        [Required]
-        public string Buttontext { get; set; }
-        [Required]
-        public string ButtonLink { get; set; }
+        public string Description2 { get; set; }
+        public string Description3 { get; set; }
     }
 }

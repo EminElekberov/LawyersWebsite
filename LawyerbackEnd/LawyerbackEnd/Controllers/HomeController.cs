@@ -30,7 +30,9 @@ namespace LawyerbackEnd.Controllers
                 teams=_dbcontext.Teams.ToList(),
                 categories=_dbcontext.Categories.ToList(),
                 news=_dbcontext.News.ToList(),
-                services=_dbcontext.Services.ToList()
+                services=_dbcontext.Services.ToList(),
+                ourAbouts=_dbcontext.OurAbouts.ToList(),
+                pictureSliders=_dbcontext.pictureSliders.ToList()
             };
             return View(homeVM);
         }

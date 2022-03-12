@@ -16,47 +16,85 @@
     }
 
 </div>
+
+
 <section class="section-holder">
     <div class="container">
-        <div class="row">
-            <div class="col-lg-8 offset-lg-2">
-                <div class="intro-msg margin-b108">
-                    <div class="intro-normal">Our firm recovered</div>
-                    <div class="intro-2"><span class="intro-small-italic">over</span> <span class="intro-big-italic">$100.000.000</span></div>
-                    <div class="intro-year">Since 1970</div>
+        @foreach (var item in Model.ourAbouts)
+        {
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2">
+                    <div class="intro-msg margin-b108">
+
+                        <div class="intro-normal">@item.Header</div>
+                        <div class="intro-2"><span class="intro-small-italic">@item.headerUndeer</span> <span class="intro-big-italic">@item.Price</span></div>
+                        <div class="intro-year">@item.Dates</div>
+
+                    </div>
                 </div>
             </div>
-        </div>
-        <!-- /row -->
-        <div class="row">
-            <div class="col-lg-4 margin-bm32">
-                <p><span class="dropcap">W</span>e are passionate advocates for victims of serious accidents. Donec suscipit lobortis ornare. Aenean vel varius odio. Cras ligula odio, congue vel adipiscing non, congue vitae neque. Pellentesque adipiscing ultricies risus, auctor ullamcorper.</p>
+            <!-- /row -->
+            <div class="row">
+                @if (item.Description != null)
+                {
+                    <div class="col-lg-4 margin-bm32">
+                        <p>@item.Description</p>
+                    </div>
+                }
+                @if (item.Description2 != null)
+                {
+                    <div class="col-lg-4 margin-bm32">
+                        <p>@item.Description2</p>
+                    </div>
+                }
+                @if (item.Description3 != null)
+                {
+                    <div class="col-lg-4 margin-bm32">
+                        <p>@item.Description3</p>
+                    </div>
+                }
+
+                @*<div class="col-lg-4 margin-bm32">
+                        <p>Sed elit nulla, varius vitae lacus hendrerit, pulvinar tincidunt lacus. Suspendisse quis purus ultrices, convallis felis ac, pulvinar tortor. Etiam adipiscing enim diam, vitae lacinia ipsum volutpat id. Sed varius nisl quis justo feugiat, a tempor enim pellentesque.</p>
+                    </div>
+                    <div class="col-lg-4">
+                        <p>Nullam at ligula at velit adipiscing malesuada et venenatis enim. Praesent lacinia volutpat imperdiet. Integer ultricies aliquam auctor. Etiam gravida sagittis ipsum nec dictum. Nunc pretium est quis placerat congue. Nam dui lectus, pretium get elit.</p>
+                    </div>*@
             </div>
-            <div class="col-lg-4 margin-bm32">
-                <p>Sed elit nulla, varius vitae lacus hendrerit, pulvinar tincidunt lacus. Suspendisse quis purus ultrices, convallis felis ac, pulvinar tortor. Etiam adipiscing enim diam, vitae lacinia ipsum volutpat id. Sed varius nisl quis justo feugiat, a tempor enim pellentesque.</p>
-            </div>
-            <div class="col-lg-4">
-                <p>Nullam at ligula at velit adipiscing malesuada et venenatis enim. Praesent lacinia volutpat imperdiet. Integer ultricies aliquam auctor. Etiam gravida sagittis ipsum nec dictum. Nunc pretium est quis placerat congue. Nam dui lectus, pretium get elit.</p>
-            </div>
-        </div>
+        }
         <!-- /row -->
     </div>
     <!-- /container -->
 </section>
+
+
 <section class="section-holder">
-    @*@foreach (var item in Model.holders)
-        {*@
-    <div class="row no-gutters">
 
-        <div class="col-md-6">
-            <img class="img-fluid" src="~/images/holder/night.jpg" alt="" />
-        </div>
-        <div class="col-md-6">
-            <img class="img-fluid" src="~/images/holder/ohlala.jpg" alt="" />
+    <div class="home-slider slide-animate owl-carousel owl-theme show-nav-hover nav-big">
+        @foreach (var item in Model.pictureSliders)
+        {
+            <div class="home-slide home-slide1 banner d-flex align-items-center">
+                <div class="col-md-6">
+                    <img class="img-fluid" src="~/images/holder/@item.Image" alt="">
+                </div>
+            </div><!-- End .home-slide -->
+        }
+
         </div>
 
-    </div>
-    @*}*@
+        @*@foreach (var item in Model.holders)
+            {*@
+        @*<div class="row no-gutters">
+
+                <div class="col-md-6">
+                    <img class="img-fluid" src="~/images/holder/night.jpg" alt="" />
+                </div>
+                <div class="col-md-6">
+                    <img class="img-fluid" src="~/images/holder/ohlala.jpg" alt="" />
+                </div>
+
+            </div>*@
+        @*}*@
 </section>
 
 <section class="section-holder">
@@ -272,17 +310,79 @@
 </section>
 
 
-<section class="parallax section-holder" style="background-image:url('images/blog/blog-7.jpg');">
+<section class="parallax section-holder" style="background-image:url('../images/blog/blog-7.jpg');">
     <div class="container parallax-content">
         <div class="row">
             <div class="col-lg-10 offset-lg-1 alignc">
-                <span class="heading-subtitle white">Legal Services</span>
-                <h2 class="margin-b16">Did we mention first consultation is free?</h2>
-                <p>Appareat reformidans his te. Mundi erroribus ad eum, mea ut dicam nostro copiosae. Eligendi accusamus nec ex. Et usu ludus vitae tritani, suas deleniti pertinacia et quo. Duo veritus mediocrem ex, vidit fabellas vis ea.</p>
-                <div class="view-more view-more-white margin-t54 alignc"><a href="contact.html">Make an Appointment</a></div>
+                @foreach (var item in Model.services)
+                {
+                    <span class="heading-subtitle white">@item.Header</span>
+                    <h2 class="margin-b16">@item.Title</h2>
+                    <p> @item.Description</p>
+                    <div class="view-more view-more-white margin-t54 alignc"><a href="@item.ButtonLink">@item.Buttontext</a></div>
+
+                }
             </div>
         </div>
         <!-- /row -->
     </div>
     <!-- /container -->
 </section>
+
+
+<section class="section-holder">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 margin-bm54">
+                <span class="heading-subtitle">Contact Us</span>
+                <h2 class="section-heading-title margin-b16">Free Case Evaluation</h2>
+                <p>Aenean facilisis, neque a varius porttitor, risus dui tempus libero, dictum aliquet justo enim vitae lorem. Aliquam lacinia lacinia mi ac convallis. Nulla et lacus et risus laoreet consectetur.</p>
+                <div class="icon-box-wrapper">
+                    <div class="icon-box-icon"><i class="fas fa-map-marker-alt"></i></div>
+                    <div class="icon-box-content">
+                        <div class="icon-box-title">OFFICE</div>
+                        <p class="icon-box-description">40 Park Ave, Brooklyn, New York</p>
+                    </div>
+                </div>
+                <!-- /icon-box-wrapper -->
+                <div class="icon-box-wrapper">
+                    <div class="icon-box-icon"><i class="fas fa-phone-alt"></i></div>
+                    <div class="icon-box-content">
+                        <div class="icon-box-title">PHONE</div>
+                        <p class="icon-box-description">1-800-000-111</p>
+                    </div>
+                </div>
+                <!-- /icon-box-wrapper -->
+                <div class="icon-box-wrapper">
+                    <div class="icon-box-icon"><i class="far fa-envelope"></i></div>
+                    <div class="icon-box-content">
+                        <div class="icon-box-title">EMAIL</div>
+                        <p class="icon-box-description">contact@example.com</p>
+                    </div>
+                </div>
+                <!-- /icon-box-wrapper -->
+                <div class="gmaps margin-t54">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3024.9762977047603!2d-73.96009086693977!3d40.69651965846399!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25bc1f922373f%3A0x398427d98fba822e!2sPark+Ave%2C+Brooklyn%2C+NY%2C+USA!5e0!3m2!1sen!2sro!4v1471514814808">
+                    </iframe>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div id="contact-form-holder">
+                    <form method="post" id="contact-form" action='include/contact-process.php'>
+                        <div class="margin-b32"><label>Name</label><input type="text" name="name" class="comm-field" /></div>
+                        <div class="margin-b32"><label>Email</label><input type="text" name="email" class="comm-field" /> </div>
+                        <div class="margin-b32"><label>Subject</label><input type="text" name="subject" class="comm-field" /> </div>
+                        <div class="margin-b32"><label>Message</label><textarea name="message" id="msg-contact" rows="5"></textarea></div>
+                        <p class="antispam">Leave this empty: <input type="text" name="url" /></p>
+                        <p><input type="submit" value="Send message" id="submit" /></p>
+                    </form>
+                </div>
+                <!-- contact-form-holder-->
+                <div id="output-contact"></div>
+            </div>
+        </div>
+        <!-- /row -->
+    </div>
+    <!-- /container -->
+</section>
+
