@@ -18,6 +18,7 @@ namespace LawyerbackEnd.ViewModel
         public List<Category> categories { get; set; }
         public List<News> news { get; set; }
         public List<Service> services { get; set; }
+        public List<PageSlider> pageSliders { get; set; }
 
     }
 }

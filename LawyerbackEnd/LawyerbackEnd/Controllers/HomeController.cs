@@ -37,9 +37,13 @@ namespace LawyerbackEnd.Controllers
             return View(homeVM);
         }
 
-        public IActionResult Privacy()
+        public IActionResult Pages()
         {
-            return View();
+            HomeVM homeVM = new HomeVM
+            {
+                pageSliders = _dbcontext.PageSliders.ToList()
+            };
+            return View(homeVM);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

@@ -20,6 +20,7 @@ namespace LawyerbackEnd.Models
         public DbSet<News> News{ get; set; }
         public DbSet<Service> Services{ get; set; }
         public DbSet<OurAbout> OurAbouts{ get; set; }
+        public DbSet<PageSlider> PageSliders{ get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);

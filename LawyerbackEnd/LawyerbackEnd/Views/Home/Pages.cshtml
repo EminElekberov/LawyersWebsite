@@ -1,0 +1,18 @@
+﻿
+
+<div class="home-slider slide-animate owl-carousel owl-theme show-nav-hover nav-big">
+    @foreach (var item in Model.sliders)
+    {
+        <div class="home-slide home-slide1 banner d-flex align-items-center">
+            <img class="img-fluid" src="~/images/home/@item.Image" alt="">
+            <div class="slider-caption">
+                <div class="slider-text">
+                    <h2>@item.Name</h2>
+                    <h4>@item.Description</h4>
+                    <a class="btn-white" href="practice-image-3-cols.html">Find More</a>
+                </div>
+            </div>
+        </div><!-- End .home-slide -->
+    }
+
+</div>
