@@ -17,3 +17,60 @@
         </div>
     </div>
 </div>
+
+<section class="section-holder">
+    <div class="container">
+        <div class="row practice-items-holder-v2">
+            @foreach (var item in Model.practiceAbouts)
+            {
+                <div class="col-lg-4 col-md-6">
+
+                    <div class="practice-item-v2">
+
+                        <a href="practice-single-page.html">
+                            <div class="practice-circle">@Html.Raw(item.IconLink)</div>
+                        </a>
+                        <h5 class="practice-title-v2"><a href="practice-single-page.html">@item.Header</a></h5>
+                        <div class="practice-excerpt">@item.Description</div>
+                        @if (item.Learntext == null)
+                        {
+                            <a class="read-more" href="#">Learn More</a>
+                        }
+                        <a class="read-more" href="@item.LearnLink">@item.Learntext</a>
+
+                    </div>
+                    
+                </div>
+            }
+            </div>
+    </div>
+</section>
+
+<section class="section-holder">
+
+    <div class="container">
+
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2 alignc">
+                @foreach (var item in Model.pageContacts)
+                {
+                    <span class="heading-subtitle">@item.Header</span>
+                    <h2 class="section-heading-title">@item.Title</h2>
+                }
+            </div>
+        </div>
+
+        <div class="row">
+            @foreach (var item in Model.pageContacts)
+            {
+                <div class="col-lg-4 alignc">
+
+                    <div class="icon-box-icon margin-none">@Html.Raw(item.Link)</div>
+                    <div class="icon-box-title">@item.LinkDescription</div>
+                    <p class="icon-box-description">@item.Description</p>
+
+                </div>
+            }
+        </div>
+    </div>
+</section>

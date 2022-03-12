@@ -1,0 +1,18 @@
+﻿@model HomeVM
+    <style>
+        .tests {
+            background-image: url(../images/top-bkgs/carBg.jpg);
+            background-size: cover;
+        }
+    </style>
+<div class="page-head tests">
+    <div class="inner-desc">
+        <div class="container">
+            @foreach (var item in Model.attorneysSliders)
+            {
+                <h1 class="page-title">@item.Name</h1>
+            }
+        </div>
+    </div>
+</div>
+

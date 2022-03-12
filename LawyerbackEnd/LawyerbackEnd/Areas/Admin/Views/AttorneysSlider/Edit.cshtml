@@ -1,0 +1,14 @@
+﻿@model AttorneysSlider
+@{
+    ViewData["Title"] = "Edit";
+}
+<form method="post" enctype="multipart/form-data">
+    <div asp-validation-summary="All" class="text-danger"></div>
+    <div class="form-group">
+        <label>Trendword</label>
+        <textarea asp-for="Name" id="Name" class="form-control"></textarea>
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+    <input type="submit" class="btn btn-danger btn-block" value="Update" />
+</form>
+

@@ -1,0 +1,39 @@
+﻿
+@model IList<AttorneysSlider>
+
+@if (TempData["Success"] != null)
+{
+    <div class="alert alert-primary" role="alert">
+        @TempData["Success"]
+    </div>
+}
+
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th>Edit/Delete</th>
+        </tr>
+    </thead>
+
+    <tbody>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <th scope="row">@item.Id</th>
+                <td>@Html.Raw(item.Name)</td>
+
+                <td>
+                    <a href="/Admin/AttorneysSlider/Edit/@item.Id" style="color:red"><i class="fas fa-edit"></i></a>
+                    <a href="/Admin/AttorneysSlider/Delete/@item.Id" onclick="return confirm('Silmek isdediyinizden eminsinizmi?')" style="color:red"><i class="fas fa-trash-alt"></i></a>
+                    <br />
+                    <a href="/Admin/AttorneysSlider/Details/@item.Id" style="color:red">Etrafli</a>
+                </td>
+            </tr>
+
+        }
+    </tbody>
+</table>

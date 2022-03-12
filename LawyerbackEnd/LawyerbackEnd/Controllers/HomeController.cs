@@ -44,7 +44,8 @@ namespace LawyerbackEnd.Controllers
                 pageSliders = _dbcontext.PageSliders.ToList(),
                 sliders = _dbcontext.Sliders.ToList(),
                 categories = _dbcontext.Categories.ToList(),
-                pageContacts = _dbcontext.PageContacts.ToList()
+                pageContacts = _dbcontext.PageContacts.ToList(),
+
             };
             return View(homeVM);
         }
@@ -52,7 +53,18 @@ namespace LawyerbackEnd.Controllers
         {
             HomeVM homeVM = new HomeVM
             {
-                practiceSliders=_dbcontext.PracticeSliders.ToList()
+                practiceSliders=_dbcontext.PracticeSliders.ToList(),
+                practiceAbouts=_dbcontext.PracticeAbouts.ToList(),
+                pageContacts=_dbcontext.PageContacts.ToList()
+            };
+            return View(homeVM);
+        }
+
+        public IActionResult Attorneys()
+        {
+            HomeVM homeVM = new HomeVM
+            {
+                attorneysSliders=_dbcontext.AttorneysSliders.ToList()
             };
             return View(homeVM);
         }
