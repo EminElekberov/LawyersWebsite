@@ -98,7 +98,7 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
             {
                 return View(pageSlider);
             }
-            var sliderdb = _dbcontext.Sliders.Find(pageSlider.Id);
+            var sliderdb = _dbcontext.PageSliders.Find(pageSlider.Id);
             if (pageSlider.Photo != null)
             {
                 try

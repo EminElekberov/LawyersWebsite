@@ -1,18 +1,83 @@
-﻿
+﻿@model HomeVM
 
-<div class="home-slider slide-animate owl-carousel owl-theme show-nav-hover nav-big">
-    @foreach (var item in Model.sliders)
-    {
-        <div class="home-slide home-slide1 banner d-flex align-items-center">
-            <img class="img-fluid" src="~/images/home/@item.Image" alt="">
-            <div class="slider-caption">
-                <div class="slider-text">
-                    <h2>@item.Name</h2>
-                    <h4>@item.Description</h4>
-                    <a class="btn-white" href="practice-image-3-cols.html">Find More</a>
-                </div>
-            </div>
-        </div><!-- End .home-slide -->
+<style>
+    .pages {
+        background-image: url(../images/top-bkgs/lawyers.jpg);
     }
+</style>
 
+<div class="page-head pages">
+    @foreach (var item in Model.pageSliders)
+    {
+        <div class="inner-desc">
+            <div class="container">
+                <h1 class="page-title">@item.Name</h1>
+                <span class="post-subtitle page-subtitle">@item.Description</span>
+            </div>
+        </div>
+    }
 </div>
+
+
+<section class="section-holder">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 offset-lg-1">
+                <h4 class="margin-b108 alignc">Client satisfaction is our number one goal. What our clients are saying about their experience with our firm.</h4>
+            </div>
+        </div>
+        <!-- /row -->
+        <div class="row">
+            @foreach (var item in Model.categories)
+            {
+                <div class="col-lg-6">
+                    <div class="testimonial-wrapper" style="height:300px">
+
+                        <div class="testimonial-content">
+                            <h6>@item.Description</h6>
+                        </div>
+                        <div class="icon-box-wrapper">
+                            <div class="icon-box-icon testimonial-client"><img src="~/images/testimonials/@item.Image" style="width:100px;height:100px;border-radius:50%;" alt=""></div>
+                            <div class="icon-box-content">
+                                <div class="client-name">@item.Name</div>
+                                <p class="client-company">@item.Company</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            }
+        </div>
+        <!-- /row -->
+    </div>
+    <!-- /container -->
+</section>
+
+<section class="section-holder">
+   
+    <div class="container">
+
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2 alignc">
+                @foreach (var item in Model.pageContacts)
+                {
+                    <span class="heading-subtitle">@item.Header</span>
+                    <h2 class="section-heading-title">@item.Title</h2>
+                }
+            </div>
+        </div>
+       
+        <div class="row">
+            @foreach (var item in Model.pageContacts)
+            {
+                <div class="col-lg-4 alignc">
+
+                    <div class="icon-box-icon margin-none">@Html.Raw(item.Link)</div>
+                    <div class="icon-box-title">@item.LinkDescription</div>
+                    <p class="icon-box-description">@item.Description</p>
+
+                </div>
+            }
+            </div>
+        </div>
+</section>

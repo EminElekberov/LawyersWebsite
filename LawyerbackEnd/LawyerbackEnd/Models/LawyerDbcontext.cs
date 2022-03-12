@@ -21,6 +21,7 @@ namespace LawyerbackEnd.Models
         public DbSet<Service> Services{ get; set; }
         public DbSet<OurAbout> OurAbouts{ get; set; }
         public DbSet<PageSlider> PageSliders{ get; set; }
+        public DbSet<PageContact> PageContacts{ get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
