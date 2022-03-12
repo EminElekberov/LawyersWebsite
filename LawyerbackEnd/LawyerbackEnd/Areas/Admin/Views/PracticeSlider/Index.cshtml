@@ -1,5 +1,5 @@
 ﻿
-@model IList<PageSlider>
+@model IList<PracticeSlider>
 
 @if (TempData["Success"] != null)
 {
@@ -29,10 +29,10 @@
                 <td>@item.Description</td>
 
                 <td>
-                    <a href="/Admin/PageSlider/Edit/@item.Id" style="color:red"><i class="fas fa-edit"></i></a>
-                    <a href="/Admin/PageSlider/Delete/@item.Id" onclick="return confirm('Silmek isdediyinizden eminsinizmi?')" style="color:red"><i class="fas fa-trash-alt"></i></a>
+                    <a href="/Admin/PracticeSlider/Edit/@item.Id" style="color:red"><i class="fas fa-edit"></i></a>
+                    <a href="/Admin/PracticeSlider/Delete/@item.Id" onclick="return confirm('Silmek isdediyinizden eminsinizmi?')" style="color:red"><i class="fas fa-trash-alt"></i></a>
                     <br />
-                    <a href="/Admin/PageSlider/Details/@item.Id" style="color:red">Etrafli</a>
+                    <a href="/Admin/PracticeSlider/Details/@item.Id" style="color:red">Etrafli</a>
                 </td>
             </tr>
 

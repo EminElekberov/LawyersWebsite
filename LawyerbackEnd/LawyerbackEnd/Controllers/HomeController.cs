@@ -48,6 +48,14 @@ namespace LawyerbackEnd.Controllers
             };
             return View(homeVM);
         }
+        public IActionResult Practice()
+        {
+            HomeVM homeVM = new HomeVM
+            {
+                practiceSliders=_dbcontext.PracticeSliders.ToList()
+            };
+            return View(homeVM);
+        }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
