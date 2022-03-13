@@ -1,0 +1,87 @@
+﻿@model HomeVM
+
+    <section class="blog-single" style="margin-top:50px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-9 posts-holder post-sidebar ">
+                    <article class="single-article-container">
+                        @foreach (var item in Model.blogDetails)
+                        {
+                            <div class="post-image"> <img src="~/images/blog/@item.Image" class="img-fluid" alt=""></div>
+                            <ul class="blog-date">
+                                <li class="meta-author"><i class="fa fa-user"></i> @item.Name</li>
+                                <li class="meta-date">@item.Dates</li>
+                                <li class="meta-categ"><a href="@item.ButtonLink1" rel="category tag">@item.Buttontext1</a> <a href="@item.ButtonLink2" rel="category tag">@item.Buttontext2</a></li>
+                            </ul>
+                            <h2 class="blog-title">@item.Header</h2>
+                            <div class="post-content single-post-content single-article-page clearfix">
+                                <p>
+                                    @item.headerDesc
+                                </p>
+                                <h2>@item.Title</h2>
+                                <p>@item.titleDesc</p>
+                                <blockquote class="wp-block-quote">
+                                    <p>@item.Aphorizm</p>
+                                    <cite> @item.AphirzmWriter </cite>
+                                </blockquote>
+                                <p>
+                                    @item.Description
+                                </p>
+                            </div>
+                            <div class="tags-single-page"> <a href="#" rel="tag">accident</a> <a href="#" rel="tag">attorney</a> <a href="#" rel="tag">justice</a> <a href="#" rel="tag">lawyer</a> <a href="#" rel="tag">tax</a></div>
+                            <div class="author-single-page">
+                                <div class="author-avatar"> <img alt="" src="~/images/gravatar.png" class="avatar photo" width="100" height="100"></div>
+                                <div class="author-content">
+                                    <h3><a href="#"> @item.Name</a></h3>
+                                    <div class="author-text">@item.Comment</div>
+                                </div>
+                            </div>
+                        }
+
+                        <!-- /post-content -->
+
+                    </article>
+                </div>
+                <!-- /col-lg-9 -->
+                <div class="col-lg-3">
+                    <aside>
+                        <ul>
+                            @foreach (var item in Model.blogDetails)
+                            {
+                                <li class="widget">
+                                    <h5 class="widgettitle">About Us</h5>
+                                    <div class="textwidget">
+                                        <p><img class="img-fluid" src="~/images/blog/@item.Image" alt=""></p>
+                                        <p>@item.AboutDesc</p>
+                                    </div>
+                                </li>
+                                <li class="widget">
+                                    <form method="get" id="search-form" action="#"> <span><input type="text" name="s" id="search-string" placeholder="type and hit enter"></span></form>
+                                </li>
+                                <li class="widget widget_recent_entries">
+                                    <h5 class="widgettitle">@item.RecentTitle</h5>
+                                    <ul>
+                                        <li> <a href="#">@item.RecentDesc</a></li>
+                                    </ul>
+                                </li>
+                                <li class="widget widget_recent_entries">
+                                    <h5 class="widgettitle">@item.CateagoriesTitle</h5>
+                                    <ul>
+                                        <li class="cat-item"><a href="#">@item.CategoriesDesc</a></li>
+                                        
+                                    </ul>
+                                </li>
+                                <li class="widget">
+                                    <h5 class="widgettitle">Tags</h5>
+                                    <div class="tagcloud"><a href="#">accident</a> <a href="#">airplaine</a> <a href="#">attorney</a> <a href="#">business</a><a href="#">divorce</a><a href="#">family</a><a href="#">finance</a><a href="#">justice</a><a href="#">law</a><a href="#">legal</a><a href="#">rights</a><a href="#">tax</a><a href="#">testament</a></div>
+                                </li>
+                            }
+
+                        </ul>
+                    </aside>
+                </div>
+            </div>
+            <!-- /row -->
+        </div>
+        <!-- /container -->
+    </section>

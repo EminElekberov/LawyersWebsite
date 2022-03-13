@@ -1,0 +1,77 @@
+﻿
+@model IList<BlogDetails>
+
+@if (TempData["Success"] != null)
+{
+    <div class="alert alert-primary" role="alert">
+        @TempData["Success"]
+    </div>
+}
+<div style="overflow-x:auto">
+
+    <div style="margin-bottom:10px;">
+        <a href="/Admin/Blog/Create" class="btn btn-success" style="width:100%">Add new slider</a>
+    </div>
+
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Image</th>
+                <th scope="col">Name</th>
+                <th scope="col">Date</th>
+                <th scope="col">Button text1</th>
+                <th scope="col">Button Link1</th>
+                <th scope="col">Button text2</th>
+                <th scope="col">Button link2</th>
+                <th scope="col">Header</th>
+                <th scope="col">Header Description</th>
+                <th scope="col">Title</th>
+                <th scope="col">Title Description</th>
+                <th scope="col">Comment</th>
+                <th scope="col">About Description</th>
+                <th scope="col">Recent titles</th>
+                <th scope="col">Recent Description</th>
+                <th scope="col">Categorise title</th>
+                <th scope="col">Categories Description</th>
+                <th>Edit/Delete</th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <th scope="row">@item.Id</th>
+                    <td>
+                        <img width="200" height="150" src="~/images/blog/@item.Image" alt="Alternate Text" />
+                    </td>
+                    <td>@item.Name</td>
+                    <td>@item.Dates</td>
+                    <td>@item.Buttontext1</td>
+                    <td>@item.ButtonLink1</td>
+                    <td>@item.Buttontext2</td>
+                    <td>@item.ButtonLink2</td>
+                    <td>@item.Header</td>
+                    <td>@item.headerDesc</td>
+                    <td>@item.Title</td>
+                    <td>@item.titleDesc</td>
+                    <td>@item.Comment</td>
+                    <td>@Html.Raw(item.AboutDesc)</td>
+                    <td>@item.RecentTitle</td>
+                    <td>@item.RecentDesc</td>
+                    <td>@item.CateagoriesTitle</td>
+                    <td>@item.CategoriesDesc</td>
+                    <td>
+                        <a href="/Admin/Blog/Edit/@item.Id" style="color:red"><i class="fas fa-edit"></i></a>
+                        <a href="/Admin/Blog/Delete/@item.Id" onclick="return confirm('Silmek isdediyinizden eminsinizmi?')" style="color:red"><i class="fas fa-trash-alt"></i></a>
+                        <br />
+                        <a href="/Admin/Blog/Details/@item.Id" style="color:red">Etrafli</a>
+                    </td>
+                </tr>
+
+            }
+        </tbody>
+    </table>
+</div>

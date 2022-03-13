@@ -68,7 +68,8 @@ namespace LawyerbackEnd.Controllers
                 attorneysSliders=_dbcontext.AttorneysSliders.ToList(),
                 biographies=_dbcontext.Biographies.ToList(),
                 attorneyWorks=_dbcontext.AttorneyWorks.ToList(),
-                attorneysLogos=_dbcontext.AttorneysLogos.ToList()
+                attorneysLogos=_dbcontext.AttorneysLogos.ToList(),
+                blogDetails=_dbcontext.BlogDetails.ToList()
             };
             return View(homeVM);
         }
@@ -85,6 +86,15 @@ namespace LawyerbackEnd.Controllers
                 return NotFound();
             }
             return View(biography);
+        }
+
+        public IActionResult Blog()
+        {
+            HomeVM home = new HomeVM
+            {
+                blogDetails = _dbcontext.BlogDetails.ToList()
+            };
+            return View(home);
         }
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

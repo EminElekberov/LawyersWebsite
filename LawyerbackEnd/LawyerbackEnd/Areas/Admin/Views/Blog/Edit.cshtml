@@ -1,0 +1,129 @@
+﻿@model BlogDetails
+
+@section styles{ @*bunu ona gore yazdiqki burda yazilan css shared papkasinda loayout.cshtml icerisinde render ede bilek*@
+<style>
+    label {
+        color: red;
+    }
+</style>
+}
+<form method="post" enctype="multipart/form-data">
+    <div class="mb-3">
+        <label>Image</label>
+        <input type="file" class="form-control" asp-for="Photo">
+        <span asp-validation-for="Photo" style="color:red"></span>
+    </div>
+
+    <div class="form-group mt-3">
+        <label>Current Photo</label>
+        <img height="150" width="200" src="~/images/blog/@Model.Image" />
+        <input type="hidden" name="Image" value="@Model.Image" />
+    </div>
+    <div class="mb-3">
+        <label>name</label>
+        <input type="text" class="form-control" asp-for="Name">
+        <span asp-validation-for="Name" style="color:red"></span>
+    </div>
+    <div class="mb-3">
+        <label>Dates</label>
+        <input type="text" class="form-control" asp-for="Dates">
+        <span asp-validation-for="Dates" style="color:red"></span>
+    </div>
+    <div class="mb-3">
+        <label>Buttontext1</label>
+        <input type="text" class="form-control" asp-for="Buttontext1">
+        <span asp-validation-for="Buttontext1" style="color:red"></span>
+    </div>
+    <div class="mb-3">
+        <label>ButtonLink1</label>
+        <input type="text" class="form-control" asp-for="ButtonLink1">
+        <span asp-validation-for="ButtonLink1" style="color:red"></span>
+    </div>
+    <div class="mb-3">
+        <label>Buttontext2</label>
+        <input type="text" class="form-control" asp-for="Buttontext2">
+        <span asp-validation-for="Buttontext2" style="color:red"></span>
+    </div>
+
+    <div class="mb-3">
+        <label>ButtonLink2</label>
+        <input type="text" class="form-control" asp-for="ButtonLink2">
+        <span asp-validation-for="ButtonLink2" style="color:red"></span>
+    </div>
+    <div class="mb-3">
+        <label>Header</label>
+        <input type="text" class="form-control" asp-for="Header">
+        <span asp-validation-for="Header" style="color:red"></span>
+    </div>
+    <div class="mb-3">
+        <label>headerDesc</label>
+        <input type="text" class="form-control" asp-for="headerDesc">
+        <span asp-validation-for="headerDesc" style="color:red"></span>
+    </div>
+
+    <div class="mb-3">
+        <label>Title</label>
+        <input type="text" class="form-control" asp-for="Title">
+        <span asp-validation-for="Title" style="color:red"></span>
+    </div>
+    <div class="mb-3">
+        <label>titleDesc</label>
+        <input type="text" class="form-control" asp-for="titleDesc">
+        <span asp-validation-for="titleDesc" style="color:red"></span>
+    </div>
+
+    <div class="mb-3">
+        <label>Aphorizm</label>
+        <input type="text" class="form-control" asp-for="Aphorizm">
+        <span asp-validation-for="Aphorizm" style="color:red"></span>
+    </div>
+
+    <div class="mb-3">
+        <label>AphirzmWriter</label>
+        <input type="text" class="form-control" asp-for="AphirzmWriter">
+        <span asp-validation-for="AphirzmWriter" style="color:red"></span>
+    </div>
+
+    <div class="mb-3">
+        <label>Description</label>
+        <input type="text" class="form-control" asp-for="Description">
+        <span asp-validation-for="Description" style="color:red"></span>
+    </div>
+
+    <div class="mb-3">
+        <label>Comment</label>
+        <input type="text" class="form-control" asp-for="Comment">
+        <span asp-validation-for="Comment" style="color:red"></span>
+    </div>
+
+    <div class="mb-3">
+        <label>AboutDesc</label>
+        <input type="text" class="form-control" asp-for="AboutDesc">
+        <span asp-validation-for="AboutDesc" style="color:red"></span>
+    </div>
+
+    <div class="mb-3">
+        <label>RecentTitle</label>
+        <input type="text" class="form-control" asp-for="RecentTitle">
+        <span asp-validation-for="RecentTitle" style="color:red"></span>
+    </div>
+
+    <div class="mb-3">
+        <label>RecentDesc</label>
+        <input type="text" class="form-control" asp-for="RecentDesc">
+        <span asp-validation-for="RecentDesc" style="color:red"></span>
+    </div>
+
+    <div class="mb-3">
+        <label>CateagoriesTitle</label>
+        <input type="text" class="form-control" asp-for="CateagoriesTitle">
+        <span asp-validation-for="CateagoriesTitle" style="color:red"></span>
+    </div>
+
+    <div class="mb-3">
+        <label>CategoriesDesc</label>
+        <input type="text" class="form-control" asp-for="CategoriesDesc">
+        <span asp-validation-for="CategoriesDesc" style="color:red"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

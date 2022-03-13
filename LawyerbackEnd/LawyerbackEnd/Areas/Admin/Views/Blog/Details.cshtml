@@ -1,0 +1,58 @@
+﻿
+@model BlogDetails
+
+<div style="overflow-x:auto">
+
+
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Image</th>
+                <th scope="col">Name</th>
+                <th scope="col">Date</th>
+                <th scope="col">Button text1</th>
+                <th scope="col">Button Link1</th>
+                <th scope="col">Button text2</th>
+                <th scope="col">Button link2</th>
+                <th scope="col">Header</th>
+                <th scope="col">Header Description</th>
+                <th scope="col">Title</th>
+                <th scope="col">Title Description</th>
+                <th scope="col">Comment</th>
+                <th scope="col">About Description</th>
+                <th scope="col">Recent titles</th>
+                <th scope="col">Recent Description</th>
+                <th scope="col">Categorise title</th>
+                <th scope="col">Categories Description</th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+                <tr>
+                    <th scope="row">@Model.Id</th>
+                    <td>
+                        <img width="200" height="150" src="~/images/blog/@Model.Image" alt="Alternate Text" />
+                    </td>
+                    <td>@Model.Name</td>
+                    <td>@Model.Dates</td>
+                    <td>@Model.Buttontext1</td>
+                    <td>@Model.ButtonLink1</td>
+                    <td>@Model.Buttontext2</td>
+                    <td>@Model.ButtonLink2</td>
+                    <td>@Model.Header</td>
+                    <td>@Model.headerDesc</td>
+                    <td>@Model.Title</td>
+                    <td>@Model.titleDesc</td>
+                    <td>@Model.Comment</td>
+                    <td>@Html.Raw(Model.AboutDesc)</td>
+                    <td>@Model.RecentTitle</td>
+                    <td>@Model.RecentDesc</td>
+                    <td>@Model.CateagoriesTitle</td>
+                    <td>@Model.CategoriesDesc</td>
+                    
+                </tr>
+        </tbody>
+    </table>
+</div>
