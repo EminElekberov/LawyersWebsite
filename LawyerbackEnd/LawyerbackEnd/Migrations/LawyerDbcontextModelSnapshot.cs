@@ -18,6 +18,50 @@ namespace LawyerbackEnd.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+            modelBuilder.Entity("LawyerbackEnd.Models.AttorneyWork", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("ButtonLink")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Buttontext")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Header")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Title")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("AttorneyWorks");
+                });
+
+            modelBuilder.Entity("LawyerbackEnd.Models.AttorneysLogo", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Image")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("AttorneysLogos");
+                });
+
             modelBuilder.Entity("LawyerbackEnd.Models.AttorneysSlider", b =>
                 {
                     b.Property<int>("Id")
@@ -72,6 +116,12 @@ namespace LawyerbackEnd.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("IconsComminucate")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("IconsComminucate2")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("IconsComminucate3")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Image")

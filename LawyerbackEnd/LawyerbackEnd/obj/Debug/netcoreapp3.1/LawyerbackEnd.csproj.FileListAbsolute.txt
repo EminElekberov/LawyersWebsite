@@ -221,3 +221,12 @@ C:\Users\EMIN\Desktop\lawyersWebsite\LawyerbackEnd\LawyerbackEnd\obj\Debug\netco
 C:\Users\EMIN\Desktop\lawyersWebsite\LawyerbackEnd\LawyerbackEnd\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\AttorneysSlider\Edit.cshtml.g.cs
 C:\Users\EMIN\Desktop\lawyersWebsite\LawyerbackEnd\LawyerbackEnd\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\AttorneysBio\Index.cshtml.g.cs
 C:\Users\EMIN\Desktop\lawyersWebsite\LawyerbackEnd\LawyerbackEnd\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\AttorneysBio\Create.cshtml.g.cs
+C:\Users\EMIN\Desktop\lawyersWebsite\LawyerbackEnd\LawyerbackEnd\obj\Debug\netcoreapp3.1\Razor\Views\Home\Details.cshtml.g.cs
+C:\Users\EMIN\Desktop\lawyersWebsite\LawyerbackEnd\LawyerbackEnd\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\AttorneysWork\Index.cshtml.g.cs
+C:\Users\EMIN\Desktop\lawyersWebsite\LawyerbackEnd\LawyerbackEnd\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\AttorneysWork\Create.cshtml.g.cs
+C:\Users\EMIN\Desktop\lawyersWebsite\LawyerbackEnd\LawyerbackEnd\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\AttorneysWork\Details.cshtml.g.cs
+C:\Users\EMIN\Desktop\lawyersWebsite\LawyerbackEnd\LawyerbackEnd\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\AttorneysWork\Edit.cshtml.g.cs
+C:\Users\EMIN\Desktop\lawyersWebsite\LawyerbackEnd\LawyerbackEnd\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\AttorneysLogo\Create.cshtml.g.cs
+C:\Users\EMIN\Desktop\lawyersWebsite\LawyerbackEnd\LawyerbackEnd\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\AttorneysLogo\Details.cshtml.g.cs
+C:\Users\EMIN\Desktop\lawyersWebsite\LawyerbackEnd\LawyerbackEnd\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\AttorneysLogo\Edit.cshtml.g.cs
+C:\Users\EMIN\Desktop\lawyersWebsite\LawyerbackEnd\LawyerbackEnd\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\AttorneysLogo\Index.cshtml.g.cs

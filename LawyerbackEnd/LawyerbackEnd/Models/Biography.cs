@@ -26,6 +26,8 @@ namespace LawyerbackEnd.Models
         public string Name { get; set; }
         public string Comminucate { get; set; }
         public string IconsComminucate { get; set; }
+        public string IconsComminucate2 { get; set; }
+        public string IconsComminucate3 { get; set; }
         public string PractiseHeader { get; set; }
         public string PrcatiseDesc { get; set; }
         public string Image { get; set; }

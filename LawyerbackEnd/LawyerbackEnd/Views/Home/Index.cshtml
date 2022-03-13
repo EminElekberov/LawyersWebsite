@@ -159,32 +159,28 @@
 
         <div class="row">
 
-            @foreach (var item in Model.teams)
+            @foreach (var item in Model.biographies)
             {
                 <div class="col-lg-4 col-md-6">
 
                     <div class="lawyer-holder lawyer-3col">
-                        <a href="attorneys-single-page.html"><img src="~/images/team/@item.Image" style="height:500px" class="img-fluid" alt=""></a>
+                        <a href="/Home/Details/@item.Id"><img src="~/images/attorneys/@item.Image" style="height:500px" class="img-fluid" alt=""></a>
                         <div class="lawyer-position">@item.Job</div>
                         <h2 class="lawyer-title"><a href="attorneys-single-page.html">@item.Name</a></h2>
-                        <div class="lawyer-excerpt">@item.Description</div>
+                        <div class="lawyer-excerpt">@item.BioDescription</div>
                         <ul class="lawyer-social">
-                            @if (item.SocialNetworkLink != null)
+                            @if (item.IconsComminucate != null)
                             {
-                                <li><a href="#" target="_blank">@Html.Raw(item.SocialNetworkLink)</a></li>
+                                <li><a href="#" target="_blank">@Html.Raw(item.IconsComminucate)</a></li>
                             }
-                            @if (item.SocialNetworkLink2 != null)
+                            @if (item.IconsComminucate2 != null)
                             {
-                                <li><a href="#" target="_blank">@Html.Raw(item.SocialNetworkLink2)</a></li>
-                            }
-                            @if (item.SocialNetworkLink3 != null)
+                                <li><a href="#" target="_blank">@Html.Raw(item.IconsComminucate2)</a></li>
+                            }@if (item.IconsComminucate3 != null)
                             {
-                                <li><a href="#" target="_blank">@Html.Raw(item.SocialNetworkLink3)</a></li>
+                                <li><a href="#" target="_blank">@Html.Raw(item.IconsComminucate3)</a></li>
                             }
-                            @if (item.SocialNetworkLink4 != null)
-                            {
-                                <li><a href="mailto:" target="_blank">@Html.Raw(item.SocialNetworkLink4)</a></li>
-                            }
+                            
                         </ul>
                     </div>
                 </div>

@@ -32,7 +32,8 @@ namespace LawyerbackEnd.Controllers
                 news=_dbcontext.News.ToList(),
                 services=_dbcontext.Services.ToList(),
                 ourAbouts=_dbcontext.OurAbouts.ToList(),
-                pictureSliders=_dbcontext.pictureSliders.ToList()
+                pictureSliders=_dbcontext.pictureSliders.ToList(),
+                biographies=_dbcontext.Biographies.ToList()
             };
             return View(homeVM);
         }
@@ -65,11 +66,26 @@ namespace LawyerbackEnd.Controllers
             HomeVM homeVM = new HomeVM
             {
                 attorneysSliders=_dbcontext.AttorneysSliders.ToList(),
-                biographies=_dbcontext.Biographies.ToList()
+                biographies=_dbcontext.Biographies.ToList(),
+                attorneyWorks=_dbcontext.AttorneyWorks.ToList(),
+                attorneysLogos=_dbcontext.AttorneysLogos.ToList()
             };
             return View(homeVM);
         }
 
+        public IActionResult Details(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+            Biography biography = _dbcontext.Biographies.Find(id);
+            if (biography == null)
+            {
+                return NotFound();
+            }
+            return View(biography);
+        }
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

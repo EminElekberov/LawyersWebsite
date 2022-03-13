@@ -24,6 +24,8 @@ namespace LawyerbackEnd.ViewModel
         public List<PracticeAbout> practiceAbouts { get; set; }
         public List<AttorneysSlider> attorneysSliders { get; set; }
         public List<Biography> biographies { get; set; }
+        public List<AttorneyWork> attorneyWorks { get; set; }
+        public List<AttorneysLogo> attorneysLogos { get; set; }
 
     }
 }
