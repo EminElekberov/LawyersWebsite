@@ -3,14 +3,16 @@ using LawyerbackEnd.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace LawyerbackEnd.Migrations
 {
     [DbContext(typeof(LawyerDbcontext))]
-    partial class LawyerDbcontextModelSnapshot : ModelSnapshot
+    [Migration("20220313133027_bioadded")]
+    partial class bioadded
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -32,66 +34,6 @@ namespace LawyerbackEnd.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("AttorneysSliders");
-                });
-
-            modelBuilder.Entity("LawyerbackEnd.Models.Biography", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Aphorizm")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("AwardDescription")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("AwardIconsDesc")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("AwarsHeader")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("BioDescription")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("BioHeader")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Comminucate")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("EducationDescription")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("EducationHeader")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("IconsComminucate")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Image")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Job")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("PractiseHeader")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("PrcatiseDesc")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Biographies");
                 });
 
             modelBuilder.Entity("LawyerbackEnd.Models.Category", b =>

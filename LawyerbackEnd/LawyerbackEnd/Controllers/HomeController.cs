@@ -64,7 +64,8 @@ namespace LawyerbackEnd.Controllers
         {
             HomeVM homeVM = new HomeVM
             {
-                attorneysSliders=_dbcontext.AttorneysSliders.ToList()
+                attorneysSliders=_dbcontext.AttorneysSliders.ToList(),
+                biographies=_dbcontext.Biographies.ToList()
             };
             return View(homeVM);
         }

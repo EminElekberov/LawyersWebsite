@@ -26,6 +26,7 @@
     <Folder Include="Areas\Admin\Data\" />
     <Folder Include="Areas\Admin\Models\" />
     <Folder Include="wwwroot\images\holder\" />
+    <Folder Include="wwwroot\images\attorneys\" />
   </ItemGroup>
 
 </Project>

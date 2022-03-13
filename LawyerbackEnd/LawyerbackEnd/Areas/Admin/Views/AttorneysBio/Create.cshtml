@@ -1,0 +1,93 @@
+﻿@model Biography
+
+@section styles{ @*bunu ona gore yazdiqki burda yazilan css shared papkasinda loayout.cshtml icerisinde render ede bilek*@
+<style>
+    label {
+        color: red;
+    }
+</style>
+}
+<form method="post" enctype="multipart/form-data">
+    <div class="mb-3">
+        <label>Image</label>
+        <input type="file" class="form-control" asp-for="Photo">
+        <span asp-validation-for="Photo" style="color:red"></span>
+    </div>
+    <div class="mb-3">
+        <label>BioHeader</label>
+        <input type="text" class="form-control" asp-for="BioHeader">
+        <span asp-validation-for="BioHeader" style="color:red"></span>
+    </div>
+    <div class="mb-3">
+        <label>BioDescription</label>
+        <input type="text" class="form-control" asp-for="BioDescription">
+        <span asp-validation-for="BioDescription" style="color:red"></span>
+    </div>
+    <div class="mb-3">
+        <label>EducationHeader</label>
+        <input type="text" class="form-control" asp-for="EducationHeader">
+        <span asp-validation-for="EducationHeader" style="color:red"></span>
+    </div>
+    <div class="mb-3">
+        <label>EducationDescription</label>
+        <input type="text" class="form-control" asp-for="EducationDescription">
+        <span asp-validation-for="EducationDescription" style="color:red"></span>
+    </div>
+    <div class="mb-3">
+        <label>Aphorizm</label>
+        <input type="text" class="form-control" asp-for="Aphorizm">
+        <span asp-validation-for="Aphorizm" style="color:red"></span>
+    </div>
+
+    <div class="mb-3">
+        <label>AwarsHeader</label>
+        <input type="text" class="form-control" asp-for="AwarsHeader">
+        <span asp-validation-for="AwarsHeader" style="color:red"></span>
+    </div>
+    <div class="mb-3">
+        <label>AwardDescription</label>
+        <input type="text" class="form-control" asp-for="AwardDescription">
+        <span asp-validation-for="AwardDescription" style="color:red"></span>
+    </div>
+    <div class="mb-3">
+        <label>AwardIconsDesc</label>
+        <input type="text" class="form-control" asp-for="AwardIconsDesc">
+        <span asp-validation-for="AwardIconsDesc" style="color:red"></span>
+    </div>
+
+    <div class="mb-3">
+        <label>Job</label>
+        <input type="text" class="form-control" asp-for="Job">
+        <span asp-validation-for="Job" style="color:red"></span>
+    </div>
+    <div class="mb-3">
+        <label>Name</label>
+        <input type="text" class="form-control" asp-for="Name">
+        <span asp-validation-for="Name" style="color:red"></span>
+    </div>
+
+    <div class="mb-3">
+        <label>Comminucate</label>
+        <input type="text" class="form-control" asp-for="Comminucate">
+        <span asp-validation-for="Comminucate" style="color:red"></span>
+    </div>
+
+    <div class="mb-3">
+        <label>IconsComminucate</label>
+        <input type="text" class="form-control" asp-for="IconsComminucate">
+        <span asp-validation-for="IconsComminucate" style="color:red"></span>
+    </div>
+
+    <div class="mb-3">
+        <label>PractiseHeader</label>
+        <input type="text" class="form-control" asp-for="PractiseHeader">
+        <span asp-validation-for="PractiseHeader" style="color:red"></span>
+    </div>
+
+    <div class="mb-3">
+        <label>PrcatiseDesc</label>
+        <input type="text" class="form-control" asp-for="PrcatiseDesc">
+        <span asp-validation-for="PrcatiseDesc" style="color:red"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
