@@ -1,0 +1,30 @@
+﻿
+@model BlogHeader
+
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Image</th>
+            <th scope="col">Header</th>
+            <th scope="col">Description</th>
+        </tr>
+    </thead>
+
+    <tbody>
+
+            <tr>
+                <th scope="row">@Model.Id</th>
+                <td>
+                    <img width="200" height="150" src="~/images/blogHeader/@Model.Image" alt="Alternate Text" />
+                </td>
+                <td>@Html.Raw(Model.header)</td>
+                <td>@Model.Description</td>
+
+              
+            </tr>
+
+        
+    </tbody>
+</table>

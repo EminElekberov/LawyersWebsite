@@ -29,6 +29,7 @@ namespace LawyerbackEnd.Models
         public DbSet<AttorneyWork> AttorneyWorks{ get; set; }
         public DbSet<AttorneysLogo> AttorneysLogos{ get; set; }
         public DbSet<BlogDetails> BlogDetails{ get; set; }
+        public DbSet<BlogHeader> BlogHeaders{ get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);

@@ -216,6 +216,29 @@ namespace LawyerbackEnd.Migrations
                     b.ToTable("BlogDetails");
                 });
 
+            modelBuilder.Entity("LawyerbackEnd.Models.BlogHeader", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Image")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("header")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("BlogHeaders");
+                });
+
             modelBuilder.Entity("LawyerbackEnd.Models.Category", b =>
                 {
                     b.Property<int>("Id")

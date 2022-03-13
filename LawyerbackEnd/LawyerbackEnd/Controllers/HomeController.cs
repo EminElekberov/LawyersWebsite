@@ -33,7 +33,8 @@ namespace LawyerbackEnd.Controllers
                 services=_dbcontext.Services.ToList(),
                 ourAbouts=_dbcontext.OurAbouts.ToList(),
                 pictureSliders=_dbcontext.pictureSliders.ToList(),
-                biographies=_dbcontext.Biographies.ToList()
+                biographies=_dbcontext.Biographies.ToList(),
+                blogDetails=_dbcontext.BlogDetails.ToList()
             };
             return View(homeVM);
         }
@@ -92,9 +93,24 @@ namespace LawyerbackEnd.Controllers
         {
             HomeVM home = new HomeVM
             {
-                blogDetails = _dbcontext.BlogDetails.ToList()
+                blogDetails = _dbcontext.BlogDetails.ToList(),
+                blogHeaders=_dbcontext.BlogHeaders.ToList()
             };
             return View(home);
+        }
+
+        public IActionResult BlogDetails(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+            BlogDetails blog = _dbcontext.BlogDetails.Find(id);
+            if (blog == null)
+            {
+                return NotFound();
+            }
+            return View(blog);
         }
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

@@ -243,25 +243,25 @@
         </div>
         <!-- /row -->
         <div class="row section-home-blog">
-            @foreach (var item in Model.news)
+            @foreach (var item in Model.blogDetails)
             {
                 <div class="col-md-4">
                     <article class="blog-item blog-item-2col-grid blog-item-3col-grid">
-                        <a href="blog-single-post.html">
+                        <a href="/Home/BlogDetails/@item.Id">
                             <div class="post-image"><img src="~/images/blog/@item.Image" style="height:400px" class="img-fluid" alt=""></div>
                         </a>
                         <ul class="blog-date">
                             <li class="meta-date">@item.Dates</li>
-                            @if (item.ButtonOnetext != null)
+                            @if (item.Buttontext1 != null)
                             {
                                 <li class="meta-categ">
-                                    <a href="@item.ButtonOneLink">@item.ButtonOnetext</a>
+                                    <a href="@item.ButtonLink1">@item.Buttontext1</a>
                                 </li>
                             }
-                            @if (item.ButtonTwotext != null)
+                            @if (item.Buttontext2 != null)
                             {
                                 <li class="meta-categ">
-                                    <a href="@item.ButtonTwoLink">@item.ButtonTwotext</a>
+                                    <a href="@item.ButtonLink1">@item.Buttontext2</a>
                                 </li>
                             }
                         </ul>
