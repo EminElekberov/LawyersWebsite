@@ -37,9 +37,9 @@
                     <td>
                         <img width="200" height="150" src="~/images/team/@item.Image" alt="Alternate Text" />
                     </td>
-                    <td>@item.Job</td>
-                    <td>@item.Name</td>
-                    <td>@item.Description</td>
+                    <td>@Html.Raw(item.Job)</td>
+                    <td>@Html.Raw(item.Name)</td>
+                    <td>@Html.Raw(item.Description)</td>
                     <td>@item.SocialNetworkLink</td>
                     <td>@item.SocialNetworkLink2</td>
                     <td>@item.SocialNetworkLink3</td>

@@ -26,7 +26,8 @@
 
     <div class="mb-3">
         <label>Button One Text</label>
-        <input type="text" class="form-control" asp-for="ButtonOnetext">
+        <textarea asp-for="ButtonOnetext" id="ButtonOnetext" class="form-control"></textarea>
+
         <span asp-validation-for="ButtonOnetext" style="color:red"></span>
     </div>
 
@@ -50,16 +51,55 @@
 
     <div class="mb-3">
         <label>Title</label>
-        <input type="text" class="form-control" asp-for="Title">
+        <textarea asp-for="Title" id="Title" class="form-control"></textarea>
+
         <span asp-validation-for="Title" style="color:red"></span>
     </div>
 
 
     <div class="mb-3">
         <label>Description</label>
-        <textarea asp-for="Description" class="form-control"></textarea>
+        <textarea asp-for="Description" id="Description" class="form-control"></textarea>
+
         <span asp-validation-for="Description" style="color:red"></span>
     </div>
 
     <button type="submit" class="btn btn-primary">Submit</button>
 </form>
+
+
+
+
+@section scripts{
+
+    <partial name="_ValidationScriptsPartial" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ckeditor5/32.0.0/ckeditor.min.js"></script>
+    <script>
+        ClassicEditor.create(document.querySelector('#ButtonOnetext')).catch(error => {
+            console.error(error);
+        });
+    </script>
+}
+
+@section scripts1{
+
+    <partial name="_ValidationScriptsPartial" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ckeditor5/32.0.0/ckeditor.min.js"></script>
+    <script>
+        ClassicEditor.create(document.querySelector('#Description')).catch(error => {
+            console.error(error);
+        });
+    </script>
+}
+
+
+@section scriptsNumOne{
+
+    <partial name="_ValidationScriptsPartial" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ckeditor5/32.0.0/ckeditor.min.js"></script>
+    <script>
+        ClassicEditor.create(document.querySelector('#Title')).catch(error => {
+            console.error(error);
+        });
+    </script>
+}

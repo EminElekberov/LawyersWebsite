@@ -16,7 +16,8 @@
     </div>
     <div class="mb-3">
         <label>Header</label>
-        <input type="text" class="form-control" asp-for="Header">
+        <textarea asp-for="Header" class="form-control"></textarea>
+
         <span asp-validation-for="Header" style="color:red"></span>
     </div>
     <div class="mb-3">
@@ -26,7 +27,8 @@
     </div>
     <div class="mb-3">
         <label>Learn text</label>
-        <input type="text" class="form-control" asp-for="Learntext">
+        <textarea asp-for="Learntext" class="form-control"></textarea>
+
         <span asp-validation-for="Learntext" style="color:red"></span>
     </div>
     <div class="mb-3">
@@ -37,3 +39,27 @@
 
     <button type="submit" class="btn btn-primary">Submit</button>
 </form>
+
+
+@section scripts1{
+
+    <partial name="_ValidationScriptsPartial" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ckeditor5/32.0.0/ckeditor.min.js"></script>
+    <script>
+        ClassicEditor.create(document.querySelector('#Description')).catch(error => {
+            console.error(error);
+        });
+    </script>
+}
+
+
+@section scriptsNumOne{
+
+    <partial name="_ValidationScriptsPartial" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ckeditor5/32.0.0/ckeditor.min.js"></script>
+    <script>
+        ClassicEditor.create(document.querySelector('#Learntext')).catch(error => {
+            console.error(error);
+        });
+    </script>
+}

@@ -10,12 +10,13 @@
 <form method="post" enctype="multipart/form-data">
     <div class="mb-3">
         <label>About Header</label>
-        <input type="text" class="form-control" asp-for="AboutHeadder">
+        <textarea asp-for="AboutHeadder" id="AboutHeadder" class="form-control"></textarea>
+
         <span asp-validation-for="AboutHeadder" style="color:red"></span>
     </div>
     <div class="mb-3">
         <label>About Description</label>
-        <input type="text" class="form-control" asp-for="ABoutDescription">
+        <textarea asp-for="ABoutDescription" id="ABoutDescription" class="form-control"></textarea>
         <span asp-validation-for="ABoutDescription" style="color:red"></span>
     </div>
 
@@ -44,3 +45,27 @@
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
 </form>
+
+
+@section scripts1{
+
+    <partial name="_ValidationScriptsPartial" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ckeditor5/32.0.0/ckeditor.min.js"></script>
+    <script>
+        ClassicEditor.create(document.querySelector('#AboutHeadder')).catch(error => {
+            console.error(error);
+        });
+    </script>
+}
+
+
+@section scriptsNumOne{
+
+    <partial name="_ValidationScriptsPartial" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ckeditor5/32.0.0/ckeditor.min.js"></script>
+    <script>
+        ClassicEditor.create(document.querySelector('#ABoutDescription')).catch(error => {
+            console.error(error);
+        });
+    </script>
+}

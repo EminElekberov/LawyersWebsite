@@ -20,7 +20,7 @@
     </div>
     <div class="mb-3">
         <label>Name</label>
-        <input type="text" class="form-control" asp-for="header">
+        <textarea asp-for="header" id="header" class="form-control"></textarea>
         <span asp-validation-for="header" style="color:red"></span>
     </div>
 
@@ -32,3 +32,27 @@
 
     <button type="submit" class="btn btn-primary">Submit</button>
 </form>
+
+
+
+@section scripts{
+
+    <partial name="_ValidationScriptsPartial" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ckeditor5/32.0.0/ckeditor.min.js"></script>
+    <script>
+        ClassicEditor.create(document.querySelector('#header')).catch(error => {
+            console.error(error);
+        });
+    </script>
+}
+
+@section scripts1{
+
+    <partial name="_ValidationScriptsPartial" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ckeditor5/32.0.0/ckeditor.min.js"></script>
+    <script>
+        ClassicEditor.create(document.querySelector('#Description')).catch(error => {
+            console.error(error);
+        });
+    </script>
+}

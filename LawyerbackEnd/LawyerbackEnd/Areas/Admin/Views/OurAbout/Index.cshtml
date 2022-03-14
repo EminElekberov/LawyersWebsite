@@ -37,15 +37,14 @@
                 <th scope="row">@item.headerUndeer</th>
                 <td>@Html.Raw(item.Price)</td>
                 <th scope="row">@item.Dates</th>
-                <td>@item.Description</td>
-                <td>@item.Description2</td>
+                <td>@Html.Raw(item.Description)</td>
+                <td>@Html.Raw(item.Description2)</td>
                 <td>@item.Description3</td>
 
                 <td>
                     <a href="/Admin/OurAbout/Edit/@item.Id" style="color:red"><i class="fas fa-edit"></i></a>
                     <a href="/Admin/OurAbout/Delete/@item.Id" onclick="return confirm('Silmek isdediyinizden eminsinizmi?')" style="color:red"><i class="fas fa-trash-alt"></i></a>
                     <br />
-                    <a href="/Admin/OurAbout/Details/@item.Id" style="color:red">Etrafli</a>
                 </td>
             </tr>
 
