@@ -14,7 +14,7 @@
     </div>
 
     <table class="table table-bordered" style="width:1500px;">
-        <thead>
+        <thead class="bg-register-image">
             <tr>
                 <th scope="col">ID</th>
                 <th scope="col">Text One</th>
@@ -37,16 +37,16 @@
             {
                 <tr>
                     <th scope="row">@item.Id</th>
-                    <td>@item.Textone</td>
-                    <td>@item.TextTwo</td>
+                    <td>@Html.Raw(item.Textone)</td>
+                    <td>@Html.Raw(item.TextTwo)</td>
                     <td>@item.numberOne</td>
                     <td>@item.numberTwo</td>
                     <td>@item.numberThree</td>
                     <td>@item.numberFour</td>
-                    <td>@item.numbroneDesc</td>
-                    <td>@item.numbrTWoDesc</td>
-                    <td>@item.numbrThreeDesc</td>
-                    <td>@item.numbFourDesc</td>
+                    <td>@Html.Raw(item.numbroneDesc)</td>
+                    <td>@Html.Raw(item.numbrTWoDesc)</td>
+                    <td>@Html.Raw(item.numbrThreeDesc)</td>
+                    <td>@Html.Raw(item.numbFourDesc)</td>
 
                     <td>
                         <a href="/Admin/About/Edit/@item.Id" style="color:red"><i class="fas fa-edit"></i></a>

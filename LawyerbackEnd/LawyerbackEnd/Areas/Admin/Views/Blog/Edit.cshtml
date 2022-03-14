@@ -21,7 +21,7 @@
     </div>
     <div class="mb-3">
         <label>name</label>
-        <input type="text" class="form-control" asp-for="Name">
+        <textarea asp-for="Name" id="Name" class="form-control"></textarea>
         <span asp-validation-for="Name" style="color:red"></span>
     </div>
     <div class="mb-3">
@@ -31,7 +31,7 @@
     </div>
     <div class="mb-3">
         <label>Buttontext1</label>
-        <input type="text" class="form-control" asp-for="Buttontext1">
+        <textarea asp-for="Buttontext1" id="Header" class="form-control"></textarea>
         <span asp-validation-for="Buttontext1" style="color:red"></span>
     </div>
     <div class="mb-3">
@@ -41,7 +41,7 @@
     </div>
     <div class="mb-3">
         <label>Buttontext2</label>
-        <input type="text" class="form-control" asp-for="Buttontext2">
+        <textarea asp-for="Buttontext2" id="Header" class="form-control"></textarea>
         <span asp-validation-for="Buttontext2" style="color:red"></span>
     </div>
 
@@ -52,7 +52,7 @@
     </div>
     <div class="mb-3">
         <label>Header</label>
-        <input type="text" class="form-control" asp-for="Header">
+        <textarea asp-for="Header" id="Header" class="form-control"></textarea>
         <span asp-validation-for="Header" style="color:red"></span>
     </div>
     <div class="mb-3">
@@ -98,7 +98,7 @@
 
     <div class="mb-3">
         <label>AboutDesc</label>
-        <input type="text" class="form-control" asp-for="AboutDesc">
+        <textarea asp-for="Header" id="Header" class="form-control"></textarea>
         <span asp-validation-for="AboutDesc" style="color:red"></span>
     </div>
 
@@ -127,3 +127,38 @@
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
 </form>
+
+
+@section scripts{
+
+    <partial name="_ValidationScriptsPartial" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ckeditor5/32.0.0/ckeditor.min.js"></script>
+    <script>
+        ClassicEditor.create(document.querySelector('#Buttontext2')).catch(error => {
+            console.error(error);
+        });
+    </script>
+}
+
+@section scripts1{
+
+    <partial name="_ValidationScriptsPartial" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ckeditor5/32.0.0/ckeditor.min.js"></script>
+    <script>
+        ClassicEditor.create(document.querySelector('#Buttontext1')).catch(error => {
+            console.error(error);
+        });
+    </script>
+}
+
+
+@section scriptsNumOne{
+
+    <partial name="_ValidationScriptsPartial" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ckeditor5/32.0.0/ckeditor.min.js"></script>
+    <script>
+        ClassicEditor.create(document.querySelector('#Name')).catch(error => {
+            console.error(error);
+        });
+    </script>
+}

@@ -10,7 +10,7 @@
 <div style="overflow-x:auto">
 
     <div style="margin-bottom:10px;">
-        <a href="/Admin/AttorneysBio/Create" class="btn btn-success" style="width:100%">Add new slider</a>
+        <a href="/Admin/AttorneysBio/Create" class="btn btn-outline-success" style="width:100%">Add new slider</a>
     </div>
 
     <table class="table table-bordered">
@@ -45,13 +45,13 @@
                     <td>
                         <img width="200" height="150" src="~/images/attorneys/@item.Image" alt="Alternate Text" />
                     </td>
-                    <td>@item.BioHeader</td>
-                    <td>@item.BioDescription</td>
-                    <td>@item.EducationHeader</td>
-                    <td>@item.EducationDescription</td>
-                    <td>@item.Aphorizm</td>
-                    <td>@item.AwarsHeader</td>
-                    <td>@item.AwardDescription</td>
+                    <td>@Html.Raw(item.BioHeader)</td>
+                    <td>@Html.Raw(item.BioDescription)</td>
+                    <td>@Html.Raw(item.EducationHeader)</td>
+                    <td>@Html.Raw(item.EducationDescription)</td>
+                    <td>@Html.Raw(item.Aphorizm)</td>
+                    <td>@Html.Raw(item.AwarsHeader)</td>
+                    <td>@Html.Raw(item.AwardDescription)</td>
                     <td>@item.AwardIconsDesc</td>
                     <td>@item.Job</td>
                     <td>@item.Name</td>
@@ -60,10 +60,8 @@
                     <td>@item.PractiseHeader</td>
                     <td>@item.PrcatiseDesc</td>
                     <td>
-                        <a href="/Admin/AttorneysBio/Edit/@item.Id" style="color:red"><i class="fas fa-edit"></i></a>
                         <a href="/Admin/AttorneysBio/Delete/@item.Id" onclick="return confirm('Silmek isdediyinizden eminsinizmi?')" style="color:red"><i class="fas fa-trash-alt"></i></a>
                         <br />
-                        <a href="/Admin/AttorneysBio/Details/@item.Id" style="color:red">Etrafli</a>
                     </td>
                 </tr>
 

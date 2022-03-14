@@ -16,6 +16,8 @@ namespace LawyerbackEnd.Models
         public string Email { get; set; }
         public string Subject { get; set; }
         public string Message { get; set; }
+        public bool ReadyForm { get; set; }
+        public string MyOpinion { get; set; }
        
     }
 }

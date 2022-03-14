@@ -1,7 +1,7 @@
 ﻿@model IList<AllContactsAreas>
 
     <table class="table table-bordered">
-        <thead>
+        <thead class="bg-info">
             <tr>
                 <th scope="col">ID</th>
                 <th scope="col">Address</th>
@@ -24,11 +24,11 @@
                     <td>@Html.Raw(item.Address)</td>
                     <td>@Html.Raw(item.AddressHeader)</td>
                     <td>@item.PhoneHeader</td>
-                    <td style="width:200px">@item.Phone</td>
-                    <td>@item.OfficeHeader</td>
-                    <td>@item.Hours</td>
-                    <td>@item.ContactHeader</td>
-                    <td>@item.ContactHeaderDescription</td>
+                    <td style="width:200px">@Html.Raw(item.Phone)</td>
+                    <td>@Html.Raw(item.OfficeHeader)</td>
+                    <td>@Html.Raw(item.Hours)</td>
+                    <td>@Html.Raw(item.ContactHeader)</td>
+                    <td>@Html.Raw(item.ContactHeaderDescription)</td>
 
                     <td style="width:300px">
                         <a class="btn btn-danger" href="/Admin/AllContactsAreas/Edit/@item.Id">Edit</a>

@@ -1,7 +1,7 @@
 ﻿
 @model Contact
 <table class="table table-bordered">
-    <thead>
+    <thead class="bg-password-image">
         <tr>
             <th scope="col">ID</th>
             <th scope="col">Name</th>
@@ -13,7 +13,7 @@
 
     <tbody>
 
-            <tr>
+            <tr class="bg-gradient-light">
                 <th scope="row">@Model.Id</th>
                 <td>@Html.Raw(Model.Name)</td>
                 <td>@Model.Email</td>

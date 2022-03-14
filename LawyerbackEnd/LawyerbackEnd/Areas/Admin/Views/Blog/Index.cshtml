@@ -14,7 +14,7 @@
     </div>
 
     <table class="table table-bordered">
-        <thead>
+        <thead class="bg-register-image">
             <tr>
                 <th scope="col">ID</th>
                 <th scope="col">Image</th>
@@ -49,13 +49,13 @@
                     <td>
                         <img width="200" height="150" src="~/images/blog/@item.Image" alt="Alternate Text" />
                     </td>
-                    <td>@item.Name</td>
+                    <td>@Html.Raw(item.Name)</td>
                     <td>@item.Dates</td>
-                    <td>@item.Buttontext1</td>
+                    <td>@Html.Raw(item.Buttontext1)</td>
                     <td>@item.ButtonLink1</td>
-                    <td>@item.Buttontext2</td>
+                    <td>@Html.Raw(item.Buttontext2)</td>
                     <td>@item.ButtonLink2</td>
-                    <td>@item.Header</td>
+                    <td>@Html.Raw(item.Header)</td>
                     <td>@item.headerDesc</td>
                     <td>@item.Title</td>
                     <td>@item.titleDesc</td>

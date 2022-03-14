@@ -7,14 +7,16 @@
         @TempData["Success"]
     </div>
 }
-<table class="table table-bordered">
-    <thead>
+<table class="table table-bordered table-striped">
+    <thead class="bg-login-image">
         <tr>
             <th scope="col">ID</th>
             <th scope="col">Name</th>
             <th scope="col">Email</th>
             <th scope="col">Subject</th>
             <th scope="col">Messsage</th>
+            <th scope="col">Are you ready?</th>
+            <th scope="col">My Opinion</th>
             <th>Edit/Delete</th>
         </tr>
     </thead>
@@ -29,10 +31,20 @@
                 <td>@item.Email</td>
                 <td>@item.Subject</td>
                 <td>@item.Message</td>
+                <td>
+                    <input type="radio" id="html" name="fav_language" asp-for="@item.ReadyForm" value="true">
+                    <label for="html">Yes</label>
+                    <br>
+                    <input type="radio" id="css" name="fav_language" asp-for="@item.ReadyForm" value="false">
+                    <label for="css">No</label>
+                    <br>
+                </td>
+                <td>@Html.Raw(item.MyOpinion)</td>
 
                 <td>
-                    <a class="btn btn-danger"  href="/Admin/Contact/Delete/@item.Id" ><i class="fas fa-trash-alt"></i></a>
-                    <a  class="btn btn-primary" href="/Admin/Contact/Details/@item.Id" style="color:red">Etrafli</a>
+                    <a class="btn btn-success" href="/Admin/Contact/CreateOpinion/@item.Id">Write opinion</a>
+                    <a class="btn btn-danger" href="/Admin/Contact/Delete/@item.Id"><i class="fas fa-trash-alt"></i></a>
+                    <a class="btn btn-primary" href="/Admin/Contact/Details/@item.Id" style="color:red">Etrafli</a>
                 </td>
             </tr>
 

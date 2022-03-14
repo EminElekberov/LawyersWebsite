@@ -5,58 +5,58 @@
 <form method="post" enctype="multipart/form-data">
     <div asp-validation-summary="All" class="text-danger"></div>
     <div class="form-group">
-        <label>Trendword</label>
+        <label>Textone</label>
         <textarea asp-for="Textone" id="Textone" class="form-control"></textarea>
         <span asp-validation-for="Textone" class="text-danger"></span>
     </div>
     <div class="form-group">
-        <label>Trendword</label>
+        <label>Text Two</label>
         <textarea asp-for="TextTwo" id="textTo" class="form-control"></textarea>
         <span asp-validation-for="TextTwo" class="text-danger"></span>
     </div>
     <div class="form-group">
-        <label>Trendword</label>
+        <label>Number One</label>
         <textarea asp-for="numberOne" id="numberOne" class="form-control"></textarea>
         <span asp-validation-for="numberOne" class="text-danger"></span>
     </div>
     <div class="form-group">
-        <label>Trendword</label>
+        <label>Number Two</label>
         <textarea asp-for="numberTwo" id="numberOne" class="form-control"></textarea>
         <span asp-validation-for="numberTwo" class="text-danger"></span>
     </div>
 
     <div class="form-group">
-        <label>Trendword</label>
+        <label>Number Three</label>
         <textarea asp-for="numberThree" id="numberThree" class="form-control"></textarea>
         <span asp-validation-for="numberThree" class="text-danger"></span>
     </div>
 
     <div class="form-group">
-        <label>Trendword</label>
+        <label>Number Four</label>
         <textarea asp-for="numberFour" id="numberFour" class="form-control"></textarea>
         <span asp-validation-for="numberFour" class="text-danger"></span>
     </div>
     <div class="form-group">
-        <label>ClothType</label>
-        <input asp-for="numbroneDesc" class="form-control" />
+        <label>Number One Description</label>
+        <textarea asp-for="numbroneDesc" id="numbroneDesc" class="form-control"></textarea>
         <span asp-validation-for="numbroneDesc" class="text-danger"></span>
     </div>
 
     <div class="form-group">
-        <label>ClothType</label>
-        <input asp-for="numbrTWoDesc" class="form-control" />
+        <label>Number Two Description</label>
+        <textarea asp-for="numbrTWoDesc" id="numbrtwoDesc" class="form-control"></textarea>
         <span asp-validation-for="numbrTWoDesc" class="text-danger"></span>
     </div>
 
     <div class="form-group">
-        <label>ClothType</label>
-        <input asp-for="numbrThreeDesc" class="form-control" />
+        <label>Number Three Description</label>
+        <textarea asp-for="numbrThreeDesc" id="numbrThreeDesc" class="form-control"></textarea>
         <span asp-validation-for="numbrThreeDesc" class="text-danger"></span>
     </div>
 
     <div class="form-group">
-        <label>ClothType</label>
-        <input asp-for="numbFourDesc" class="form-control" />
+        <label>Number Four Description</label>
+        <textarea asp-for="numbFourDesc" id="numbFourDesc" class="form-control"></textarea>
         <span asp-validation-for="numbFourDesc" class="text-danger"></span>
     </div>
     <input type="submit" class="btn btn-danger btn-block" value="Update" />
@@ -68,8 +68,64 @@
     <partial name="_ValidationScriptsPartial" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ckeditor5/32.0.0/ckeditor.min.js"></script>
     <script>
-    ClassicEditor.create(document.querySelector('#Name')).catch(error => {
-        console.error(error);
-    });
+        ClassicEditor.create(document.querySelector('#Textone')).catch(error => {
+            console.error(error);
+        });
+    </script>
+}
+
+@section scripts1{
+
+    <partial name="_ValidationScriptsPartial" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ckeditor5/32.0.0/ckeditor.min.js"></script>
+    <script>
+        ClassicEditor.create(document.querySelector('#textTo')).catch(error => {
+            console.error(error);
+        });
+    </script>
+}
+
+
+@section scriptsNumOne{
+
+    <partial name="_ValidationScriptsPartial" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ckeditor5/32.0.0/ckeditor.min.js"></script>
+    <script>
+        ClassicEditor.create(document.querySelector('#numbroneDesc')).catch(error => {
+            console.error(error);
+        });
+    </script>
+}
+
+@section scriptsNumTwo{
+
+    <partial name="_ValidationScriptsPartial" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ckeditor5/32.0.0/ckeditor.min.js"></script>
+    <script>
+        ClassicEditor.create(document.querySelector('#numbrtwoDesc')).catch(error => {
+            console.error(error);
+        });
+    </script>
+}
+
+@section scriptsNumThree{
+
+    <partial name="_ValidationScriptsPartial" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ckeditor5/32.0.0/ckeditor.min.js"></script>
+    <script>
+        ClassicEditor.create(document.querySelector('#numbrThreeDesc')).catch(error => {
+            console.error(error);
+        });
+    </script>
+}
+
+@section scriptsNumFour{
+
+    <partial name="_ValidationScriptsPartial" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ckeditor5/32.0.0/ckeditor.min.js"></script>
+    <script>
+        ClassicEditor.create(document.querySelector('#numbFourDesc')).catch(error => {
+            console.error(error);
+        });
     </script>
 }

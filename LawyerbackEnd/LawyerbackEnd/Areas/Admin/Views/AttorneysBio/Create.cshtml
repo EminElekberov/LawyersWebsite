@@ -15,33 +15,33 @@
     </div>
     <div class="mb-3">
         <label>BioHeader</label>
-        <input type="text" class="form-control" asp-for="BioHeader">
+        <textarea asp-for="BioHeader" id="BioHeader" class="form-control"></textarea>
         <span asp-validation-for="BioHeader" style="color:red"></span>
     </div>
     <div class="mb-3">
         <label>BioDescription</label>
-        <input type="text" class="form-control" asp-for="BioDescription">
+        <textarea asp-for="BioDescription" id="BioDescription" class="form-control"></textarea>
         <span asp-validation-for="BioDescription" style="color:red"></span>
     </div>
     <div class="mb-3">
         <label>EducationHeader</label>
-        <input type="text" class="form-control" asp-for="EducationHeader">
+        <textarea asp-for="EducationHeader" id="EducationHeader" class="form-control"></textarea>
         <span asp-validation-for="EducationHeader" style="color:red"></span>
     </div>
     <div class="mb-3">
         <label>EducationDescription</label>
-        <input type="text" class="form-control" asp-for="EducationDescription">
+        <textarea asp-for="EducationDescription" id="EducationDescription" class="form-control"></textarea>
         <span asp-validation-for="EducationDescription" style="color:red"></span>
     </div>
     <div class="mb-3">
         <label>Aphorizm</label>
-        <input type="text" class="form-control" asp-for="Aphorizm">
+        <textarea asp-for="Aphorizm" id="Aphorizm" class="form-control"></textarea>
         <span asp-validation-for="Aphorizm" style="color:red"></span>
     </div>
 
     <div class="mb-3">
         <label>AwarsHeader</label>
-        <input type="text" class="form-control" asp-for="AwarsHeader">
+        <textarea asp-for="AwarsHeader" id="AwarsHeader" class="form-control"></textarea>
         <span asp-validation-for="AwarsHeader" style="color:red"></span>
     </div>
     <div class="mb-3">
@@ -91,3 +91,75 @@
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
 </form>
+
+
+
+@section scripts{
+
+    <partial name="_ValidationScriptsPartial" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ckeditor5/32.0.0/ckeditor.min.js"></script>
+    <script>
+        ClassicEditor.create(document.querySelector('#BioHeader')).catch(error => {
+            console.error(error);
+        });
+    </script>
+}
+
+
+@section scripts1{
+
+    <partial name="_ValidationScriptsPartial" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ckeditor5/32.0.0/ckeditor.min.js"></script>
+    <script>
+        ClassicEditor.create(document.querySelector('#BioDescription')).catch(error => {
+            console.error(error);
+        });
+    </script>
+}
+
+
+@section scriptsNumOne{
+
+    <partial name="_ValidationScriptsPartial" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ckeditor5/32.0.0/ckeditor.min.js"></script>
+    <script>
+        ClassicEditor.create(document.querySelector('#EducationHeader')).catch(error => {
+            console.error(error);
+        });
+    </script>
+}
+
+@section scriptsNumTwo{
+
+    <partial name="_ValidationScriptsPartial" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ckeditor5/32.0.0/ckeditor.min.js"></script>
+    <script>
+        ClassicEditor.create(document.querySelector('#EducationDescription')).catch(error => {
+            console.error(error);
+        });
+    </script>
+}
+
+
+
+@section scriptsNumThree{
+
+    <partial name="_ValidationScriptsPartial" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ckeditor5/32.0.0/ckeditor.min.js"></script>
+    <script>
+        ClassicEditor.create(document.querySelector('#Aphorizm')).catch(error => {
+            console.error(error);
+        });
+    </script>
+}
+
+@section scriptsNumFour{
+
+    <partial name="_ValidationScriptsPartial" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ckeditor5/32.0.0/ckeditor.min.js"></script>
+    <script>
+        ClassicEditor.create(document.querySelector('#AwarsHeader')).catch(error => {
+            console.error(error);
+        });
+    </script>
+}

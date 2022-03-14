@@ -23,6 +23,43 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
         {
             return View(_dbcontext.Contacts.ToList());
         }
+        [HttpGet]
+        public IActionResult CreateOpinion(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+            Contact contact = _dbcontext.Contacts.Find(id);
+            if (contact == null)
+            {
+                return NotFound();
+            }
+            return View(contact);
+        }
+        [HttpPost]
+        public async Task<IActionResult> CreateOpinion(Contact contact)
+        {
+            #region
+            //if (!ModelState.IsValid)
+            //{
+            //    ModelState.AddModelError("Error", "Error");
+            //    return View();
+            //}
+            //await _dbcontext.Contacts.AddAsync(contact);
+            //await _dbcontext.SaveChangesAsync();
+            //return Redirect("Index");
+            #endregion
+            if (ModelState.IsValid)
+            {
+                return View(contact);
+            }
+            var sliderdb = _dbcontext.Contacts.Find(contact.Id);
+            sliderdb.MyOpinion = contact.MyOpinion;
+            await _dbcontext.SaveChangesAsync();
+            return Redirect("/Admin/Contact/Index");
+
+        }
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)

@@ -12,3 +12,14 @@
     <input type="submit" class="btn btn-danger btn-block" value="Update" />
 </form>
 
+
+@section scriptsNumTwo{
+
+    <partial name="_ValidationScriptsPartial" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ckeditor5/32.0.0/ckeditor.min.js"></script>
+    <script>
+        ClassicEditor.create(document.querySelector('#Name')).catch(error => {
+            console.error(error);
+        });
+    </script>
+}

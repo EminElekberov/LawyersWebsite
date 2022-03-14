@@ -1,0 +1,33 @@
+﻿@model Contact
+
+@section styles{ @*bunu ona gore yazdiqki burda yazilan css shared papkasinda loayout.cshtml icerisinde render ede bilek*@
+<style>
+    label {
+        color: red;
+    }
+</style>
+}
+<form method="post" enctype="multipart/form-data">
+
+
+    <div class="mb-3">
+        <label>My opinion</label>
+        <textarea asp-for="MyOpinion" id="opinion" class="form-control"></textarea>
+        <span asp-validation-for="MyOpinion" style="color:red"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+
+
+@section scripts{
+
+    <partial name="_ValidationScriptsPartial" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ckeditor5/32.0.0/ckeditor.min.js"></script>
+    <script>
+        ClassicEditor.create(document.querySelector('#opinion')).catch(error => {
+        console.error(error);
+    });
+    </script>
+}

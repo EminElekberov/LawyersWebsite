@@ -11,7 +11,7 @@
     </div>
     <div class="form-group">
         <label>AddressHeader</label>
-        <textarea asp-for="AddressHeader" id="Name" class="form-control"></textarea>
+        <textarea asp-for="AddressHeader" id="AddressHeader" class="form-control"></textarea>
         <span asp-validation-for="AddressHeader" class="text-danger"></span>
     </div>
     <div class="form-group">
@@ -21,12 +21,12 @@
     </div>
     <div class="form-group">
         <label>PhoneHeader</label>
-        <textarea asp-for="PhoneHeader" id="Name" class="form-control"></textarea>
+        <textarea asp-for="PhoneHeader" id="PhoneHeader" class="form-control"></textarea>
         <span asp-validation-for="PhoneHeader" class="text-danger"></span>
     </div>
     <div class="form-group">
         <label>OfficeHeader</label>
-        <textarea asp-for="OfficeHeader" id="Name" class="form-control"></textarea>
+        <textarea asp-for="OfficeHeader" id="OfficeHeader" class="form-control"></textarea>
         <span asp-validation-for="OfficeHeader" class="text-danger"></span>
     </div>
     <div class="form-group">
@@ -36,13 +36,84 @@
     </div>
     <div class="form-group">
         <label>ContactHeader</label>
-        <textarea asp-for="ContactHeader" id="Name" class="form-control"></textarea>
+        <textarea asp-for="ContactHeader" id="ContactHeader" class="form-control"></textarea>
         <span asp-validation-for="ContactHeader" class="text-danger"></span>
     </div>
     <div class="form-group">
         <label>ContactHeaderDescription</label>
-        <input asp-for="ContactHeaderDescription" class="form-control" />
+        <textarea asp-for="ContactHeaderDescription" id="ContactHeaderDescription" class="form-control"></textarea>
         <span asp-validation-for="ContactHeaderDescription" class="text-danger"></span>
     </div>
     <input type="submit" class="btn btn-danger btn-block" value="Update" />
 </form>
+
+
+@section scripts{
+
+    <partial name="_ValidationScriptsPartial" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ckeditor5/32.0.0/ckeditor.min.js"></script>
+    <script>
+        ClassicEditor.create(document.querySelector('#Name')).catch(error => {
+            console.error(error);
+        });
+    </script>
+}
+
+
+@section scripts1{
+
+    <partial name="_ValidationScriptsPartial" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ckeditor5/32.0.0/ckeditor.min.js"></script>
+    <script>
+        ClassicEditor.create(document.querySelector('#AddressHeader')).catch(error => {
+            console.error(error);
+        });
+    </script>
+}
+
+
+@section scriptsNumOne{
+
+    <partial name="_ValidationScriptsPartial" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ckeditor5/32.0.0/ckeditor.min.js"></script>
+    <script>
+        ClassicEditor.create(document.querySelector('#PhoneHeader')).catch(error => {
+            console.error(error);
+        });
+    </script>
+}
+
+@section scriptsNumTwo{
+
+    <partial name="_ValidationScriptsPartial" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ckeditor5/32.0.0/ckeditor.min.js"></script>
+    <script>
+        ClassicEditor.create(document.querySelector('#OfficeHeader')).catch(error => {
+            console.error(error);
+        });
+    </script>
+}
+
+
+
+@section scriptsNumThree{
+
+    <partial name="_ValidationScriptsPartial" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ckeditor5/32.0.0/ckeditor.min.js"></script>
+    <script>
+        ClassicEditor.create(document.querySelector('#ContactHeader')).catch(error => {
+            console.error(error);
+        });
+    </script>
+}
+
+@section scriptsNumFour{
+
+    <partial name="_ValidationScriptsPartial" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ckeditor5/32.0.0/ckeditor.min.js"></script>
+    <script>
+        ClassicEditor.create(document.querySelector('#ContactHeaderDescription')).catch(error => {
+            console.error(error);
+        });
+    </script>
+}
