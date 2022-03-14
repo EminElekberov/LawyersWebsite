@@ -240,3 +240,7 @@ C:\Users\EMIN\Desktop\lawyersWebsite\LawyerbackEnd\LawyerbackEnd\obj\Debug\netco
 C:\Users\EMIN\Desktop\lawyersWebsite\LawyerbackEnd\LawyerbackEnd\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\BlogHeader\Details.cshtml.g.cs
 C:\Users\EMIN\Desktop\lawyersWebsite\LawyerbackEnd\LawyerbackEnd\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\BlogHeader\Create.cshtml.g.cs
 C:\Users\EMIN\Desktop\lawyersWebsite\LawyerbackEnd\LawyerbackEnd\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\BlogHeader\Edit.cshtml.g.cs
+C:\Users\EMIN\Desktop\lawyersWebsite\LawyerbackEnd\LawyerbackEnd\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\BlogIndexHeader\Create.cshtml.g.cs
+C:\Users\EMIN\Desktop\lawyersWebsite\LawyerbackEnd\LawyerbackEnd\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\BlogIndexHeader\Details.cshtml.g.cs
+C:\Users\EMIN\Desktop\lawyersWebsite\LawyerbackEnd\LawyerbackEnd\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\BlogIndexHeader\Edit.cshtml.g.cs
+C:\Users\EMIN\Desktop\lawyersWebsite\LawyerbackEnd\LawyerbackEnd\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\BlogIndexHeader\Index.cshtml.g.cs

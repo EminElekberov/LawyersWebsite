@@ -2,91 +2,90 @@
 <style>
     .tests {
         background-image: url(../images/blogHeader/99548948-c67b-4590-800a-02b7934ba113natural.jpg);
-        background-size:cover;
+        background-size: cover;
     }
 </style>
- <div class="page-head tests">
-        <div class="inner-desc">
-            <div class="container">
-                @foreach (var item in Model.blogHeaders)
-                {
-                    <h1 class="page-title">@item.header</h1>
-                    <span class="post-subtitle page-subtitle"> @item.Description</span>
-                }
-            </div>
+<div class="page-head tests">
+    <div class="inner-desc">
+        <div class="container">
+            @foreach (var item in Model.blogHeaders)
+            {
+                <h1 class="page-title">@item.header</h1>
+                <span class="post-subtitle page-subtitle"> @item.Description</span>
+            }
         </div>
     </div>
+</div>
 
 
- <section class="blog-1col-list-left">
-     <div class="container">
-         <div class="row">
-             @foreach (var item in Model.blogDetails)
-             {
-                 <div class="col-lg-9  posts-holder post-sidebar ">
-                     <article class="blog-item blog-item-1col">
-                         <a href="blog-single-post.html">
-                             <div class="post-image"> <img src="~/images/blog/@item.Image" class="img-fluid" alt=""></div>
-                         </a>
-                         <div class="post-holder post-holder-all">
-                             <ul class="blog-date">
-                                 <li class="meta-author"><i class="fa fa-user"></i> @item.Name</li>
-                                 <li class="meta-date">@item.Dates</li>
-                                 <li class="meta-categ"><a href="@item.ButtonLink1" rel="category tag">@item.Buttontext1</a> <a href="@item.ButtonLink2" rel="category tag">@item.Buttontext2</a></li>
-                             </ul>
-                             <h2 class="blog-title"><a href="blog-single-post.html">@item.Header</a></h2>
-                             <div class="article-excerpt">
-                                 <p>@item.headerDesc</p>
-                             </div>
-                             <div class="blog-button"><a href="">Continue Reading</a></div>
-                         </div>
-                     </article>
-                     <div class="prev-next"><span class="nav-page"></span><span class="page-numbers current-page">1</span> <a class="page-numbers" href="#">2</a> <a class="page-numbers" href="#">3</a> <span class="nav-page"><a href="#">&gt;</a></span></div>
-                 </div>
-             }
+<section class="blog-1col-list-left">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-9  posts-holder post-sidebar ">
+                <article class="blog-item blog-item-1col">
 
-             <!-- /col-lg-9 -->
-             <div class="col-lg-3">
-                 <aside>
-                     <ul>
-                         <li class="widget">
-                             <h5 class="widgettitle">About Us</h5>
-                             <div class="textwidget">
-                                 <p><img class="img-fluid" src="images/home/about-feature3.jpg" alt=""></p>
-                                 <p>Hi, we’re Lawyers and we’re here to help with any legal issue. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</p>
-                             </div>
-                         </li>
-                         <li class="widget">
-                             <form method="get" id="search-form" action="#"> <span><input type="text" name="s" id="search-string" placeholder="type and hit enter"></span></form>
-                         </li>
-                         <li class="widget widget_recent_entries">
-                             <h5 class="widgettitle">Recent Posts</h5>
-                             <ul>
-                                 <li> <a href="#">Thinking Out Of The Box After A Simple Car Accident</a></li>
-                                 <li> <a href="#">Understanding Domestic Violence Defense</a></li>
-                                 <li> <a href="#">How to Make a Claim Against an Airline</a></li>
-                                 <li> <a href="#">Internship for Law Students</a></li>
-                                 <li> <a href="#">Last Will and Testament</a></li>
-                             </ul>
-                         </li>
-                         <li class="widget widget_recent_entries">
-                             <h5 class="widgettitle">Categories</h5>
-                             <ul>
-                                 <li class="cat-item"><a href="#">Business Law</a></li>
-                                 <li class="cat-item"><a href="#">Car Accidents</a></li>
-                                 <li class="cat-item"><a href="#">Divorce</a></li>
-                                 <li class="cat-item"><a href="#">News</a></li>
-                             </ul>
-                         </li>
-                         <li class="widget">
-                             <h5 class="widgettitle">Tags</h5>
-                             <div class="tagcloud"><a href="#">accident</a> <a href="#">airplaine</a> <a href="#">attorney</a> <a href="#">business</a><a href="#">divorce</a><a href="#">family</a><a href="#">finance</a><a href="#">justice</a><a href="#">law</a><a href="#">legal</a><a href="#">rights</a><a href="#">tax</a><a href="#">testament</a></div>
-                         </li>
-                     </ul>
-                 </aside>
-             </div>
-         </div>
-         <!-- /row -->
-     </div>
-     <!-- /container -->
- </section>
+                    @foreach (var item in Model.blogDetails)
+                    {
+                        <a href="/Home/BlogDetails/@item.Id">
+                            <div class="post-image"> <img src="~/images/blog/@item.Image" style="padding-top:200px;" class="img-fluid" alt=""></div>
+                        </a>
+                        <div class="post-holder post-holder-all">
+                            <ul class="blog-date">
+                                <li class="meta-author"><i class="fa fa-user"></i> @item.Name</li>
+                                <li class="meta-date">@item.Dates</li>
+                                <li class="meta-categ"><a href="@item.ButtonLink1" rel="category tag">@item.Buttontext1</a> <a href="@item.ButtonLink2" rel="category tag">@item.Buttontext2</a></li>
+                            </ul>
+                            <h2 class="blog-title"><a href="blog-single-post.html">@item.Header</a></h2>
+                            <div class="article-excerpt">
+                                <p>@item.headerDesc</p>
+                            </div>
+                            <div class="blog-button"><a href="/Home/BlogDetails/@item.Id">Continue Reading</a></div>
+                        </div>
+                    }
+                </article>
+            </div>
+
+
+            <!-- /col-lg-9 -->
+            <div class="col-lg-3">
+                <aside>
+                    <ul>
+                        @foreach (var item in Model.blogIndexAbouts)
+                        {
+                            <li class="widget">
+                                <h5 class="widgettitle">@item.AboutHeadder</h5>
+                                <div class="textwidget">
+                                    <p><img class="img-fluid" src="images/home/about-feature3.jpg" alt=""></p>
+                                    <p>@item.ABoutDescription</p>
+                                </div>
+                            </li>
+                            <li class="widget">
+                                <form method="get" id="search-form" action="#"> <span><input type="text" name="s" id="search-string" placeholder="type and hit enter"></span></form>
+                            </li>
+                            <li class="widget widget_recent_entries">
+                                <h5 class="widgettitle">@item.RecetHeader</h5>
+                                <ul>
+                                    <li> <a href="#">@item.RecentDesc</a></li>
+                                </ul>
+                            </li>
+                            <li class="widget widget_recent_entries">
+                                <h5 class="widgettitle">@item.CategoryHEader</h5>
+                                <ul>
+                                    <li class="cat-item"><a href="#">@item.catgoryDesc</a></li>
+                                   
+                                </ul>
+                            </li>
+                            <li class="widget">
+                                <h5 class="widgettitle">Tags</h5>
+                                <div class="tagcloud"><a href="#">accident</a> <a href="#">airplaine</a> <a href="#">attorney</a> <a href="#">business</a><a href="#">divorce</a><a href="#">family</a><a href="#">finance</a><a href="#">justice</a><a href="#">law</a><a href="#">legal</a><a href="#">rights</a><a href="#">tax</a><a href="#">testament</a></div>
+                            </li>
+                        }
+
+                    </ul>
+                </aside>
+            </div>
+        </div>
+        <!-- /row -->
+    </div>
+    <!-- /container -->
+</section>

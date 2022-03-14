@@ -94,7 +94,8 @@ namespace LawyerbackEnd.Controllers
             HomeVM home = new HomeVM
             {
                 blogDetails = _dbcontext.BlogDetails.ToList(),
-                blogHeaders=_dbcontext.BlogHeaders.ToList()
+                blogHeaders=_dbcontext.BlogHeaders.ToList(),
+                blogIndexAbouts=_dbcontext.BlogIndexAbouts.ToList()
             };
             return View(home);
         }

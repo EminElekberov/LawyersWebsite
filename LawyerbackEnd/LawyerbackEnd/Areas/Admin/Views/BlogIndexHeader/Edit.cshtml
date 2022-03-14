@@ -1,0 +1,46 @@
+﻿@model BlogIndexAbout
+
+@section styles{ @*bunu ona gore yazdiqki burda yazilan css shared papkasinda loayout.cshtml icerisinde render ede bilek*@
+<style>
+    label {
+        color: red;
+    }
+</style>
+}
+<form method="post" enctype="multipart/form-data">
+    <div class="mb-3">
+        <label>About Header</label>
+        <input type="text" class="form-control" asp-for="AboutHeadder">
+        <span asp-validation-for="AboutHeadder" style="color:red"></span>
+    </div>
+    <div class="mb-3">
+        <label>About Description</label>
+        <input type="text" class="form-control" asp-for="ABoutDescription">
+        <span asp-validation-for="ABoutDescription" style="color:red"></span>
+    </div>
+
+    <div class="mb-3">
+        <label>RecentTitle</label>
+        <input type="text" class="form-control" asp-for="RecetHeader">
+        <span asp-validation-for="RecetHeader" style="color:red"></span>
+    </div>
+
+    <div class="mb-3">
+        <label>RecentDesc</label>
+        <input type="text" class="form-control" asp-for="RecentDesc">
+        <span asp-validation-for="RecentDesc" style="color:red"></span>
+    </div>
+
+    <div class="mb-3">
+        <label>CateagoriesTitle</label>
+        <input type="text" class="form-control" asp-for="CategoryHEader">
+        <span asp-validation-for="CategoryHEader" style="color:red"></span>
+    </div>
+
+    <div class="mb-3">
+        <label>CategoriesDesc</label>
+        <input type="text" class="form-control" asp-for="catgoryDesc">
+        <span asp-validation-for="catgoryDesc" style="color:red"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

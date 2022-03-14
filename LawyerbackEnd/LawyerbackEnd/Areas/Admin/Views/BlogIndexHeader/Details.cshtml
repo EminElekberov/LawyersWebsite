@@ -1,0 +1,33 @@
+﻿
+@model BlogIndexAbout
+
+<div style="overflow-x:auto">
+
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">About Header</th>
+                <th scope="col">About Description</th>
+                <th scope="col">Recent titles</th>
+                <th scope="col">Recent Description</th>
+                <th scope="col">Categorise title</th>
+                <th scope="col">Categories Description</th>
+            </tr>
+        </thead>
+
+        <tbody>
+                <tr>
+                    <th scope="row">@Model.Id</th>
+
+                    <td>@Html.Raw(Model.AboutHeadder)</td>
+                    <td>@Html.Raw(Model.ABoutDescription)</td>
+                    <td>@Model.RecetHeader</td>
+                    <td>@Model.RecentDesc</td>
+                    <td>@Model.CategoryHEader</td>
+                    <td>@Model.catgoryDesc</td>
+                    
+                </tr>
+        </tbody>
+    </table>
+</div>

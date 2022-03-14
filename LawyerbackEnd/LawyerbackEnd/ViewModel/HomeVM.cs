@@ -28,6 +28,7 @@ namespace LawyerbackEnd.ViewModel
         public List<AttorneysLogo> attorneysLogos { get; set; }
         public List<BlogDetails> blogDetails { get; set; }
         public List<BlogHeader> blogHeaders { get; set; }
+        public List<BlogIndexAbout> blogIndexAbouts { get; set; }
 
     }
 }
