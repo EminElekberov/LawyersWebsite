@@ -116,7 +116,12 @@ namespace LawyerbackEnd.Controllers
         [HttpGet]
         public IActionResult Contact()
         {
-            return View();
+            HomeVM homes = new HomeVM
+            {
+                allContacts=_dbcontext.AllContactsAreas.ToList(),
+                contacts=_dbcontext.Contacts.ToList()
+            };
+            return View(homes);
         }
         [HttpPost]
         public IActionResult Contact(Contact contact)

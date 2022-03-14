@@ -1,0 +1,34 @@
+﻿@model AllContactsAreas
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Address</th>
+            <th scope="col">AddressHeader</th>
+            <th scope="col">PhoneHeader</th>
+            <th scope="col">Phone</th>
+            <th scope="col">OfficeHeader</th>
+            <th scope="col">Hours</th>
+            <th scope="col">ContactHeader</th>
+            <th scope="col">ContactHeaderDescription</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr>
+            <th scope="row">@Model.Id</th>
+            <td>@Html.Raw(Model.Address)</td>
+            <td>@Html.Raw(Model.AddressHeader)</td>
+            <td>@Model.PhoneHeader</td>
+            <td style="width:200px">@Model.Phone</td>
+            <td>@Model.OfficeHeader</td>
+            <td>@Model.Hours</td>
+            <td>@Model.ContactHeader</td>
+            <td>@Model.ContactHeaderDescription</td>
+
+        </tr>
+
+
+    </tbody>
+</table>

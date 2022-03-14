@@ -73,15 +73,15 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
             {
                 return View(contact);
             }
-            var contactdb = _dbcontext.Contacts.Find(contact.Id);
-            contactdb.AddressHeader = contact.AddressHeader;
-            contactdb.Address = contact.Address;
-            contactdb.ContactHeader = contact.ContactHeader;
-            contactdb.ContactHeaderDescription = contact.ContactHeaderDescription;
-            contactdb.OfficeHeader = contact.OfficeHeader;
-            contactdb.Hours = contact.Hours;
-            contactdb.PhoneHeader = contact.PhoneHeader;
-            contactdb.Phone = contact.Phone;
+            //var contactdb = _dbcontext.Contacts.Find(contact.Id);
+            //contactdb.AddressHeader = contact.AddressHeader;
+            //contactdb.Address = contact.Address;
+            //contactdb.ContactHeader = contact.ContactHeader;
+            //contactdb.ContactHeaderDescription = contact.ContactHeaderDescription;
+            //contactdb.OfficeHeader = contact.OfficeHeader;
+            //contactdb.Hours = contact.Hours;
+            //contactdb.PhoneHeader = contact.PhoneHeader;
+            //contactdb.Phone = contact.Phone;
             await _dbcontext.SaveChangesAsync();
             return Redirect("/Admin/Contact/Index");
         }

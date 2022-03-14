@@ -1,0 +1,42 @@
+﻿@model IList<AllContactsAreas>
+
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Address</th>
+                <th scope="col">AddressHeader</th>
+                <th scope="col">PhoneHeader</th>
+                <th scope="col">Phone</th>
+                <th scope="col">OfficeHeader</th>
+                <th scope="col">Hours</th>
+                <th scope="col">ContactHeader</th>
+                <th scope="col">ContactHeaderDescription</th>
+                <th >Edit/Detailed</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <th scope="row">@item.Id</th>
+                    <td>@Html.Raw(item.Address)</td>
+                    <td>@Html.Raw(item.AddressHeader)</td>
+                    <td>@item.PhoneHeader</td>
+                    <td style="width:200px">@item.Phone</td>
+                    <td>@item.OfficeHeader</td>
+                    <td>@item.Hours</td>
+                    <td>@item.ContactHeader</td>
+                    <td>@item.ContactHeaderDescription</td>
+
+                    <td style="width:300px">
+                        <a class="btn btn-danger" href="/Admin/AllContactsAreas/Edit/@item.Id">Edit</a>
+                        <a class="btn btn-primary" href="/Admin/AllContactsAreas/Details/@item.Id" style="color:red">Etrafli</a>
+                    </td>
+                </tr>
+            }
+
+
+        </tbody>
+    </table>

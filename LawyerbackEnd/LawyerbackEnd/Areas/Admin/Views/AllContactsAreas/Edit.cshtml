@@ -1,0 +1,48 @@
+﻿@model AllContactsAreas
+@{
+    ViewData["Title"] = "Edit";
+}
+<form method="post" enctype="multipart/form-data">
+    <div asp-validation-summary="All" class="text-danger"></div>
+    <div class="form-group">
+        <label>Address</label>
+        <textarea asp-for="Address" id="Name" class="form-control"></textarea>
+        <span asp-validation-for="Address" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label>AddressHeader</label>
+        <textarea asp-for="AddressHeader" id="Name" class="form-control"></textarea>
+        <span asp-validation-for="AddressHeader" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label>Phone</label>
+        <textarea asp-for="Phone" id="Name" class="form-control"></textarea>
+        <span asp-validation-for="Phone" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label>PhoneHeader</label>
+        <textarea asp-for="PhoneHeader" id="Name" class="form-control"></textarea>
+        <span asp-validation-for="PhoneHeader" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label>OfficeHeader</label>
+        <textarea asp-for="OfficeHeader" id="Name" class="form-control"></textarea>
+        <span asp-validation-for="OfficeHeader" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label>Hours</label>
+        <textarea asp-for="Hours" id="Name" class="form-control"></textarea>
+        <span asp-validation-for="Hours" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label>ContactHeader</label>
+        <textarea asp-for="ContactHeader" id="Name" class="form-control"></textarea>
+        <span asp-validation-for="ContactHeader" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label>ContactHeaderDescription</label>
+        <input asp-for="ContactHeaderDescription" class="form-control" />
+        <span asp-validation-for="ContactHeaderDescription" class="text-danger"></span>
+    </div>
+    <input type="submit" class="btn btn-danger btn-block" value="Update" />
+</form>

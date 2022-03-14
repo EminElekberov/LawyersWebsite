@@ -1,4 +1,4 @@
-﻿@model Contact
+﻿@model HomeVM
 
 <style>
     .tests {
@@ -6,50 +6,62 @@
         background-size: cover;
     }
 </style>
-    <div class="page-head tests" >
-        <div class="inner-desc">
-            <div class="container">
-                <h1 class="page-title">Contact</h1>
-                <span class="post-subtitle page-subtitle">Call Us Today 1-800-000-111</span>
-            </div>
+<div class="page-head tests">
+    <div class="inner-desc">
+        <div class="container">
+            <h1 class="page-title">Contact</h1>
+            <span class="post-subtitle page-subtitle">Call Us Today 1-800-000-111</span>
         </div>
     </div>
+</div>
 
 
 <section class="section-holder">
     <div class="container">
         <div class="row align-items-center">
-            <div class="col-lg-5">
-                <h3 class="margin-b16">Address:</h3>
-                <p>40 Park Ave, Brooklyn, New York</p>
-                <hr />
-                <h3 class="margin-b16">Phone:</h3>
-                <p>1-800-000-111</p>
-                <hr />
-                <h3 class="margin-b16">Office Hours:</h3>
-                <p>Monday - Friday: 9AM - 5PM</p>
-            </div>
-            <div class="col-lg-7">
-                <h2 class="section-heading-title margin-b16">Get in Touch with Us</h2>
-                <p>At has mollis audire inermis, vim ex alia equidem platonem, pri eius mutat interesset ei. In minim affert eam, cetero legimus moderatius has at. Te has utroque patrioque vituperata, case eligendi</p>
+            @foreach (var item in Model.allContacts)
+            {
+                <div class="col-lg-5">
+                    <h3 class="margin-b16">@item.AddressHeader:</h3>
+                    <p>@item.Address</p>
+                    <hr />
+                    <h3 class="margin-b16">@item.PhoneHeader</h3>
+                    <p>@item.Phone</p>
+                    <hr />
+                    <h3 class="margin-b16">@item.OfficeHeader</h3>
+                    <p>@item.Hours</p>
+                </div>
+            }
+        <div class="col-lg-7">
+            @foreach (var item in Model.allContacts)
+            {
+                <h2 class="section-heading-title margin-b16">@item.ContactHeader</h2>
+                <p>@item.ContactHeaderDescription</p>
+            }
+
                 <div id="contact-form-holder">
+
                     <form method="post" enctype="multipart/form-data">
+
                         <div class="row">
-                            <div class="col-lg-4 margin-b32"><input type="text" asp-for="Name" name="name" class="comm-field" placeholder="Name" /></div>
-                            <div class="col-lg-4 margin-b32"><input type="text" asp-for="Email" name="email" class="comm-field" placeholder="Email" /> </div>
-                            <div class="col-lg-4 margin-b32"><input type="text" asp-for="Subject" name="subject" class="comm-field" placeholder="Subject" /> </div>
+
+                            <div class="col-lg-4 margin-b32"><input type="text" asp-for="@Model.contact.Name"  class="comm-field" placeholder="Name" /></div>
+                            <div class="col-lg-4 margin-b32"><input type="text" asp-for="@Model.contact.Email"  class="comm-field" placeholder="Email" /> </div>
+                            <div class="col-lg-4 margin-b32"><input type="text" asp-for="@Model.contact.Subject"  class="comm-field" placeholder="Subject" /> </div>
                         </div>
-                        <div class="margin-b32"><textarea name="message" asp-for="Message" id="msg-contact" rows="5" placeholder="Message"></textarea></div>
+                        <div class="margin-b32"><textarea asp-for="@Model.contact.Message" id="msg-contact" rows="5" placeholder="Message"></textarea></div>
                         <p class="antispam">Leave this empty: <input type="text" name="url" /></p>
                         <button type="submit" class="btn btn-primary">Submit</button>
+
                     </form>
+                    
                 </div>
                 <!-- contact-form-holder-->
                 <div id="output-contact"></div>
             </div>
-            <!-- /col-lg-7-->
+                <!-- /col-lg-7-->
+            </div>
+            <!-- /row -->
         </div>
-        <!-- /row -->
-    </div>
-    <!-- /container -->
-</section>
+        <!-- /container -->
+    </section>
