@@ -113,6 +113,22 @@ namespace LawyerbackEnd.Controllers
             }
             return View(blog);
         }
+        [HttpGet]
+        public IActionResult Contact()
+        {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult Contact(Contact contact)
+        {
+            if (contact==null)
+            {
+                return NotFound();
+            }
+            _dbcontext.Contacts.Add(contact);
+            _dbcontext.SaveChanges();
+            return Redirect("/Home/Contact");
+        }
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
