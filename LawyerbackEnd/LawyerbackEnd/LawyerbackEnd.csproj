@@ -29,6 +29,7 @@
     <Folder Include="wwwroot\images\attorneys\" />
     <Folder Include="wwwroot\images\Logo\" />
     <Folder Include="wwwroot\images\blogHeader\" />
+    <Folder Include="wwwroot\images\contact\" />
   </ItemGroup>
 
 </Project>

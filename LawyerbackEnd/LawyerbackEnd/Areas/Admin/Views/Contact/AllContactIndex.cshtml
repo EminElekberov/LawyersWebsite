@@ -1,0 +1,39 @@
+﻿
+@model IList<Contact>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Subject</th>
+            <th scope="col">Messsage</th>
+            <th>Edit/Delete</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <th scope="row">@item.Id</th>
+                <td>@Html.Raw(item.Address)</td>
+                <td>@Html.Raw(item.AddressHeader)</td>
+                <td>@item.PhoneHeader</td>
+                <td>@item.Phone</td>
+                <td>@item.OfficeHeader</td>
+                <td>@item.Hours</td>
+                <td>@item.ContactHeader</td>
+                <td>@item.ContactHeaderDescription</td>
+
+                <td>
+                    <a class="btn btn-danger" href="/Admin/Contact/Delete/@item.Id"><i class="fas fa-trash-alt"></i></a>
+                    <a class="btn btn-primary" href="/Admin/Contact/Details/@item.Id" style="color:red">Etrafli</a>
+                </td>
+            </tr>
+        }
+
+
+    </tbody>
+</table>

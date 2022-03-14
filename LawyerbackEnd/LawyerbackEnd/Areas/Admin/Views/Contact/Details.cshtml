@@ -1,0 +1,28 @@
+﻿
+@model Contact
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Subject</th>
+            <th scope="col">Messsage</th>
+        </tr>
+    </thead>
+
+    <tbody>
+
+            <tr>
+                <th scope="row">@Model.Id</th>
+                <td>@Html.Raw(Model.Name)</td>
+                <td>@Model.Email</td>
+                <td>@Model.Subject</td>
+                <td>@Model.Message</td>
+
+               
+            </tr>
+
+        
+    </tbody>
+</table>
