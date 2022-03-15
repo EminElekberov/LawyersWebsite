@@ -9,9 +9,7 @@ namespace LawyerbackEnd.Models
     public class IndexChoose
     {
         public int Id { get; set; }
-        [Required]
         public string Textone { get; set; }
-        [Required]
         public string TextTwo { get; set; }
         [Required]
         public string numberOne { get; set; }

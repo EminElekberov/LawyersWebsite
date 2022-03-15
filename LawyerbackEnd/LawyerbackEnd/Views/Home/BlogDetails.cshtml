@@ -13,29 +13,29 @@
                     <ul class="blog-date">
                         <li class="meta-author"><i class="fa fa-user"></i> @Model.Name</li>
                         <li class="meta-date">@Model.Dates</li>
-                        <li class="meta-categ"><a href="@Model.ButtonLink1" rel="category tag">@Model.Buttontext1</a> <a href="@Model.ButtonLink2" rel="category tag">@Model.Buttontext2</a></li>
+                        <li class="meta-categ"><a href="@Model.ButtonLink1" rel="category tag">@Html.Raw(Model.Buttontext1)</a> <a href="@Model.ButtonLink2" rel="category tag">@Model.Buttontext2</a></li>
                     </ul>
                     <h2 class="blog-title">@Model.Header</h2>
                     <div class="post-content single-post-content single-article-page clearfix">
                         <p>
-                            @Model.headerDesc
+                            @Html.Raw(Model.headerDesc)
                         </p>
-                        <h2>@Model.Title</h2>
-                        <p>@Model.titleDesc</p>
+                        <h2>@Html.Raw(Model.Title)</h2>
+                        <p>@Html.Raw(Model.titleDesc)</p>
                         <blockquote class="wp-block-quote">
-                            <p>@Model.Aphorizm</p>
-                            <cite> @Model.AphirzmWriter </cite>
+                            <p>@Html.Raw(Model.Aphorizm)</p>
+                            <cite> @Html.Raw(Model.AphirzmWriter)</cite>
                         </blockquote>
                         <p>
-                            @Model.Description
+                            @Html.Raw(Model.Description)
                         </p>
                     </div>
                     <div class="tags-single-page"> <a href="#" rel="tag">accident</a> <a href="#" rel="tag">attorney</a> <a href="#" rel="tag">justice</a> <a href="#" rel="tag">lawyer</a> <a href="#" rel="tag">tax</a></div>
                     <div class="author-single-page">
                         <div class="author-avatar"> <img alt="" src="~/images/gravatar.png" class="avatar photo" width="100" height="100"></div>
                         <div class="author-content">
-                            <h3><a href="#"> @Model.Name</a></h3>
-                            <div class="author-text">@Model.Comment</div>
+                            <h3><a href="#"> @Html.Raw(Model.Name)</a></h3>
+                            <div class="author-text">@Html.Raw(Model.Comment)</div>
                         </div>
                     </div>
                     }

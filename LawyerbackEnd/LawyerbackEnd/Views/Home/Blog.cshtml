@@ -10,8 +10,8 @@
         <div class="container">
             @foreach (var item in Model.blogHeaders)
             {
-                <h1 class="page-title">@item.header</h1>
-                <span class="post-subtitle page-subtitle"> @item.Description</span>
+                <h1 class="page-title">@Html.Raw(item.header)</h1>
+                <span class="post-subtitle page-subtitle"> @Html.Raw(item.Description)</span>
             }
         </div>
     </div>
@@ -31,13 +31,13 @@
                         </a>
                         <div class="post-holder post-holder-all">
                             <ul class="blog-date">
-                                <li class="meta-author"><i class="fa fa-user"></i> @item.Name</li>
-                                <li class="meta-date">@item.Dates</li>
+                                <li class="meta-author"><i class="fa fa-user"></i> @Html.Raw(item.Name)</li>
+                                <li class="meta-date">@Html.Raw(item.Dates)</li>
                                 <li class="meta-categ"><a href="@item.ButtonLink1" rel="category tag">@item.Buttontext1</a> <a href="@item.ButtonLink2" rel="category tag">@item.Buttontext2</a></li>
                             </ul>
-                            <h2 class="blog-title"><a href="blog-single-post.html">@item.Header</a></h2>
+                            <h2 class="blog-title"><a href="blog-single-post.html">@Html.Raw(item.Header)</a></h2>
                             <div class="article-excerpt">
-                                <p>@item.headerDesc</p>
+                                <p>@Html.Raw(item.headerDesc)</p>
                             </div>
                             <div class="blog-button"><a href="/Home/BlogDetails/@item.Id">Continue Reading</a></div>
                         </div>
@@ -53,25 +53,25 @@
                         @foreach (var item in Model.blogIndexAbouts)
                         {
                             <li class="widget">
-                                <h5 class="widgettitle">@item.AboutHeadder</h5>
+                                <h5 class="widgettitle">@Html.Raw(item.AboutHeadder)</h5>
                                 <div class="textwidget">
                                     <p><img class="img-fluid" src="images/home/about-feature3.jpg" alt=""></p>
-                                    <p>@item.ABoutDescription</p>
+                                    <p>@Html.Raw(item.ABoutDescription)</p>
                                 </div>
                             </li>
                             <li class="widget">
                                 <form method="get" id="search-form" action="#"> <span><input type="text" name="s" id="search-string" placeholder="type and hit enter"></span></form>
                             </li>
                             <li class="widget widget_recent_entries">
-                                <h5 class="widgettitle">@item.RecetHeader</h5>
+                                <h5 class="widgettitle">@Html.Raw(item.RecetHeader)</h5>
                                 <ul>
-                                    <li> <a href="#">@item.RecentDesc</a></li>
+                                    <li> <a href="#">@Html.Raw(item.RecentDesc)</a></li>
                                 </ul>
                             </li>
                             <li class="widget widget_recent_entries">
-                                <h5 class="widgettitle">@item.CategoryHEader</h5>
+                                <h5 class="widgettitle">@Html.Raw(item.CategoryHEader)</h5>
                                 <ul>
-                                    <li class="cat-item"><a href="#">@item.catgoryDesc</a></li>
+                                    <li class="cat-item"><a href="#">@Html.Raw(item.catgoryDesc)</a></li>
                                    
                                 </ul>
                             </li>

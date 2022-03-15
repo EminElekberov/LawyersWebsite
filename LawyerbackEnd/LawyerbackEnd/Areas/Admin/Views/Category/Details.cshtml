@@ -16,9 +16,9 @@
             <th width="300px">
                 <img width="200" height="150" src="~/images/testimonials/@Model.Image" />
             </th>
-            <td>@Model.Name</td>
-            <td>@Model.Company</td>
-            <td>@Model.Description</td>
+            <td>@Html.Raw(Model.Name)</td>
+            <td>@Html.Raw(Model.Company)</td>
+            <td>@Html.Raw(Model.Description)</td>
         </tr>
     </tbody>
 </table>

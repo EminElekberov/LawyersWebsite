@@ -10,7 +10,7 @@
         <div class="container">
             @foreach (var item in Model.attorneysSliders)
             {
-                <h1 class="page-title">@item.Name</h1>
+                <h1 class="page-title">@Html.Raw(item.Name)</h1>
             }
         </div>
     </div>
@@ -22,10 +22,10 @@
             @foreach (var item in Model.attorneyWorks)
             {
                 <div class="col-lg-10 offset-lg-1 alignc">
-                    <span class="heading-subtitle">@item.Header</span>
-                    <h2 class="margin-b16">@item.Title</h2>
-                    <p> @item.Description.</p>
-                    <div class="view-more alignc"><a href="@item.ButtonLink">@item.Buttontext</a></div>
+                    <span class="heading-subtitle">@Html.Raw(item.Header)</span>
+                    <h2 class="margin-b16">@Html.Raw(item.Title)</h2>
+                    <p> @Html.Raw(item.Description)</p>
+                    <div class="view-more alignc"><a href="@item.ButtonLink">@Html.Raw(item.Buttontext)</a></div>
                 </div>
             }
         </div>

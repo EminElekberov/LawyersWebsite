@@ -4,11 +4,11 @@
     @foreach (var item in Model.sliders)
     {
         <div class="home-slide home-slide1 banner d-flex align-items-center">
-            <img class="img-fluid" src="~/images/home/@item.Image" alt="">
+            <img class="img-fluid" src="~/images/home/@item.Image" style="height:700px" alt="">
             <div class="slider-caption">
                 <div class="slider-text">
-                    <h2>@item.Name</h2>
-                    <h4>@item.Description</h4>
+                    <h2>@Html.Raw(item.Name)</h2>
+                    <h4>@Html.Raw(item.Description)</h4>
                     <a class="btn-white" href="practice-image-3-cols.html">Find More</a>
                 </div>
             </div>
@@ -26,9 +26,9 @@
                 <div class="col-lg-8 offset-lg-2">
                     <div class="intro-msg margin-b108">
 
-                        <div class="intro-normal">@item.Header</div>
-                        <div class="intro-2"><span class="intro-small-italic">@item.headerUndeer</span> <span class="intro-big-italic">@item.Price</span></div>
-                        <div class="intro-year">@item.Dates</div>
+                        <div class="intro-normal">@Html.Raw(item.Header)</div>
+                        <div class="intro-2"><span class="intro-small-italic">@Html.Raw(item.headerUndeer)</span> <span class="intro-big-italic">@Html.Raw(item.Price)</span></div>
+                        <div class="intro-year">@Html.Raw(item.Dates)</div>
 
                     </div>
                 </div>
@@ -38,19 +38,19 @@
                 @if (item.Description != null)
                 {
                     <div class="col-lg-4 margin-bm32">
-                        <p>@item.Description</p>
+                        <p>@Html.Raw(item.Description)</p>
                     </div>
                 }
                 @if (item.Description2 != null)
                 {
                     <div class="col-lg-4 margin-bm32">
-                        <p>@item.Description2</p>
+                        <p>@Html.Raw(item.Description2)</p>
                     </div>
                 }
                 @if (item.Description3 != null)
                 {
                     <div class="col-lg-4 margin-bm32">
-                        <p>@item.Description3</p>
+                        <p>@Html.Raw(item.Description3)</p>
                     </div>
                 }
 
@@ -86,13 +86,13 @@
                     <a href="practice-single-page.html">
                         <div class="practice-item">
                             <div class="practice-icon">@Html.Raw(item.Link)</div>
-                            <h3 class="practice-title">@item.Description</h3>
+                            <h3 class="practice-title">@Html.Raw(item.Description)</h3>
                         </div>
                     </a>
                 </div>
             }
         </div>
-        <div class="view-more alignc margin-t72"><a href="practice-areas.html">View More</a></div>
+        <div class="view-more alignc margin-t72"><a asp-action="Practice" asp-controller="Home">View More</a></div>
     </div>
 </section>
 
@@ -111,29 +111,29 @@
 
             <div class="row margin-b72">
                 <div class="col-lg-6 margin-bm32">
-                    <p>@item.Textone </p>
+                    <p>@Html.Raw(item.Textone) </p>
                 </div>
                 <div class="col-lg-6">
-                    <p>@item.TextTwo</p>
+                    <p>@Html.Raw(item.TextTwo)</p>
                 </div>
             </div>
             <!-- /row -->
             <div class="row alignc">
                 <div class="col-sm-6 col-lg-3 margin-bm32">
                     <div class="facts-title">@item.numberOne</div>
-                    <p class="pcolor">@item.numbroneDesc</p>
+                    <p class="pcolor">@Html.Raw(item.numbroneDesc)</p>
                 </div>
                 <div class="col-sm-6 col-lg-3 margin-bm32">
                     <div class="facts-title">@item.numberTwo</div>
-                    <p class="pcolor">@item.numbrTWoDesc</p>
+                    <p class="pcolor">@Html.Raw(item.numbrTWoDesc)</p>
                 </div>
                 <div class="col-sm-6 col-lg-3 margin-bm32">
                     <div class="facts-title">@item.numberThree</div>
-                    <p class="pcolor">@item.numbrThreeDesc</p>
+                    <p class="pcolor">@Html.Raw(item.numbrThreeDesc)</p>
                 </div>
                 <div class="col-sm-6 col-lg-3 margin-bm32">
                     <div class="facts-title">@item.numberFour</div>
-                    <p class="pcolor">@item.numbFourDesc</p>
+                    <p class="pcolor">@Html.Raw(item.numbFourDesc)</p>
                 </div>
             </div>
 
@@ -165,9 +165,9 @@
 
                     <div class="lawyer-holder lawyer-3col">
                         <a href="/Home/Details/@item.Id"><img src="~/images/attorneys/@item.Image" style="height:500px" class="img-fluid" alt=""></a>
-                        <div class="lawyer-position">@item.Job</div>
-                        <h2 class="lawyer-title"><a href="attorneys-single-page.html">@item.Name</a></h2>
-                        <div class="lawyer-excerpt">@item.BioDescription</div>
+                        <div class="lawyer-position">@Html.Raw(item.Job)</div>
+                        <h2 class="lawyer-title"><a href="attorneys-single-page.html">@Html.Raw(item.Name)</a></h2>
+                        <div class="lawyer-excerpt">@Html.Raw(item.BioDescription)</div>
                         <ul class="lawyer-social">
                             @if (item.IconsComminucate != null)
                             {
@@ -210,11 +210,11 @@
 
                                 <div class="testimonial-desc">
                                     <i class="fas fa-quote-left"></i>
-                                    <h5>@item.Description</h5>
+                                    <h5>@Html.Raw(item.Description)</h5>
                                 </div>
                                 <div class="testimonial-client"> <img src="~/images/testimonials/@item.Image" style="width:100px;height:100px;border-radius:50%;" alt=""></div>
-                                <div class="client-name">@item.Name</div>
-                                <div class="client-company">@item.Company</div>
+                                <div class="client-name">@Html.Raw(item.Name)</div>
+                                <div class="client-company">@Html.Raw(item.Company)</div>
 
 
                             </div>
@@ -251,7 +251,7 @@
                             <div class="post-image"><img src="~/images/blog/@item.Image" style="height:400px" class="img-fluid" alt=""></div>
                         </a>
                         <ul class="blog-date">
-                            <li class="meta-date">@item.Dates</li>
+                            <li class="meta-date">@Html.Raw(item.Dates)</li>
                             @if (item.Buttontext1 != null)
                             {
                                 <li class="meta-categ">
@@ -266,8 +266,8 @@
                             }
                         </ul>
                         <div class="post-holder">
-                            <h2 class="blog-title"><a href="blog-single-post.html">@item.Title</a></h2>
-                            <div class="article-excerpt">@item.Description</div>
+                            <h2 class="blog-title"><a href="blog-single-post.html">@Html.Raw(item.Title)</a></h2>
+                            <div class="article-excerpt">@Html.Raw(item.Description)</div>
                         </div>
                     </article>
                 </div>
@@ -285,10 +285,10 @@
             <div class="col-lg-10 offset-lg-1 alignc">
                 @foreach (var item in Model.services)
                 {
-                    <span class="heading-subtitle white">@item.Header</span>
-                    <h2 class="margin-b16">@item.Title</h2>
-                    <p> @item.Description</p>
-                    <div class="view-more view-more-white margin-t54 alignc"><a href="@item.ButtonLink">@item.Buttontext</a></div>
+                    <span class="heading-subtitle white">@Html.Raw(item.Header)</span>
+                    <h2 class="margin-b16">@Html.Raw(item.Title)</h2>
+                    <p> @Html.Raw(item.Description)</p>
+                    <div class="view-more view-more-white margin-t54 alignc"><a href="@Html.Raw(item.ButtonLink)">@Html.Raw(item.Buttontext)</a></div>
 
                 }
             </div>

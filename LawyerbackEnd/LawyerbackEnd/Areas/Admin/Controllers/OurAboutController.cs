@@ -52,5 +52,42 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
             TempData["Success"] = "Slider silindi";
             return Redirect("/Admin/OurAbout/Index");
         }
+        [HttpGet]
+        public IActionResult Edit(int? id)
+        {
+            if (id==null)
+            {
+                return NotFound();
+            }
+            OurAbout ourAbout = _dbcontext.OurAbouts.Find(id);
+            if (ourAbout==null)
+            {
+                return NotFound();
+            }
+            return View(ourAbout);
+        }
+        [HttpPost]
+        public async Task<IActionResult> Edit(OurAbout ourAbout)
+        {
+            if (ourAbout==null)
+            {
+                return NotFound();
+            }
+            OurAbout our = _dbcontext.OurAbouts.Find(ourAbout.Id);
+            if (our==null)
+            {
+                return NotFound();
+            }
+            our.Header = ourAbout.Header;
+            our.headerUndeer = ourAbout.headerUndeer;
+            our.Price = ourAbout.Price;
+            our.Dates = ourAbout.Dates;
+            our.Description = ourAbout.Description;
+            our.Description2 = ourAbout.Description2;
+            our.Description3 = ourAbout.Description3;
+            await _dbcontext.SaveChangesAsync();
+            return Redirect("/Admin/OurAbout/Index");
+        }
+
     }
 }

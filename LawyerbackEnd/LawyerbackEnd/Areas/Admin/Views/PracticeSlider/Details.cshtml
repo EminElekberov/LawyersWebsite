@@ -11,8 +11,8 @@
     <tbody>
         <tr>
             <td>@Model.Id</td>
-            <td>@Model.Name</td>
-            <td>@Model.Description</td>
+            <td>@Html.Raw(Model.Name)</td>
+            <td>@Html.Raw(Model.Description)</td>
         </tr>
     </tbody>
 </table>

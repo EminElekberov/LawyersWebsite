@@ -1,8 +1,9 @@
-﻿@model Service
-@{
-    ViewData["Title"] = "Edit";
-}
+﻿@model PageContact
+
+
 <form method="post" enctype="multipart/form-data">
+    @*<div asp-validation-summary="ModelOnly" style="color:red"></div>*@
+
     <div class="mb-3">
         <label>Header</label>
         <textarea asp-for="Header" class="form-control"></textarea>
@@ -11,27 +12,28 @@
     </div>
     <div class="mb-3">
         <label>Title</label>
-        <input type="text" class="form-control" asp-for="Title">
+        <textarea asp-for="Title" class="form-control"></textarea>
+
         <span asp-validation-for="Title" style="color:red"></span>
     </div>
-
+    <div class="mb-3">
+        <label>Link</label>
+        <input type="text" class="form-control" asp-for="Link">
+        <span asp-validation-for="Link" style="color:red"></span>
+    </div>
+    <div class="mb-3">
+        <label>Link Description</label>
+        <input type="text" class="form-control" asp-for="LinkDescription">
+        <span asp-validation-for="LinkDescription" style="color:red"></span>
+    </div>
     <div class="mb-3">
         <label>Description</label>
         <textarea asp-for="Description" class="form-control"></textarea>
         <span asp-validation-for="Description" style="color:red"></span>
     </div>
-    <div class="mb-3">
-        <label>Button Text</label>
-        <input type="text" class="form-control" asp-for="Buttontext">
-        <span asp-validation-for="Buttontext" style="color:red"></span>
-    </div>
-    <div class="mb-3">
-        <label>Button Link</label>
-        <input type="text" class="form-control" asp-for="ButtonLink">
-        <span asp-validation-for="ButtonLink" style="color:red"></span>
-    </div>
-    <input type="submit" class="btn btn-danger btn-block" value="Update" />
+    <button type="submit" class="btn btn-primary">Submit</button>
 </form>
+
 
 
 @section scripts{
@@ -45,9 +47,19 @@
     </script>
 }
 
-
-
 @section scripts1{
+
+    <partial name="_ValidationScriptsPartial" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ckeditor5/32.0.0/ckeditor.min.js"></script>
+    <script>
+        ClassicEditor.create(document.querySelector('#Title')).catch(error => {
+            console.error(error);
+        });
+    </script>
+}
+
+
+@section scriptsNumOne{
 
     <partial name="_ValidationScriptsPartial" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ckeditor5/32.0.0/ckeditor.min.js"></script>

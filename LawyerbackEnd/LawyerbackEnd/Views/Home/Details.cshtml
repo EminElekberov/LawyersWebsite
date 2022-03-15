@@ -7,36 +7,36 @@
 
                 <div class="col-lg-4">
                     <img src="~/images/attorneys/@Model.Image" class="img-fluid margin-b32" alt="">
-                    <div class="pcolor margin-b16">@Model.Job</div>
-                    <h5 class="widgettitle">@Model.Name</h5>
+                    <div class="pcolor margin-b16">@Html.Raw(Model.Job)</div>
+                    <h5 class="widgettitle">@Html.Raw(Model.Name)</h5>
                     <hr />
-                    <p>@Model.Comminucate</p>
+                    <p>@Html.Raw(Model.Comminucate)</p>
                     <ul class="about-social">
                         <li><a class="social-facebook" href="#" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
                         <li><a class="social-twitter" href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
                         <li><a class="social-linkedin" href="#" target="_blank"><i class="fab fa-linkedin"></i></a></li>
                     </ul>
                     <hr />
-                    <h5 class="widgettitle">@Model.PractiseHeader</h5>
+                    <h5 class="widgettitle">@Html.Raw(Model.PractiseHeader)</h5>
                     <div class="sidebar widget_recent_entries">
                         <ul>
-                            @Model.PrcatiseDesc
+                            @Html.Raw(Model.PrcatiseDesc)
                         </ul>
                     </div>
                 </div>
                 <div class="col-lg-8">
-                    <h3>@Model.BioHeader</h3>
-                    <p>@Model.BioDescription</p>
-                    <h3>@Model.EducationHeader</h3>
-                    <p>@Model.EducationDescription</p>
+                    <h3>@Html.Raw(Model.BioHeader)</h3>
+                    <p>@Html.Raw(Model.BioDescription)</p>
+                    <h3>@Html.Raw(Model.EducationHeader)</h3>
+                    <p>@Html.Raw(Model.EducationDescription)</p>
                     <blockquote>
-                        <p>@Model.Aphorizm.</p>
+                        <p>@Html.Raw(Model.Aphorizm)</p>
                     </blockquote>
-                    <h3>@Model.AwarsHeader</h3>
-                    <p>@Model.AwardDescription<p>
+                    <h3>@Html.Raw(Model.AwarsHeader)</h3>
+                    <p>@Html.Raw(Model.AwardDescription)<p>
                         <div class="sidebar widget_recent_entries">
                             <ul>
-                                @Model.AwardIconsDesc
+                                @Html.Raw(Model.AwardIconsDesc)
                             </ul>
                         </div>
                 </div>

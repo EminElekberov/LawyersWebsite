@@ -62,7 +62,7 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
             _dbcontext.BlogDetails.Remove(blog);
             await _dbcontext.SaveChangesAsync();
             TempData["Success"] = "blog silindi";
-            return Redirect("/Admin/BlogDetails/Index");
+            return Redirect("/Admin/Blog/Index");
         }
         public IActionResult Details(int? id)
         {

@@ -15,7 +15,7 @@
             <th scope="col">Email</th>
             <th scope="col">Subject</th>
             <th scope="col">Messsage</th>
-            <th scope="col">Are you ready?</th>
+            <th scope="col">Did you read?</th>
             <th scope="col">My Opinion</th>
             <th>Edit/Delete</th>
         </tr>
@@ -28,9 +28,9 @@
             <tr>
                 <th scope="row">@item.Id</th>
                 <td>@Html.Raw(item.Name)</td>
-                <td>@item.Email</td>
-                <td>@item.Subject</td>
-                <td>@item.Message</td>
+                <td>@Html.Raw(item.Email)</td>
+                <td>@Html.Raw(item.Subject)</td>
+                <td>@Html.Raw(item.Message)</td>
                 <td>
                     <input type="radio" id="html" name="fav_language" asp-for="@item.ReadyForm" value="true">
                     <label for="html">Yes</label>

@@ -22,21 +22,21 @@
             @foreach (var item in Model.allContacts)
             {
                 <div class="col-lg-5">
-                    <h3 class="margin-b16">@item.AddressHeader:</h3>
-                    <p>@item.Address</p>
+                    <h3 class="margin-b16">@Html.Raw(item.AddressHeader)</h3>
+                    <p>@Html.Raw(item.Address)</p>
                     <hr />
-                    <h3 class="margin-b16">@item.PhoneHeader</h3>
-                    <p>@item.Phone</p>
+                    <h3 class="margin-b16">@Html.Raw(item.PhoneHeader)</h3>
+                    <p>@Html.Raw(item.Phone)</p>
                     <hr />
-                    <h3 class="margin-b16">@item.OfficeHeader</h3>
-                    <p>@item.Hours</p>
+                    <h3 class="margin-b16">@Html.Raw(item.OfficeHeader)</h3>
+                    <p>@Html.Raw(item.Hours)</p>
                 </div>
             }
         <div class="col-lg-7">
             @foreach (var item in Model.allContacts)
             {
-                <h2 class="section-heading-title margin-b16">@item.ContactHeader</h2>
-                <p>@item.ContactHeaderDescription</p>
+                <h2 class="section-heading-title margin-b16">@Html.Raw(item.ContactHeader)</h2>
+                <p>@Html.Raw(item.ContactHeaderDescription)</p>
             }
 
                 <div id="contact-form-holder">

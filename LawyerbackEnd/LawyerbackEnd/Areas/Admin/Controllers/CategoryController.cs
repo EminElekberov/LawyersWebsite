@@ -94,7 +94,7 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
         [HttpPost]
         public async Task<IActionResult> Edit(Category category)
         {
-            if (!ModelState.IsValid && category.Photo==null)
+            if (!ModelState.IsValid)
             {
                 ModelState.AddModelError("photo", "Sekil daxil edin");
                 return View();

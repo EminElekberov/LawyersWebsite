@@ -11,8 +11,8 @@
         <div class="container">
             @foreach (var item in Model.practiceSliders)
             {
-                <h1 class="page-title">@item.Name</h1>
-                <span class="post-subtitle page-subtitle">@item.Description</span>
+                <h1 class="page-title">@Html.Raw(item.Name)</h1>
+                <span class="post-subtitle page-subtitle">@Html.Raw(item.Description)</span>
             }
         </div>
     </div>
@@ -30,13 +30,13 @@
                         <a href="practice-single-page.html">
                             <div class="practice-circle">@Html.Raw(item.IconLink)</div>
                         </a>
-                        <h5 class="practice-title-v2"><a href="practice-single-page.html">@item.Header</a></h5>
-                        <div class="practice-excerpt">@item.Description</div>
+                        <h5 class="practice-title-v2"><a href="practice-single-page.html">@Html.Raw(item.Header)</a></h5>
+                        <div class="practice-excerpt">@Html.Raw(item.Description)</div>
                         @if (item.Learntext == null)
                         {
                             <a class="read-more" href="#">Learn More</a>
                         }
-                        <a class="read-more" href="@item.LearnLink">@item.Learntext</a>
+                        <a class="read-more" href="@item.LearnLink">@Html.Raw(item.Learntext)</a>
 
                     </div>
                     
@@ -54,8 +54,8 @@
             <div class="col-lg-8 offset-lg-2 alignc">
                 @foreach (var item in Model.pageContacts)
                 {
-                    <span class="heading-subtitle">@item.Header</span>
-                    <h2 class="section-heading-title">@item.Title</h2>
+                    <span class="heading-subtitle">@Html.Raw(item.Header)</span>
+                    <h2 class="section-heading-title">@Html.Raw(item.Title)</h2>
                 }
             </div>
         </div>
@@ -66,8 +66,8 @@
                 <div class="col-lg-4 alignc">
 
                     <div class="icon-box-icon margin-none">@Html.Raw(item.Link)</div>
-                    <div class="icon-box-title">@item.LinkDescription</div>
-                    <p class="icon-box-description">@item.Description</p>
+                    <div class="icon-box-title">@Html.Raw(item.LinkDescription)</div>
+                    <p class="icon-box-description">@Html.Raw(item.Description)</p>
 
                 </div>
             }

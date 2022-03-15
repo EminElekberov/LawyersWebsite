@@ -252,3 +252,6 @@ C:\Users\EMIN\Desktop\lawyersWebsite\LawyerbackEnd\LawyerbackEnd\obj\Debug\netco
 C:\Users\EMIN\Desktop\lawyersWebsite\LawyerbackEnd\LawyerbackEnd\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\AllContactsAreas\Details.cshtml.g.cs
 C:\Users\EMIN\Desktop\lawyersWebsite\LawyerbackEnd\LawyerbackEnd\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\AllContactsAreas\Edit.cshtml.g.cs
 C:\Users\EMIN\Desktop\lawyersWebsite\LawyerbackEnd\LawyerbackEnd\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Contact\CreateOpinion.cshtml.g.cs
+C:\Users\EMIN\Desktop\lawyersWebsite\LawyerbackEnd\LawyerbackEnd\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\OurAbout\Edit.cshtml.g.cs
+C:\Users\EMIN\Desktop\lawyersWebsite\LawyerbackEnd\LawyerbackEnd\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\AttorneysBio\Edit.cshtml.g.cs
+C:\Users\EMIN\Desktop\lawyersWebsite\LawyerbackEnd\LawyerbackEnd\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\PageContact\Edit.cshtml.g.cs
