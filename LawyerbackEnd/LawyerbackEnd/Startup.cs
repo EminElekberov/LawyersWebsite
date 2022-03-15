@@ -2,6 +2,7 @@ using LawyerbackEnd.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -30,6 +31,21 @@ namespace LawyerbackEnd
             {
                 options.UseSqlServer(Configuration.GetConnectionString("LawyerConnection"));
             });
+
+            services.AddIdentity<User, IdentityRole>()
+               .AddEntityFrameworkStores<LawyerDbcontext>()
+               .AddTokenProvider<DataProtectorTokenProvider<User>>(TokenOptions.DefaultProvider);
+
+            services.Configure<IdentityOptions>(options =>
+            {
+                options.Password.RequireDigit = false;
+                options.Password.RequiredLength = 8;
+                options.Password.RequireLowercase = true;
+                options.Password.RequireNonAlphanumeric = false;//! ve ya diger simvolik isareler
+                options.Lockout.MaxFailedAccessAttempts = 3;
+                options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMilliseconds(5);//blokladiqdan  5 deq sonra acilsin
+                options.Lockout.AllowedForNewUsers = true;//eger sen yeni qeydiyytadn kecmisense seni parolda sehv etmisense seni bloka salmir
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -46,6 +62,7 @@ namespace LawyerbackEnd
                 app.UseHsts();
             }
             app.UseHttpsRedirection();
+            app.UseAuthentication();
             app.UseStaticFiles();
 
             app.UseRouting();
