@@ -1,0 +1,52 @@
+﻿@model IList<Biography>
+
+
+<section class="section-holder" style="margin-top:50px;">
+    <div class="container">
+        @foreach (var item in Model)
+        {
+            <div class="row" style="margin-top:70px"> 
+
+                <div class="col-lg-4">
+                    <img src="~/images/attorneys/@item.Image" class="img-fluid margin-b32" alt="">
+                    <div class="pcolor margin-b16">@Html.Raw(item.Job)</div>
+                    <h5 class="widgettitle">@Html.Raw(item.Name)</h5>
+                    <hr />
+                    <p>@Html.Raw(item.Comminucate)</p>
+                    <ul class="about-social">
+                        <li><a class="social-facebook" href="#" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a class="social-twitter" href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                        <li><a class="social-linkedin" href="#" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+                    </ul>
+                    <hr />
+                    <h5 class="widgettitle">@Html.Raw(item.PractiseHeader)</h5>
+                    <div class="sidebar widget_recent_entries">
+                        <ul>
+                            @Html.Raw(item.PrcatiseDesc)
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-8">
+                    <h3>@Html.Raw(item.BioHeader)</h3>
+                    <p>@Html.Raw(item.BioDescription)</p>
+                    <h3>@Html.Raw(item.EducationHeader)</h3>
+                    <p>@Html.Raw(item.EducationDescription)</p>
+                    <blockquote>
+                        <p>@Html.Raw(item.Aphorizm)</p>
+                    </blockquote>
+                    <h3>@Html.Raw(item.AwarsHeader)</h3>
+                    <p>@Html.Raw(item.AwardDescription)<p>
+                        <div class="sidebar widget_recent_entries">
+                            <ul>
+                                @Html.Raw(item.AwardIconsDesc)
+                            </ul>
+                        </div>
+                </div>
+            </div>
+        }
+
+        <!-- /row -->
+    </div>
+    <!-- /container -->
+</section>
+

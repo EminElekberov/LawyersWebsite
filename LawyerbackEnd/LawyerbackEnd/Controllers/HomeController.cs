@@ -18,7 +18,7 @@ namespace LawyerbackEnd.Controllers
         {
             _dbcontext = dbcontext;
         }
-
+        [HttpGet]
         public IActionResult Index()
         {
             HomeVM homeVM = new HomeVM
@@ -34,11 +34,23 @@ namespace LawyerbackEnd.Controllers
                 ourAbouts=_dbcontext.OurAbouts.ToList(),
                 pictureSliders=_dbcontext.pictureSliders.ToList(),
                 biographies=_dbcontext.Biographies.ToList(),
-                blogDetails=_dbcontext.BlogDetails.ToList()
+                blogDetails=_dbcontext.BlogDetails.ToList(),
+                contacts=_dbcontext.Contacts.ToList(),
+                allContacts=_dbcontext.AllContactsAreas.ToList()
             };
             return View(homeVM);
         }
-
+        [HttpPost]
+        public IActionResult Index(Contact contact)
+        {
+            if (contact == null)
+            {
+                return NotFound();
+            }
+            _dbcontext.Contacts.Add(contact);
+            _dbcontext.SaveChanges();
+            return Redirect("/Home/Index");
+        }
         public IActionResult Pages()
         {
             HomeVM homeVM = new HomeVM
@@ -89,6 +101,11 @@ namespace LawyerbackEnd.Controllers
             return View(biography);
         }
 
+
+        public IActionResult TeamAllDetails()
+        {
+            return View(_dbcontext.Biographies.ToList());
+        }
         public IActionResult Blog()
         {
             HomeVM home = new HomeVM
