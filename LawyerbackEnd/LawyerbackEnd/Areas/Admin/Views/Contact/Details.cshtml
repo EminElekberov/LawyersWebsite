@@ -8,9 +8,12 @@
             <th scope="col">Email</th>
             <th scope="col">Subject</th>
             <th scope="col">Messsage</th>
+            @if (Model.MyOpinion!=null)
+            {
+                <th>My Opinion</th>
+            }
         </tr>
     </thead>
-
     <tbody>
 
             <tr class="bg-gradient-light">
@@ -19,8 +22,10 @@
                 <td>@Model.Email</td>
                 <td>@Model.Subject</td>
                 <td>@Model.Message</td>
-
-               
+                @if (Model.MyOpinion!=null)
+                {
+                    <td>@Html.Raw(Model.MyOpinion)</td>
+                }
             </tr>
 
         

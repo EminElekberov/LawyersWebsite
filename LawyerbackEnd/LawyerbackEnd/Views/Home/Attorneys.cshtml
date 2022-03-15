@@ -25,7 +25,7 @@
                     <span class="heading-subtitle">@Html.Raw(item.Header)</span>
                     <h2 class="margin-b16">@Html.Raw(item.Title)</h2>
                     <p> @Html.Raw(item.Description)</p>
-                    <div class="view-more alignc"><a href="@item.ButtonLink">@Html.Raw(item.Buttontext)</a></div>
+                    <div class="view-more alignc"><a asp-action="Contact" asp-controller="Home">@Html.Raw(item.Buttontext)</a></div>
                 </div>
             }
         </div>

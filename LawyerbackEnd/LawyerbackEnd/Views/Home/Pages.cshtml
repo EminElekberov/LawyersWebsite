@@ -73,8 +73,8 @@
                 <div class="col-lg-4 alignc">
 
                     <div class="icon-box-icon margin-none">@Html.Raw(item.Link)</div>
-                    <div class="icon-box-title">@item.LinkDescription</div>
-                    <p class="icon-box-description">@item.Description</p>
+                    <div class="icon-box-title">@Html.Raw(item.LinkDescription)</div>
+                    <p class="icon-box-description">@Html.Raw(item.Description)</p>
 
                 </div>
             }
