@@ -1,3 +1,4 @@
+using LawyerbackEnd.Extension;
 using LawyerbackEnd.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -35,6 +36,8 @@ namespace LawyerbackEnd
             services.AddIdentity<User, IdentityRole>()
                .AddEntityFrameworkStores<LawyerDbcontext>()
                .AddTokenProvider<DataProtectorTokenProvider<User>>(TokenOptions.DefaultProvider);
+
+            services.AddScoped<IEmailSendMessage, EmailSendMessage>();
 
             services.Configure<IdentityOptions>(options =>
             {

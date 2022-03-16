@@ -1,5 +1,6 @@
 ﻿using LawyerbackEnd.Extension;
 using LawyerbackEnd.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -10,6 +11,8 @@ using System.Threading.Tasks;
 namespace LawyerbackEnd.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize(Roles = "Admin")]
+
     public class PictureSliderController : Controller
     {
 
