@@ -167,6 +167,7 @@ namespace LawyerbackEnd.Controllers
             Case cases = _dbcontext.Cases.Include(c => c.categorys).FirstOrDefault(i => i.Id==id);
             ViewBag.Cases = _dbcontext.Cases.Include(c=>c.categorys).ToList();
             return View(cases);
+            //
         }
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
