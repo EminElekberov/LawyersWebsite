@@ -265,3 +265,4 @@ C:\Users\EMIN\Desktop\lawyersWebsite\LawyerbackEnd\LawyerbackEnd\obj\Debug\netco
 C:\Users\EMIN\Desktop\lawyersWebsite\LawyerbackEnd\LawyerbackEnd\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Account\Register.cshtml.g.cs
 C:\Users\EMIN\Desktop\lawyersWebsite\LawyerbackEnd\LawyerbackEnd\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Account\ForgetPassword.cshtml.g.cs
 C:\Users\EMIN\Desktop\lawyersWebsite\LawyerbackEnd\LawyerbackEnd\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Account\ResetPassword.cshtml.g.cs
+C:\Users\EMIN\Desktop\lawyersWebsite\LawyerbackEnd\LawyerbackEnd\obj\Debug\netcoreapp3.1\Razor\Views\Home\CaseStudies.cshtml.g.cs

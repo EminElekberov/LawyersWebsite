@@ -17,6 +17,7 @@ namespace LawyerbackEnd.Models
         public int Time { get; set; }
         public string LawherFullname { get; set; }
         public int Price { get; set; }
+        public Categorys categorys { get; set; }
         public int CategoryId { get; set; }
     }
 }

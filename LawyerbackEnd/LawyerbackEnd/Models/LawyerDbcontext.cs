@@ -34,6 +34,8 @@ namespace LawyerbackEnd.Models
         public DbSet<BlogIndexAbout> BlogIndexAbouts{ get; set; }
         public DbSet<Contact> Contacts{ get; set; }
         public DbSet<AllContactsAreas> AllContactsAreas{ get; set; }
+        public DbSet<Case> Cases{ get; set; }
+        public DbSet<Categorys> Categorys{ get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);

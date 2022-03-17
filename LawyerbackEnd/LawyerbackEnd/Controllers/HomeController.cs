@@ -1,6 +1,7 @@
 ﻿using LawyerbackEnd.Models;
 using LawyerbackEnd.ViewModel;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
@@ -150,6 +151,22 @@ namespace LawyerbackEnd.Controllers
             _dbcontext.Contacts.Add(contact);
             _dbcontext.SaveChanges();
             return Redirect("/Home/Contact");
+        }
+
+        public IActionResult CaseStudies()
+        {
+            List<Case> cases = _dbcontext.Cases.Include(c => c.categorys).ToList();
+            return View(cases);
+        }
+        public IActionResult CaseStudiesDetails(int? id)
+        {
+            if (id==null)
+            {
+                return NotFound();
+            }
+            Case cases = _dbcontext.Cases.Include(c => c.categorys).FirstOrDefault(i => i.Id==id);
+            ViewBag.Cases = _dbcontext.Cases.Include(c=>c.categorys).ToList();
+            return View(cases);
         }
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

@@ -30,6 +30,8 @@ namespace LawyerbackEnd.ViewModel
         public List<BlogHeader> blogHeaders { get; set; }
         public List<BlogIndexAbout> blogIndexAbouts { get; set; }
         public List<AllContactsAreas> allContacts { get; set; }
+        public List<Case> cases { get; set; }
+        public List<Categorys> categorys { get; set; }
         public List<Contact> contacts { get; set; }
         public Contact  contact { get; set; }
 

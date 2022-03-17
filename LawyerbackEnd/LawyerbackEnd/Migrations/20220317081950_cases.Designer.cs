@@ -4,14 +4,16 @@ using LawyerbackEnd.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace LawyerbackEnd.Migrations
 {
     [DbContext(typeof(LawyerDbcontext))]
-    partial class LawyerDbcontextModelSnapshot : ModelSnapshot
+    [Migration("20220317081950_cases")]
+    partial class cases
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -316,6 +318,9 @@ namespace LawyerbackEnd.Migrations
                     b.Property<int>("CategoryId")
                         .HasColumnType("int");
 
+                    b.Property<int?>("CategorysId")
+                        .HasColumnType("int");
+
                     b.Property<string>("Challenge")
                         .HasColumnType("nvarchar(max)");
 
@@ -343,12 +348,9 @@ namespace LawyerbackEnd.Migrations
                     b.Property<string>("Title")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("categorysId")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
 
-                    b.HasIndex("categorysId");
+                    b.HasIndex("CategorysId");
 
                     b.ToTable("Cases");
                 });
@@ -1023,9 +1025,9 @@ namespace LawyerbackEnd.Migrations
 
             modelBuilder.Entity("LawyerbackEnd.Models.Case", b =>
                 {
-                    b.HasOne("LawyerbackEnd.Models.Categorys", "categorys")
+                    b.HasOne("LawyerbackEnd.Models.Categorys", null)
                         .WithMany("Cases")
-                        .HasForeignKey("categorysId");
+                        .HasForeignKey("CategorysId");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

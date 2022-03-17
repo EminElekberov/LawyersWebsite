@@ -22,6 +22,8 @@ namespace LawyerbackEnd.Extension
             mime.To.Add(MailboxAddress.Parse(to));
             mime.Subject = subject;
             mime.Body = new TextPart(TextFormat.Text) { Text=html };
+
+
             SmtpClient smtpClient = new SmtpClient();
             smtpClient.Connect("smtp.gmail.com", 587, SecureSocketOptions.StartTls);
             smtpClient.Authenticate("aspporto99@gmail.com", "aspnetc638");

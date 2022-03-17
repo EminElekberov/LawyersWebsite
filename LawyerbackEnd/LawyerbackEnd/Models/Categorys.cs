@@ -11,6 +11,5 @@ namespace LawyerbackEnd.Models
         public string Name { get; set; }
         public string className { get; set; }
         public List<Case> Cases { get; set; }
-
     }
 }
