@@ -35,8 +35,13 @@
                         <a asp-action="Index" asp-controller="Home">Home</a>
                         
                     </li>
-                    <li class="">
+                    <li class="menu-item menu-item-has-children current-menu-item">
                         <a asp-action="Pages" asp-controller="Home">Pages</a>
+                        <ul class="sub-menu">
+                            <li class="menu-item"><a asp-action="AboutMe" asp-controller="Home">About Me</a></li>
+                            <li class="menu-item"><a asp-action="Pricing" asp-controller="Home">Pricing</a></li>
+                            <li class="menu-item"><a asp-action="Faq" asp-controller="Home">Faq</a></li>
+                        </ul>
                     </li>
                     <li class="">
                         <a asp-action="Practice" asp-controller="Home">Practice Areas</a>

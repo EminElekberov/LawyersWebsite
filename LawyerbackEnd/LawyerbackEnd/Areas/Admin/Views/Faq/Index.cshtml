@@ -1,0 +1,63 @@
+﻿
+@model IList<Faq>
+
+@if (TempData["Success"] != null)
+{
+    <div class="alert alert-primary" role="alert">
+        @TempData["Success"]
+    </div>
+}
+<div style="overflow-x:auto">
+    @*<div>
+        <a href="/Admin/Faq/Create" class="btn btn-success" style="width:100%">Add new slider</a>
+    </div>*@
+
+    <table class="table table-bordered">
+        <thead class="bg-register-image">
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Image</th>
+                <th scope="col">Question1 Text</th>
+                <th scope="col">Question1 DEscription</th>
+                <th scope="col">Question2 Text</th>
+                <th scope="col">Question2 DEscription</th>
+                <th scope="col">Question3 Text</th>
+                <th scope="col">Question3 DEscription</th>
+                <th scope="col">Question4 Text</th>
+                <th scope="col">Question4 DEscription</th>
+                <th>Edit</th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <th scope="row">@item.id</th>
+                    <td>
+                        <img width="200" height="150" src="~/images/faq/@item.Image" alt="Alternate Text" />
+                    </td>
+                    <td>@Html.Raw(item.Question1)</td>
+                    <td>@Html.Raw(item.Questiontext1)</td>
+
+                    <td>@Html.Raw(item.Question2)</td>
+                    <td>@Html.Raw(item.Questiontext2)</td>
+
+                    <td>@Html.Raw(item.Question3)</td>
+                    <td>@Html.Raw(item.QuestionText3)</td>
+
+                    <td>@Html.Raw(item.Question4)</td>
+                    <td>@Html.Raw(item.QuestionText4)</td>
+
+                    <td>
+                        <a href="/Admin/Faq/Edit/@item.id" style="color:red"><i class="fas fa-edit"></i></a>
+                        @*<a href="/Admin/Faq/Delete/@item.id" onclick="return confirm('Silmek isdediyinizden eminsinizmi?')" style="color:red"><i class="fas fa-trash-alt"></i></a>*@
+                        <br />
+                    </td>
+                </tr>
+
+            }
+        </tbody>
+    </table>
+</div>

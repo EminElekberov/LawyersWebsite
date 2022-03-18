@@ -313,9 +313,6 @@ namespace LawyerbackEnd.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("CategoryId")
-                        .HasColumnType("int");
-
                     b.Property<string>("Challenge")
                         .HasColumnType("nvarchar(max)");
 
@@ -343,7 +340,7 @@ namespace LawyerbackEnd.Migrations
                     b.Property<string>("Title")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("categorysId")
+                    b.Property<int>("categorysId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
@@ -397,6 +394,21 @@ namespace LawyerbackEnd.Migrations
                     b.ToTable("Categorys");
                 });
 
+            modelBuilder.Entity("LawyerbackEnd.Models.Components", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Components");
+                });
+
             modelBuilder.Entity("LawyerbackEnd.Models.Contact", b =>
                 {
                     b.Property<int>("Id")
@@ -427,6 +439,45 @@ namespace LawyerbackEnd.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Contacts");
+                });
+
+            modelBuilder.Entity("LawyerbackEnd.Models.Faq", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Image")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Question1")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Question2")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Question3")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Question4")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("QuestionText3")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("QuestionText4")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Questiontext1")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Questiontext2")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("id");
+
+                    b.ToTable("Faqs");
                 });
 
             modelBuilder.Entity("LawyerbackEnd.Models.Holder", b =>
@@ -569,6 +620,36 @@ namespace LawyerbackEnd.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("OurAbouts");
+                });
+
+            modelBuilder.Entity("LawyerbackEnd.Models.Packet", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Packets");
+                });
+
+            modelBuilder.Entity("LawyerbackEnd.Models.PacketToComponents", b =>
+                {
+                    b.Property<int>("PacketId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("componentsId")
+                        .HasColumnType("int");
+
+                    b.HasKey("PacketId", "componentsId");
+
+                    b.HasIndex("componentsId");
+
+                    b.ToTable("packetToComponents");
                 });
 
             modelBuilder.Entity("LawyerbackEnd.Models.PageContact", b =>
@@ -1025,7 +1106,24 @@ namespace LawyerbackEnd.Migrations
                 {
                     b.HasOne("LawyerbackEnd.Models.Categorys", "categorys")
                         .WithMany("Cases")
-                        .HasForeignKey("categorysId");
+                        .HasForeignKey("categorysId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("LawyerbackEnd.Models.PacketToComponents", b =>
+                {
+                    b.HasOne("LawyerbackEnd.Models.Packet", "packet")
+                        .WithMany("packetToComponents")
+                        .HasForeignKey("PacketId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("LawyerbackEnd.Models.Components", "components")
+                        .WithMany("PacketToComponents")
+                        .HasForeignKey("componentsId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

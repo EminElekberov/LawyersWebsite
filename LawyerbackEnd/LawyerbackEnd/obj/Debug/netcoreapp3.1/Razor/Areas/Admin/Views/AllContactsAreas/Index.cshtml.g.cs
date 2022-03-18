@@ -33,8 +33,15 @@ using LawyerbackEnd.Models.AdminAccount;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 4 "C:\Users\EMIN\Desktop\lawyersWebsite\LawyerbackEnd\LawyerbackEnd\Areas\Admin\Views\_ViewImports.cshtml"
+using LawyerbackEnd.ViewModel;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"2dfcc574659dead9003721e89949c30fb83328d6", @"/Areas/Admin/Views/AllContactsAreas/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"2a9e96e9356355bc0a07a4f74e7984a416c6d14e", @"/Areas/Admin/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"6cf4c724a89af8a05ecc33744d67300178a688fb", @"/Areas/Admin/Views/_ViewImports.cshtml")]
     public class Areas_Admin_Views_AllContactsAreas_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<IList<AllContactsAreas>>
     {
         #pragma warning disable 1998

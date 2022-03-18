@@ -33,8 +33,15 @@ using LawyerbackEnd.Models.AdminAccount;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 4 "C:\Users\EMIN\Desktop\lawyersWebsite\LawyerbackEnd\LawyerbackEnd\Areas\Admin\Views\_ViewImports.cshtml"
+using LawyerbackEnd.ViewModel;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"5f48740cfdcbd4da39d7506c9673023e7da506a2", @"/Areas/Admin/Views/AttorneysSlider/Details.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"2a9e96e9356355bc0a07a4f74e7984a416c6d14e", @"/Areas/Admin/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"6cf4c724a89af8a05ecc33744d67300178a688fb", @"/Areas/Admin/Views/_ViewImports.cshtml")]
     public class Areas_Admin_Views_AttorneysSlider_Details : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<AttorneysSlider>
     {
         #pragma warning disable 1998

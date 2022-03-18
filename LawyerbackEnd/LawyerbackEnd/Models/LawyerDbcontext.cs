@@ -25,6 +25,7 @@ namespace LawyerbackEnd.Models
         public DbSet<PageContact> PageContacts{ get; set; }
         public DbSet<PracticeSlider> PracticeSliders{ get; set; }
         public DbSet<PracticeAbout> PracticeAbouts{ get; set; }
+        public DbSet<Faq> Faqs{ get; set; }
         public DbSet<AttorneysSlider> AttorneysSliders{ get; set; }
         public DbSet<Biography> Biographies{ get; set; }
         public DbSet<AttorneyWork> AttorneyWorks{ get; set; }
@@ -36,6 +37,9 @@ namespace LawyerbackEnd.Models
         public DbSet<AllContactsAreas> AllContactsAreas{ get; set; }
         public DbSet<Case> Cases{ get; set; }
         public DbSet<Categorys> Categorys{ get; set; }
+        public DbSet<Components> Components{ get; set; }
+        public DbSet<Packet> Packets{ get; set; }
+        public DbSet<PacketToComponents> packetToComponents{ get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
@@ -54,6 +58,20 @@ namespace LawyerbackEnd.Models
                 Name = "We provide legal",
                 Description = "Auto Accidents"
             });
+
+            modelBuilder.Entity<PacketToComponents>()
+                .HasOne(a => a.packet)
+                .WithMany(b => b.packetToComponents)
+                .HasForeignKey(a => a.PacketId);
+
+            modelBuilder.Entity<PacketToComponents>()
+                .HasOne(a => a.components)
+                .WithMany(b => b.PacketToComponents)
+                .HasForeignKey(a => a.componentsId);
+
+            modelBuilder.Entity<PacketToComponents>()
+               .HasKey(bc => new { bc.PacketId, bc.componentsId });
+
         }
     }
 }

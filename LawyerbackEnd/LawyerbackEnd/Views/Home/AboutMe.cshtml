@@ -1,0 +1,120 @@
+﻿@model HomeVM
+
+
+<div class="page-head " style="background-image:url('images/top-bkgs/about.jpg');">
+    <div class="inner-desc">
+        <div class="container">
+            <h1 class="page-title">About Me</h1> <span class="post-subtitle page-subtitle">
+                Creative, efficient and
+                passionate
+            </span>
+        </div>
+    </div>
+</div>
+
+<section class="section-holder">
+    <div class="container" style="margin-top:50px">
+        <div class="row">
+            @foreach (var item in Model.biographies)
+            {
+                <div class="col-lg-5 margin-bm54" style="padding-top:50px">
+                    <img class="img-fluid" src="~/images/attorneys/@item.Image" alt="">
+                </div>
+                <div class="col-lg-7">
+                    <span class="heading-subtitle">Bio</span>
+                    <h2 class="section-heading-title margin-b16">
+                        @item.Name
+                    </h2>
+                    <p>
+                        @item.BioDescription
+                    </p>
+
+                    <ul class="about-social">
+                        @if (item.IconsComminucate != null)
+                        {
+                            <li><a href="#" target="_blank">@Html.Raw(item.IconsComminucate)</a></li>
+                        }
+                        @if (item.IconsComminucate2 != null)
+                        {
+                            <li><a href="#" target="_blank">@Html.Raw(item.IconsComminucate2)</a></li>
+                        }@if (item.IconsComminucate3 != null)
+                        {
+                            <li><a href="#" target="_blank">@Html.Raw(item.IconsComminucate3)</a></li>
+                        }
+                    </ul>
+
+                </div>
+            }
+        </div>
+        <!-- /row -->
+    </div>
+    <!-- /container -->
+</section>
+
+<section class="section-holder">
+    <div class="container">
+        <div class="row practice-items-holder-v2">
+            @foreach (var item in Model.practiceAbouts)
+            {
+                <div class="col-lg-4 col-md-6">
+
+                    <div class="practice-item-v2">
+
+                        <a>
+                            <div class="practice-circle">@Html.Raw(item.IconLink)</div>
+                        </a>
+                        <h5 class="practice-title-v2"><a href="practice-single-page.html">@Html.Raw(item.Header)</a></h5>
+                        <div class="practice-excerpt">@Html.Raw(item.Description)</div>
+                        @if (item.Learntext == null)
+                        {
+                            <a class="read-more" href="#">Learn More</a>
+                        }
+                        <a class="read-more" href="@item.LearnLink">@Html.Raw(item.Learntext)</a>
+
+                    </div>
+
+                </div>
+            }
+        </div>
+    </div>
+</section>
+<div class="page-holder custom-page-template page-full fullscreen-page clearfix"></div>
+
+
+    <section class="section-holder">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2 alignc">
+                    <span class="heading-subtitle">Testimonials</span>
+                    <h2 class="section-heading-title">What Clients Say</h2>
+                </div>
+            </div>
+            <!-- /row -->
+
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2">
+                    <div class="testimonials-container">
+                        <div class="owl-carousel owl-theme testimonials-slider">
+                            <div class="testimonial-item">
+                                @foreach (var item in Model.categories)
+                                {
+                                    <div class="testimonial-desc">
+                                        <i class="fas fa-quote-left"></i>
+                                        <h5>
+                                            @item.Description
+                                        </h5>
+                                    </div>
+                                    <div class="testimonial-client">
+                                        <img src="~/images/testimonials/@item.Image" alt="">
+                                    </div>
+                                    <div class="client-name">@item.Name</div>
+                                    <div class="client-company">@item.Company</div>
+                                }
+                            </div>
+                        </div>
+                        <!-- /testimonials-container -->
+                    </div>
+                </div>
+            </div>
+            <!-- /container -->
+    </section>

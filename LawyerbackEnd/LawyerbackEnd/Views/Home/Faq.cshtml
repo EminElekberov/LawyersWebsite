@@ -1,0 +1,104 @@
+﻿@model HomeVM
+
+<div class="page-head " style="background-image:url('../images/faq/faqBg.jpg');">
+    <div class="inner-desc">
+        <div class="container">
+            <h1 class="page-title">FAQ</h1>
+            <span class="post-subtitle page-subtitle">Quisque ultricies tristique metus vitae</span>
+        </div>
+    </div>
+</div>
+
+<section class="section-holder">
+    <div class="container">
+
+        <div class="row">
+            @foreach (var item in Model.faqs)
+            {
+                <div class="col-lg-6 margin-bm54">
+
+                    <span class="heading-subtitle">FAQ</span>
+                    <h2 class="section-heading-title margin-b16">Our job is helping our clients with legal issues</h2>
+                    <p>Lorem ipsum dolor sit amet, ut eius periculis eos, eu mea suscipit intellegam. Tota consequuntur cu pro, congue efficiantur eos id. Ius in percipit recusabo. Has ex agam audire, id dicat dolores.</p>
+                    <ul class="faq-list">
+                        @if (item.Question1 != null)
+                        {
+                            <li>
+                                <h5 class="faq-title"><a href="#faq1">@Html.Raw(item.Question1)</a></h5>
+                                <div id="faq1" class="faq-section">
+                                    <p>@item.Questiontext1</p>
+                                </div>
+                            </li>
+                        }
+                        @if (item.Question2 != null)
+                        {
+                            <li>
+                                <h5 class="faq-title"><a href="#faq2">@item.Question2</a></h5>
+                                <div id="faq2" class="faq-section">
+                                    <p>@item.Questiontext2</p>
+                                </div>
+                            </li>
+                        }
+                        @if (item.Question3 != null)
+                        {
+                            <li>
+                                <h5 class="faq-title"><a href="#faq3">@item.Question3</a></h5>
+                                <div id="faq3" class="faq-section">
+                                    <p>@item.QuestionText3</p>
+                                </div>
+                            </li>
+                        }
+                        @if (item.Question4 != null)
+                        {
+                            <li>
+                                <h5 class="faq-title"><a href="#faq4">@item.Question4</a></h5>
+                                <div id="faq4" class="faq-section">
+                                    <p>@item.QuestionText4</p>
+                                </div>
+                            </li>
+                        }
+                    </ul>
+                </div>
+                <div class="col-lg-6">
+                    <img class="img-fluid" src="~/images/faq/@item.Image" alt="">
+                </div>
+            }
+        </div>
+        <!-- /row -->
+    </div>
+    <!-- /container -->
+</section>
+
+
+<section class="section-holder">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2 alignc">
+                <span class="heading-subtitle">Have a Question?</span>
+                <h2 class="section-heading-title">Get in Touch with Our Experts</h2>
+            </div>
+            <div class="col-lg-12">
+                <div id="contact-form-holder">
+                    <form method="post" enctype="multipart/form-data">
+
+                        <div class="row">
+
+                            <div class="col-lg-4 margin-b32"><input type="text" asp-for="@Model.contact.Name" class="comm-field" placeholder="Name" /></div>
+                            <div class="col-lg-4 margin-b32"><input type="text" asp-for="@Model.contact.Email" class="comm-field" placeholder="Email" /> </div>
+                            <div class="col-lg-4 margin-b32"><input type="text" asp-for="@Model.contact.Subject" class="comm-field" placeholder="Subject" /> </div>
+                        </div>
+                        <div class="margin-b32"><textarea asp-for="@Model.contact.Message" id="msg-contact" rows="5" placeholder="Message"></textarea></div>
+                        <p class="antispam">Leave this empty: <input type="text" name="url" /></p>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+
+                    </form>
+
+                </div>
+                <!-- contact-form-holder-->
+                <div id="output-contact"></div>
+            </div>
+        </div>
+        <!-- /row -->
+    </div>
+    <!-- /container -->
+</section>

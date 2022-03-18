@@ -1,0 +1,67 @@
+﻿@model IList<Case>
+@{
+    ViewData["Title"] = "Index";
+}
+
+@if (TempData["Success"] != null)
+{
+    <div class="alert alert-primary" role="alert">
+        @TempData["Success"]
+    </div>
+}
+
+<h1>Index</h1>
+<div style="overflow-x: auto">
+
+    <div>
+        <a href="/Admin/Case/Create" style="width:100%" class="btn btn-success">Add new student</a>
+    </div>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Image</th>
+                <th>Name</th>
+                <th>className</th>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Challenge</th>
+                <th>Solution</th>
+                <th>Result</th>
+                <th>Time</th>
+                <th>LawherFullname</th>
+                <th>Price</th>
+                <th>Edit/Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <th scope="row">@item.Id</th>
+                    <td>
+                        <img width="200" height="150" src="~/images/aboutCase/@item.Image" alt="Alternate Text" />
+                    </td>
+                    <th scope="row">@item.categorys.Name</th>
+                    <th scope="row">@item.categorys.className</th>
+                    <td>@item.Title</td>
+                    <td>@Html.Raw(item.Description)</td>
+                    <td>@item.Challenge</td>
+                    <td>@item.Solution</td>
+                    <td>@item.Result</td>
+                    <td>@item.Time</td>
+                    <td>@item.LawherFullname</td>
+                    <td>@item.Price</td>
+                    <td>
+                        <a href="/Admin/Case/Edit/@item.Id" style="color:red"><i class="fas fa-edit"></i></a>
+                        <a href="/Admin/Case/Delete/@item.Id" onclick="return confirm('Silmek istediyinizden eminsiz?')" style="color:red">
+                            <i class="fas fa-trash-alt"></i>
+                        </a>
+                    </td>
+                </tr>
+
+            }
+        </tbody>
+    </table>
+</div>

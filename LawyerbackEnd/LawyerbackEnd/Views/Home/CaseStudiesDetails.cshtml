@@ -1,0 +1,44 @@
+﻿@model Case
+
+<section class="section-holder">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-9">
+                <h3>@Model.Title</h3>
+                <p>@Html.Raw(Model.Description)</p>
+                <img src="~/images/aboutCase/@Model.Image" class="img-fluid margin-b32" alt="">
+                <h3>@Model.Challenge</h3>
+                <p> ilentes faucibus sollicitudin ante,at porta felisrutrum eget. Sed ut nisl urna,e get convallis purus pretium facilisis. Interdum et malesuada. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer commodo sapien felis.</p>
+                <blockquote><p>The foundation of justice is good faith.</p></blockquote>
+                <h3>The Solution</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer commodo sapien felis. Pellentes faucibus sollicitudin ante,at porta felisrutrum eget. Sed ut nisl urna,e get convallis purus pretium facilisis. Interdum et malesuada. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer commodo sapien felis.</p>
+                <h3>The Result</h3>
+                <p>Eros sale has id, usu solet primis cetero in. Vel ex qualisque argumentum dissentiet, iusto omnes ornatus nec at. Vim definiebas neglegentur mediocritatem in, est expetendis incorrupte scripserit an. Qui ex quando antiopam mandamus, omnes nullam mel et. Pro no magna luptatum laboramus. Sea eu sint quodsi constituam. Usu quas quodsi utamur.</p>
+            </div>
+            <div class="col-lg-3">
+                <aside>
+                    <ul>
+                        <li class="widget">
+                            <div class="case-info">
+                                <h5 class="white margin-b16">Case Info</h5>
+                                <ul class="case-info-list">
+                                    <li><b>Category:</b> Finance</li>
+                                    <li><b>Time:</b> 1 Year</li>
+                                    <li><b>Lawyer:</b> Mike Holmes</li>
+                                    <li><b>Result:</b> $50k</li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="widget">
+                            <h5 class="widgettitle">Case Studies</h5>
+                            <div class="sidebar widget_recent_entries"><ul><li><a href="#">Tax Dispute</a></li><li><a href="#">Business Law</a></li><li><a href="#">Auto Accident</a></li><li><a href="#">Family Law</a></li><li><a href="#">Real Estate</a></li><li><a href="#">Domestic Violence</a></li><li><a href="#">Motocycle Security</a></li><li><a href="#">Medical Malpractice</a></li></ul></div>
+                        </li>
+                        <li class="widget">
+                            <div class="practice-contact" style="background-image: url('images/practice/practice-banner.jpg');"><h5 class="white">Need help?</h5><p>Contact us today for a free consultation and our experts will help you.</p><p><strong>Phone:</strong> 1-800-000-111<br><strong>Email:</strong> contact@example.com</p><p><strong>Mon – Fri:</strong> 09:00 -17:00</p></div>
+                        </li>
+                    </ul>
+                </aside>
+            </div>
+        </div>
+    </div>
+</section>

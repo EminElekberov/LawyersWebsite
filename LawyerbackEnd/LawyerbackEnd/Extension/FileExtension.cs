@@ -15,7 +15,7 @@ namespace LawyerbackEnd.Extension
                file.ContentType == "image/jpg" ||
                file.ContentType == "image/gif" ||
                file.ContentType == "image/png" ||
-               file.ContentType == "image/svg" ||//svg formatinda iconlar ucun
+               file.ContentType == "image/svg" ||
                file.ContentType == "image/jfif";
         }
         public static bool isCv(this IFormFile file)

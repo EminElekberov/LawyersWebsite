@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Http;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -18,6 +20,9 @@ namespace LawyerbackEnd.Models
         public string LawherFullname { get; set; }
         public int Price { get; set; }
         public Categorys categorys { get; set; }
-        public int CategoryId { get; set; }
+        public int categorysId { get; set; }
+        [NotMapped]
+        public IFormFile Photo { get; set; }
+        
     }
 }

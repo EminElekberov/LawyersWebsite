@@ -1,0 +1,90 @@
+﻿@model Case
+@{
+    ViewData["Title"] = "Edit";
+}
+<form method="post" enctype="multipart/form-data">
+    <div asp-validation-summary="All" class="text-danger"></div>
+
+    <div class="form-group">
+        <label>Add Picture</label>
+        <input asp-for="Photo" class="form-control" />
+        <span asp-validation-for="Photo" class="text-danger"></span>
+    </div>
+    <div class="form-group mt-3">
+        <label>Current Photo</label>
+        <img height="150" width="200" src="~/images/aboutCase/@Model.Image" />
+        <input type="hidden" name="Image" value="@Model.Image" />
+    </div>
+    <div class="mb-3">
+        <label>Title</label>
+        <textarea class="form-control" asp-for="Title"></textarea>
+        <span asp-validation-for="Title" style="color:red"></span>
+
+    </div>
+    <div class="mb-3">
+        <label>Description</label>
+        <textarea class="form-control" asp-for="Description"></textarea>
+        <span asp-validation-for="Description" style="color:red"></span>
+
+    </div>
+    <div class="mb-3">
+        <label>Challenge</label>
+        <input type="text" class="form-control" asp-for="Challenge">
+        <span asp-validation-for="Challenge" style="color:red"></span>
+
+    </div>
+    <div class="mb-3">
+        <label>Solution</label>
+        <input type="text" class="form-control" asp-for="Solution">
+        <span asp-validation-for="Solution" style="color:red"></span>
+
+    </div>
+    <div class="mb-3">
+        <label>result</label>
+        <input type="text" class="form-control" asp-for="Result">
+        <span asp-validation-for="Result" style="color:red"></span>
+
+    </div>
+    <div class="mb-3">
+        <label>time</label>
+        <input type="text" class="form-control" asp-for="Time">
+        <span asp-validation-for="Time" style="color:red"></span>
+
+    </div>
+    <div class="mb-3">
+        <label>LawherFullname</label>
+        <input type="text" class="form-control" asp-for="LawherFullname">
+        <span asp-validation-for="LawherFullname" style="color:red"></span>
+
+    </div>
+    <div class="mb-3">
+        <label>price</label>
+        <input type="text" class="form-control" asp-for="Price">
+        <span asp-validation-for="Price" style="color:red"></span>
+
+    </div>
+    <input type="submit" class="btn btn-danger btn-block" value="Update" />
+</form>
+
+@section scripts1{
+
+    <partial name="_ValidationScriptsPartial" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ckeditor5/32.0.0/ckeditor.min.js"></script>
+    <script>
+        ClassicEditor.create(document.querySelector('#Description')).catch(error => {
+            console.error(error);
+        });
+    </script>
+}
+
+
+@section scriptsNumOne{
+
+    <partial name="_ValidationScriptsPartial" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ckeditor5/32.0.0/ckeditor.min.js"></script>
+    <script>
+        ClassicEditor.create(document.querySelector('#Name')).catch(error => {
+            console.error(error);
+        });
+    </script>
+}

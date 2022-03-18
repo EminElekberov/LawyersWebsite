@@ -1,0 +1,87 @@
+﻿
+@model HomeVM
+<div class="page-head " style="background-image:url('images/home/slider-2.jpg');">
+    <div class="inner-desc">
+        <div class="container">
+            <h1 class="page-title">Pricing</h1>
+            <span class="post-subtitle page-subtitle">Dedicated legal support specialist</span>
+        </div>
+    </div>
+</div>
+
+<section class="section-holder">
+    <div class="container">
+        <div class="row">
+            @foreach (var item in Model.biographies)
+            {
+                <div class="col-lg-7">
+                    <span class="heading-subtitle">Pricing Plans</span>
+                    <h2 class="section-heading-title margin-b16">@Html.Raw(item.EducationHeader)</h2>
+                    <p>@Html.Raw(item.EducationDescription)</p>
+                    <p>@Html.Raw(item.AwardDescription)</p>
+                    <h2 class="section-heading-title margin-b16">
+                        @Html.Raw(item.Name)
+                    </h2>
+                </div>
+                <div class="col-lg-5 margin-bm54">
+                    <img class="img-fluid" src="~/images/attorneys/@item.Image" alt="">
+                </div>
+            }
+
+
+        </div>
+        <!-- /row -->
+    </div>
+    <!-- /container -->
+</section>
+
+<section class="section-holder">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 margin-bm32">
+                <div class="pricing-col">
+                    <h3 class="margin-b32">Basic</h3>
+                    <h2 class="price-title">$20<sup>/monthly</sup></h2>
+                    <ul class="price-features">
+                        <li>Auto Accidents</li>
+                        <li>Business Litigation</li>
+                        <li>Family Law</li>
+                        <li>Tax Disputes</li>
+                    </ul>
+                    <div class="view-more"><a href="#">Learn More</a></div>
+                </div>
+                <!-- /pricing-col -->
+            </div>
+            <div class="col-md-4 margin-bm32">
+                <div class="pricing-col">
+                    <h3 class="margin-b32">Standard</h3>
+                    <h2 class="price-title">$40<sup>/monthly</sup></h2>
+                    <ul class="price-features">
+                        <li>Auto Accidents</li>
+                        <li>Business Litigation</li>
+                        <li>Family Law</li>
+                        <li>Tax Disputes</li>
+                    </ul>
+                    <div class="view-more"><a href="#">Learn More</a></div>
+                </div>
+                <!-- /pricing-col -->
+            </div>
+            <div class="col-md-4 margin-bm32">
+                <div class="pricing-col">
+                    <h3 class="margin-b32">Premium</h3>
+                    <h2 class="price-title">$60<sup>/monthly</sup></h2>
+                    <ul class="price-features">
+                        <li>Auto Accidents</li>
+                        <li>Business Litigation</li>
+                        <li>Family Law</li>
+                        <li>Tax Disputes</li>
+                    </ul>
+                    <div class="view-more"><a href="#">Learn More</a></div>
+                </div>
+                <!-- /pricing-col -->
+            </div>
+        </div>
+        <!-- /row -->
+    </div>
+    <!-- /container -->
+</section>

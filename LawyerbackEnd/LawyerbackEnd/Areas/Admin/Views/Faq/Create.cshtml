@@ -1,0 +1,92 @@
+﻿@model Faq
+
+@section styles{ @*bunu ona gore yazdiqki burda yazilan css shared papkasinda loayout.cshtml icerisinde render ede bilek*@
+<style>
+    label {
+        color: red;
+    }
+</style>
+}
+<form method="post" enctype="multipart/form-data">
+    <div class="mb-3">
+        <label>Image</label>
+        <input type="file" class="form-control" asp-for="Photo">
+        <span asp-validation-for="Photo" style="color:red"></span>
+    </div>
+
+    <div class="mb-3">
+        <label>Question1</label>
+        <textarea asp-for="Question1" id="Name" class="form-control"></textarea>
+        <span asp-validation-for="Question1" style="color:red"></span>
+    </div>
+
+    <div class="mb-3">
+        <label>Questiontext1</label>
+        <textarea asp-for="Questiontext1" id="Name" class="form-control"></textarea>
+        <span asp-validation-for="Questiontext1" style="color:red"></span>
+    </div>
+
+
+    <div class="mb-3">
+        <label>Question2</label>
+        <textarea asp-for="Question2" id="Name" class="form-control"></textarea>
+        <span asp-validation-for="Question2" style="color:red"></span>
+    </div>
+
+    <div class="mb-3">
+        <label>Questiontext2</label>
+        <textarea asp-for="Questiontext2" id="Name" class="form-control"></textarea>
+        <span asp-validation-for="Questiontext2" style="color:red"></span>
+    </div>
+
+    <div class="mb-3">
+        <label>Question3</label>
+        <textarea asp-for="Question3" id="Name" class="form-control"></textarea>
+        <span asp-validation-for="Question3" style="color:red"></span>
+    </div>
+
+
+    <div class="mb-3">
+        <label>QuestionText3</label>
+        <textarea asp-for="QuestionText3" id="Name" class="form-control"></textarea>
+        <span asp-validation-for="QuestionText3" style="color:red"></span>
+    </div>
+    <div class="mb-3">
+        <label>Question4</label>
+        <textarea asp-for="Question4" class="form-control"></textarea>
+        <span asp-validation-for="Question4" style="color:red"></span>
+    </div>
+
+    <div class="mb-3">
+        <label>QuestionText4</label>
+        <textarea asp-for="QuestionText4" class="form-control"></textarea>
+        <span asp-validation-for="QuestionText4" style="color:red"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+
+
+@section scripts1{
+
+    <partial name="_ValidationScriptsPartial" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ckeditor5/32.0.0/ckeditor.min.js"></script>
+    <script>
+        ClassicEditor.create(document.querySelector('#Description')).catch(error => {
+            console.error(error);
+        });
+    </script>
+}
+
+
+@section scriptsNumOne{
+
+    <partial name="_ValidationScriptsPartial" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ckeditor5/32.0.0/ckeditor.min.js"></script>
+    <script>
+        ClassicEditor.create(document.querySelector('#Name')).catch(error => {
+            console.error(error);
+        });
+    </script>
+}
