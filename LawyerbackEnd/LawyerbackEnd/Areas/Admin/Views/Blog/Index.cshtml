@@ -64,9 +64,9 @@
                     <td>@item.Comment</td>
                     <td>@Html.Raw(item.AboutDesc)</td>
                     <td>@item.RecentTitle</td>
-                    <td>@item.RecentDesc</td>
+                    <td>@Html.Raw(item.RecentDesc)</td>
                     <td>@item.CateagoriesTitle</td>
-                    <td>@item.CategoriesDesc</td>
+                    <td>@Html.Raw(item.CategoriesDesc)</td>
                     <td>
                         <a href="/Admin/Blog/Edit/@item.Id" style="color:red"><i class="fas fa-edit"></i></a>
                         <a href="/Admin/Blog/Delete/@item.Id" onclick="return confirm('Silmek isdediyinizden eminsinizmi?')" style="color:red"><i class="fas fa-trash-alt"></i></a>

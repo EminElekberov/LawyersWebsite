@@ -129,6 +129,8 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
             biographydb.Name = biography.Name;
             biographydb.Comminucate = biography.Comminucate;
             biographydb.IconsComminucate = biography.IconsComminucate;
+            biographydb.IconsComminucate2 = biography.IconsComminucate2;
+            biographydb.IconsComminucate3 = biography.IconsComminucate3;
             biographydb.PractiseHeader = biography.PractiseHeader;
             biographydb.PrcatiseDesc = biography.PrcatiseDesc;
             await _dbcontext.SaveChangesAsync();

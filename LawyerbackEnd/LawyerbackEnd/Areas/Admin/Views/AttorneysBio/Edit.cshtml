@@ -74,8 +74,18 @@
 
     <div class="mb-3">
         <label>IconsComminucate</label>
-        <input type="text" class="form-control" asp-for="IconsComminucate">
+        <input type="text" class="form-control" asp-for="IconsComminucate" />
         <span asp-validation-for="IconsComminucate" style="color:red"></span>
+    </div>
+    <div class="mb-3">
+        <label>IconsComminucate2</label>
+        <input type="text" class="form-control" asp-for="IconsComminucate2" />
+        <span asp-validation-for="IconsComminucate2" style="color:red"></span>
+    </div>
+    <div class="mb-3">
+        <label>IconsComminucate3</label>
+        <input type="text" class="form-control" asp-for="IconsComminucate3" />
+        <span asp-validation-for="IconsComminucate3" style="color:red"></span>
     </div>
 
     <div class="mb-3">
@@ -86,7 +96,7 @@
 
     <div class="mb-3">
         <label>PrcatiseDesc</label>
-        <input type="text" class="form-control" asp-for="PrcatiseDesc">
+        <textarea asp-for="PrcatiseDesc" id="PrcatiseDesc" class="form-control"></textarea>
         <span asp-validation-for="PrcatiseDesc" style="color:red"></span>
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
@@ -100,6 +110,18 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ckeditor5/32.0.0/ckeditor.min.js"></script>
     <script>
         ClassicEditor.create(document.querySelector('#BioHeader')).catch(error => {
+            console.error(error);
+        });
+    </script>
+}
+
+
+@section scriptsnew{
+
+    <partial name="_ValidationScriptsPartial" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ckeditor5/32.0.0/ckeditor.min.js"></script>
+    <script>
+        ClassicEditor.create(document.querySelector('#PrcatiseDesc')).catch(error => {
             console.error(error);
         });
     </script>
@@ -163,3 +185,4 @@
         });
     </script>
 }
+h

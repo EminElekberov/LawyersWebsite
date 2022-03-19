@@ -30,6 +30,8 @@
                 <th scope="col">Name</th>
                 <th scope="col">Comminucate</th>
                 <th scope="col">IconsComminucate</th>
+                <th scope="col">IconsComminucate2</th>
+                <th scope="col">IconsComminucate3</th>
                 <th scope="col">PractiseHeader</th>
                 <th scope="col">PrcatiseDesc</th>
                 <th>Edit/Delete</th>
@@ -55,10 +57,12 @@
                     <td>@item.AwardIconsDesc</td>
                     <td>@item.Job</td>
                     <td>@item.Name</td>
-                    <td>@item.Comminucate</td>
+                    <td>@Html.Raw(item.Comminucate)</td>
                     <td>@Html.Raw(item.IconsComminucate)</td>
+                    <td>@Html.Raw(item.IconsComminucate2)</td>
+                    <td>@Html.Raw(item.IconsComminucate3)</td>
                     <td>@item.PractiseHeader</td>
-                    <td>@item.PrcatiseDesc</td>
+                    <td>@Html.Raw(item.PrcatiseDesc)</td>
                     <td>
                         <a href="/Admin/AttorneysBio/Edit/@item.Id"><i class="fas fa-edit"></i></a>
                         <a href="/Admin/AttorneysBio/Delete/@item.Id" onclick="return confirm('Silmek isdediyinizden eminsinizmi?')" style="color:red"><i class="fas fa-trash-alt"></i></a>

@@ -11,7 +11,7 @@
 
                     <div class="post-image"> <img src="~/images/blog/@Model.Image" class="img-fluid" alt=""></div>
                     <ul class="blog-date">
-                        <li class="meta-author"><i class="fa fa-user"></i> @Model.Name</li>
+                        <li class="meta-author"><i class="fa fa-user"></i> @Html.Raw(Model.Name)</li>
                         <li class="meta-date">@Model.Dates</li>
                         <li class="meta-categ"><a href="@Model.ButtonLink1" rel="category tag">@Html.Raw(Model.Buttontext1)</a> <a href="@Model.ButtonLink2" rel="category tag">@Model.Buttontext2</a></li>
                     </ul>
@@ -38,7 +38,6 @@
                             <div class="author-text">@Html.Raw(Model.Comment)</div>
                         </div>
                     </div>
-                    }
 
                     <!-- /post-content -->
 
@@ -61,13 +60,15 @@
                         <li class="widget widget_recent_entries">
                             <h5 class="widgettitle">@Model.RecentTitle</h5>
                             <ul>
-                                <li> <a href="#">@Model.RecentDesc</a></li>
+                                @Html.Raw(Model.RecentDesc)
                             </ul>
                         </li>
+
+
                         <li class="widget widget_recent_entries">
                             <h5 class="widgettitle">@Model.CateagoriesTitle</h5>
                             <ul>
-                                <li class="cat-item"><a href="#">@Model.CategoriesDesc</a></li>
+                                @Html.Raw(Model.CategoriesDesc)
 
                             </ul>
                         </li>
@@ -75,7 +76,6 @@
                             <h5 class="widgettitle">Tags</h5>
                             <div class="tagcloud"><a href="#">accident</a> <a href="#">airplaine</a> <a href="#">attorney</a> <a href="#">business</a><a href="#">divorce</a><a href="#">family</a><a href="#">finance</a><a href="#">justice</a><a href="#">law</a><a href="#">legal</a><a href="#">rights</a><a href="#">tax</a><a href="#">testament</a></div>
                         </li>
-                        }
 
                     </ul>
                 </aside>

@@ -110,7 +110,7 @@
 
     <div class="mb-3">
         <label>RecentDesc</label>
-        <input type="text" class="form-control" asp-for="RecentDesc">
+        <textarea asp-for="RecentDesc" id="RecentDesc" class="form-control"></textarea>
         <span asp-validation-for="RecentDesc" style="color:red"></span>
     </div>
 
@@ -122,7 +122,7 @@
 
     <div class="mb-3">
         <label>CategoriesDesc</label>
-        <input type="text" class="form-control" asp-for="CategoriesDesc">
+        <textarea asp-for="CategoriesDesc" id="CategoriesDesc" class="form-control"></textarea>
         <span asp-validation-for="CategoriesDesc" style="color:red"></span>
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
@@ -140,6 +140,18 @@
     </script>
 }
 
+
+@section scriptsnew{
+
+    <partial name="_ValidationScriptsPartial" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ckeditor5/32.0.0/ckeditor.min.js"></script>
+    <script>
+        ClassicEditor.create(document.querySelector('#CategoriesDesc')).catch(error => {
+            console.error(error);
+        });
+    </script>
+}
+
 @section scripts1{
 
     <partial name="_ValidationScriptsPartial" />
@@ -151,6 +163,17 @@
     </script>
 }
 
+
+@section scriptsNumTwo{
+
+    <partial name="_ValidationScriptsPartial" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ckeditor5/32.0.0/ckeditor.min.js"></script>
+    <script>
+        ClassicEditor.create(document.querySelector('#RecentDesc')).catch(error => {
+            console.error(error);
+        });
+    </script>
+}
 
 @section scriptsNumOne{
 

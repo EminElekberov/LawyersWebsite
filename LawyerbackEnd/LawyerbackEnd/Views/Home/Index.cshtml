@@ -9,7 +9,7 @@
                 <div class="slider-text">
                     <h2>@Html.Raw(item.Name)</h2>
                     <h4>@Html.Raw(item.Description)</h4>
-                    <a class="btn-white" href="practice-image-3-cols.html">Find More</a>
+                    <a class="btn-white" asp-action="Practice" asp-controller="Home">Find More</a>
                 </div>
             </div>
         </div><!-- End .home-slide -->
@@ -97,7 +97,7 @@
 </section>
 
 
-<section class="parallax section-holder" style="background-image:url('images/home/home-bkg-1.jpg');">
+<section class="parallax section-holder" style="background-image:url('../images/bg.jpg');">
     @foreach (var item in Model.indexChooses)
     {
         <div class="container parallax-content">
@@ -169,7 +169,7 @@
                         <h2 class="lawyer-title"><a href="attorneys-single-page.html">@Html.Raw(item.Name)</a></h2>
                         <div class="lawyer-excerpt">@Html.Raw(item.BioDescription)</div>
                         <ul class="lawyer-social">
-                            @if (item.IconsComminucate != null)
+                            @if (Html.Raw(item.IconsComminucate) != null)
                             {
                                 <li><a href="#" target="_blank">@Html.Raw(item.IconsComminucate)</a></li>
                             }

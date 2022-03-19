@@ -74,10 +74,19 @@
 
     <div class="mb-3">
         <label>IconsComminucate</label>
-        <input type="text" class="form-control" asp-for="IconsComminucate">
+        <input type="text" class="form-control" asp-for="IconsComminucate" />
         <span asp-validation-for="IconsComminucate" style="color:red"></span>
     </div>
-
+    <div class="mb-3">
+        <label>IconsComminucate2</label>
+        <input type="text" class="form-control" asp-for="IconsComminucate2" />
+        <span asp-validation-for="IconsComminucate2" style="color:red"></span>
+    </div>
+    <div class="mb-3">
+        <label>IconsComminucate3</label>
+        <input type="text" class="form-control" asp-for="IconsComminucate3" />
+        <span asp-validation-for="IconsComminucate3" style="color:red"></span>
+    </div>
     <div class="mb-3">
         <label>PractiseHeader</label>
         <input type="text" class="form-control" asp-for="PractiseHeader">
@@ -100,6 +109,17 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ckeditor5/32.0.0/ckeditor.min.js"></script>
     <script>
         ClassicEditor.create(document.querySelector('#BioHeader')).catch(error => {
+            console.error(error);
+        });
+    </script>
+}
+
+@section scriptsnews{
+
+    <partial name="_ValidationScriptsPartial" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ckeditor5/32.0.0/ckeditor.min.js"></script>
+    <script>
+        ClassicEditor.create(document.querySelector('#IconsComminucate')).catch(error => {
             console.error(error);
         });
     </script>
