@@ -34,7 +34,6 @@
     <Folder Include="wwwroot\images\Logo\" />
     <Folder Include="wwwroot\images\blogHeader\" />
     <Folder Include="wwwroot\images\contact\" />
-    <Folder Include="wwwroot\images\aboutCase\" />
     <Folder Include="wwwroot\images\faq\" />
   </ItemGroup>
 

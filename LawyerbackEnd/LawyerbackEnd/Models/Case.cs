@@ -18,7 +18,7 @@ namespace LawyerbackEnd.Models
         public string Result { get; set; }
         public int Time { get; set; }
         public string LawherFullname { get; set; }
-        public int Price { get; set; }
+        public string Price { get; set; }
         public Categorys categorys { get; set; }
         public int categorysId { get; set; }
         [NotMapped]

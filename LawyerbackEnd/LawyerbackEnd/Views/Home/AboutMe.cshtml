@@ -2,192 +2,69 @@
 
 
 
-<div class="page-head " style="background-image:url('images/top-bkgs/about.jpg');"><div class="inner-desc"><div class="container"><h1 class="page-title">About Me</h1> <span class="post-subtitle page-subtitle"> Creative, efficient and passionate</span></div></div></div>
-<!-- /TOP IMAGE -->
-<!-- PAGE CONTENT -->
-<div class="page-holder custom-page-template page-full fullscreen-page clearfix">
-    <!-- SECTION 1-->
-    <section class="section-holder">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-5 margin-bm54">
-                    <img class="img-fluid" src="images/team/team-4.jpg" alt="">
+<div class="page-head " style="background-image:url('../images/about/aboutBg.jpg');"><div class="inner-desc"><div class="container"><h1 class="page-title">About Me</h1> <span class="post-subtitle page-subtitle"> Creative, efficient and passionate</span></div></div></div>
+<section class="section-holder">
+    <div class="container" style="margin-top:50px">
+        <div class="row">
+            @foreach (var item in Model.biographies)
+            {
+                <div class="col-lg-5 margin-bm54" style="padding-top:50px">
+                    <img class="img-fluid" src="~/images/attorneys/@item.Image" alt="">
                 </div>
                 <div class="col-lg-7">
                     <span class="heading-subtitle">Bio</span>
-                    <h2 class="section-heading-title margin-b16">Hi there, I’m Sarah Barrett, passionate injury lawyer, located in New York City</h2>
-                    <p>Vim possit eleifend forensibus ea, cibo antiopam pri ea, elit discere percipitur ad nec. At erant voluptatibus cum, vim vivendum expetenda erroribus ad. Mel at numquam delicata, ut ius veri molestie. Et pro amet unum.</p>
+                    <h2 class="section-heading-title margin-b16">
+                        @item.Name
+                    </h2>
+                    <p>
+                        @item.BioDescription
+                    </p>
 
                     <ul class="about-social">
-                        <li><a class="social-facebook" href="#" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
-                        <li><a class="social-twitter" href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
-                        <li><a class="social-linkedin" href="#" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+                        @if (item.IconsComminucate != null)
+                        {
+                            <li><a href="#" target="_blank">@Html.Raw(item.IconsComminucate)</a></li>
+                        }
+                        @if (item.IconsComminucate2 != null)
+                        {
+                            <li><a href="#" target="_blank">@Html.Raw(item.IconsComminucate2)</a></li>
+                        }@if (item.IconsComminucate3 != null)
+                        {
+                            <li><a href="#" target="_blank">@Html.Raw(item.IconsComminucate3)</a></li>
+                        }
                     </ul>
 
-                </div>
-            </div>
-            <!-- /row -->
+                </div>}
         </div>
-        <!-- /container -->
-    </section>
-    <!-- /SECTION 1-->
-    <!-- SECTION 2-->
-    <section class="section-holder">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 offset-lg-2 alignc">
-                    <span class="heading-subtitle">Legal Help</span>
-                    <h2 class="section-heading-title">Practice Areas</h2>
-                </div>
-            </div>
-            <!-- /row -->
-            <div class="row practice-items-holder-v2">
-                <div class="col-lg-3 col-md-6">
-                    <div class="practice-item-v2">
-                        <a href="practice-single-page.html">
-                            <div class="practice-circle"><i class="fas fa-truck"></i></div>
-                        </a>
-                        <h5 class="practice-title-v2"><a href="practice-single-page.html">Auto Accidents</a></h5>
-                        <div class="practice-excerpt">Fusce commodo iaculis pulvinar. Cras faucibus facilisis aliquet. Morbi lorem nulla, bibendum vel bibendum id, aliquet ut ipsum. Praesent est diam, porta.</div>
-                        <a class="read-more" href="practice-single-page.html">Learn More</a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="practice-item-v2">
-                        <a href="practice-single-page.html">
-                            <div class="practice-circle"><i class="fas fa-hard-hat"></i></div>
-                        </a>
-                        <h5 class="practice-title-v2"><a href="practice-single-page.html">Construction Loans</a></h5>
-                        <div class="practice-excerpt">Fusce commodo iaculis pulvinar. Cras faucibus facilisis aliquet. Morbi lorem nulla, bibendum vel bibendum id, aliquet ut ipsum. Praesent est diam, porta.</div>
-                        <a class="read-more" href="practice-single-page.html">Learn More</a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="practice-item-v2">
-                        <a href="practice-single-page.html">
-                            <div class="practice-circle"><i class="far fa-building"></i></div>
-                        </a>
-                        <h5 class="practice-title-v2"><a href="practice-single-page.html">Real Estate</a></h5>
-                        <div class="practice-excerpt">Fusce commodo iaculis pulvinar. Cras faucibus facilisis aliquet. Morbi lorem nulla, bibendum vel bibendum id, aliquet ut ipsum. Praesent est diam, porta.</div>
-                        <a class="read-more" href="practice-single-page.html">Learn More</a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="practice-item-v2">
-                        <a href="practice-single-page.html">
-                            <div class="practice-circle"><i class="far fa-chart-bar"></i></div>
-                        </a>
-                        <h5 class="practice-title-v2"><a href="practice-single-page.html">Finance Law</a></h5>
-                        <div class="practice-excerpt">Fusce commodo iaculis pulvinar. Cras faucibus facilisis aliquet. Morbi lorem nulla, bibendum vel bibendum id, aliquet ut ipsum. Praesent est diam, porta.</div>
-                        <a class="read-more" href="practice-single-page.html">Learn More</a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="practice-item-v2">
-                        <a href="practice-single-page.html">
-                            <div class="practice-circle"><i class="far fa-money-bill-alt"></i></div>
-                        </a>
-                        <h5 class="practice-title-v2"><a href="practice-single-page.html">Tax Disputes</a></h5>
-                        <div class="practice-excerpt">Fusce commodo iaculis pulvinar. Cras faucibus facilisis aliquet. Morbi lorem nulla, bibendum vel bibendum id, aliquet ut ipsum. Praesent est diam, porta.</div>
-                        <a class="read-more" href="practice-single-page.html">Learn More</a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="practice-item-v2">
-                        <a href="practice-single-page.html">
-                            <div class="practice-circle"><i class="far fa-meh"></i></div>
-                        </a>
-                        <h5 class="practice-title-v2"><a href="practice-single-page.html">Child Abuse</a></h5>
-                        <div class="practice-excerpt">Fusce commodo iaculis pulvinar. Cras faucibus facilisis aliquet. Morbi lorem nulla, bibendum vel bibendum id, aliquet ut ipsum. Praesent est diam, porta.</div>
-                        <a class="read-more" href="practice-single-page.html">Learn More</a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="practice-item-v2">
-                        <a href="practice-single-page.html">
-                            <div class="practice-circle"><i class="fas fa-medkit"></i></div>
-                        </a>
-                        <h5 class="practice-title-v2"><a href="practice-single-page.html">Health Care</a></h5>
-                        <div class="practice-excerpt">Fusce commodo iaculis pulvinar. Cras faucibus facilisis aliquet. Morbi lorem nulla, bibendum vel bibendum id, aliquet ut ipsum. Praesent est diam, porta.</div>
-                        <a class="read-more" href="practice-single-page.html">Learn More</a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="practice-item-v2">
-                        <a href="practice-single-page.html">
-                            <div class="practice-circle"><i class="fas fa-heart-broken"></i></div>
-                        </a>
-                        <h5 class="practice-title-v2"><a href="practice-single-page.html">Divorce</a></h5>
-                        <div class="practice-excerpt">Fusce commodo iaculis pulvinar. Cras faucibus facilisis aliquet. Morbi lorem nulla, bibendum vel bibendum id, aliquet ut ipsum. Praesent est diam, porta.</div>
-                        <a class="read-more" href="practice-single-page.html">Learn More</a>
-                    </div>
-                </div>
 
-            </div>
-            <!-- /row -->
-        </div>
-        <!-- /container -->
-    </section>
-    <!-- /SECTION 2-->
-    <!-- SECTION 3-->
-    <section class="section-holder">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 offset-lg-2 alignc">
-                    <span class="heading-subtitle">Testimonials</span>
-                    <h2 class="section-heading-title">What Clients Say</h2>
-                </div>
-            </div>
-            <!-- /row -->
+    </div>
+</section>
 
-            <div class="row">
-                <div class="col-lg-8 offset-lg-2">
-                    <div class="testimonials-container">
-                        <div class="owl-carousel owl-theme testimonials-slider">
-                            <div class="testimonial-item">
-                                <div class="testimonial-desc">
-                                    <i class="fas fa-quote-left"></i>
-                                    <h5>Curabitur sit amet ligula vitae lorem consequat condimentum id in mauris. Vivamus pretium aliquet sapien, ut commodo risus. Fusce erat orci, tempus vitae mi ac, interdum sollicitudin felis. Suspendisse elementum turpis vitae libero lobortis laoreet raesent lacinia volutpat.</h5>
-                                </div>
-                                <div class="testimonial-client"> <img src="images/testimonials/client-1.jpg" alt=""></div>
-                                <div class="client-name">John Doe</div>
-                                <div class="client-company">Company Name</div>
-                            </div>
-                            <div class="testimonial-item">
-                                <div class="testimonial-desc">
-                                    <i class="fas fa-quote-left"></i>
-                                    <h5>Sed sodales, odio eget adipiscing mattis, sapien purus dapibus felis, sit amet mollis velit dolor eu lorem. Vivamus condimentum nunc a quam lobortis tempus. Integer porttitor, elit vestibulum facilisis accumsan, tortor nisl volutpat sem, ac laoreet ligula metus ut felis.</h5>
-                                </div>
-                                <div class="testimonial-client"> <img src="images/testimonials/client-2.jpg" alt=""></div>
-                                <div class="client-name">Giulia Doe</div>
-                                <div class="client-company">Company Name</div>
-                            </div>
-                            <div class="testimonial-item">
-                                <div class="testimonial-desc">
-                                    <i class="fas fa-quote-left"></i>
-                                    <h5>Cras eu nibh non dui mattis pretium id vitae erat. Quisque justo nisi, malesuada eget lorem ac, posuere dictum justo. Vestibulum vitae scelerisque ante. Duis at mi vel odio fermentum accumsan at nec massa. Donec id velit porta, mattis lorem vitae, convallis nunc.</h5>
-                                </div>
-                                <div class="testimonial-client"> <img src="images/testimonials/client-3.jpg" alt=""></div>
-                                <div class="client-name">Paul Doe</div>
-                                <div class="client-company">Company Name</div>
-                            </div>
-                            <div class="testimonial-item">
-                                <div class="testimonial-desc">
-                                    <i class="fas fa-quote-left"></i>
-                                    <h5>Proin at venenatis dui. Morbi posuere ullamcorper libero in posuere. Proin quis est consectetur, varius diam ut, fringilla orci. Nunc ac lacus id ligula egestas ultricies nec id odio. Maecenas lectus mauris, ultricies ac aliquet at, fermentum eget leo.</h5>
-                                </div>
-                                <div class="testimonial-client"> <img src="images/testimonials/client-4.jpg" alt=""></div>
-                                <div class="client-name">Mary Doe</div>
-                                <div class="client-company">Company Name</div>
-                            </div>
-                        </div>
+<section class="section-holder">
+    <div class="container">
+        <div class="row practice-items-holder-v2">
+            @foreach (var item in Model.practiceAbouts)
+            {
+                <div class="col-lg-4 col-md-6">
+
+                    <div class="practice-item-v2">
+
+                        <a>
+                            <div class="practice-circle">@Html.Raw(item.IconLink)</div>
+                        </a>
+                        <h5 class="practice-title-v2"><a href="practice-single-page.html">@Html.Raw(item.Header)</a></h5>
+                        <div class="practice-excerpt">@Html.Raw(item.Description)</div>
+                        @if (item.Learntext == null)
+                        {
+                            <a class="read-more" href="#">Learn More</a>
+                        }
+                        <a class="read-more" href="@item.LearnLink">@Html.Raw(item.Learntext)</a>
+
                     </div>
-                    <!-- /testimonials-container -->
+
                 </div>
-            </div>
+            }
         </div>
-        <!-- /container -->
-    </section>
-    <!-- /SECTION 3-->
-</div>
-<!-- /PAGE CONTENT -->
+    </div>
+</section>
+<div class="page-holder custom-page-template page-full fullscreen-page clearfix"></div>
