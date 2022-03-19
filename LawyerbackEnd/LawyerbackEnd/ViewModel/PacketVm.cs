@@ -8,8 +8,6 @@ namespace LawyerbackEnd.ViewModel
 {
     public class PacketVm
     {
-        public List<Components> Components { get; set; }
-        public List<Packet> Packets { get; set; }
         public int PacketID { get; set; }
         public List<int> ComponentsId { get; set; }
     }

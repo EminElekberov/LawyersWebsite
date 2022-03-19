@@ -25,70 +25,80 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
         [HttpGet]
         public IActionResult Create()
         {
-            PacketVm packetVm = new PacketVm
-            {
-                Packets = _dbcontext.Packets.ToList(),
-                Components = _dbcontext.Components.ToList()
-            };
-            return View(packetVm);
+            ViewBag.Components = _dbcontext.Components.ToList();
+            ViewBag.Packets = _dbcontext.Packets.ToList();
+            //{
+            //    PacketVm packetVm = new PacketVm
+            //    {
+            //        Packets = _dbcontext.Packets.ToList(),
+            //        Components = _dbcontext.Components.ToList()
+            //    };
+            //    return View(packetVm);
+            return View();
         }
         [HttpPost]
-        public async Task<IActionResult> Create(PacketVm packetVm)
+        public async Task<IActionResult> Create(PacketVm packet)
         {
-            foreach (var item in packetVm.ComponentsId)
+            if (!ModelState.IsValid)
             {
-                PacketToComponents packetToComponents = new PacketToComponents
-                {
-                    PacketId=packetVm.PacketID,
-                    componentsId=item
-                };
-                await _dbcontext.packetToComponents.AddAsync(packetToComponents);
+                ModelState.AddModelError("Error", "Error");
+                return View();
             }
-            await _dbcontext.SaveChangesAsync();
-            return Redirect("/Admin/Packet/Index");
-        }
-        [HttpGet]
-        public IActionResult Edit(int? id)
-        {
-            if (id==null)
-            {
-                return NotFound();
-            }
-            var packet = _dbcontext.Packets.FirstOrDefault(dr => dr.Id == id);
-            if (packet==null)
-            {
-                return NotFound();
-            }
-            var components = _dbcontext.packetToComponents.Where(e => e.PacketId == id).Select(z => z.componentsId).ToList();
-            PacketVm packetVm = new PacketVm
-            {
-                Packets=_dbcontext.Packets.ToList(),
-                Components=_dbcontext.Components.ToList(),
-                PacketID=packet.Id,
-                ComponentsId=components
-            };
-            return View(packetVm);
-        }
-        [HttpPost]
-        public async Task<IActionResult> Edit(PacketVm packetVm)
-        {
-            var package = _dbcontext.packetToComponents.Where(a => a.PacketId == packetVm.PacketID).ToList();
-            foreach (var item in package)
-            {
-                _dbcontext.packetToComponents.Remove(item);
-            }
-            await _dbcontext.SaveChangesAsync();
-            foreach (var item in packetVm.ComponentsId)
+            PacketToComponents packetToComponents = new PacketToComponents();
+            foreach (var item in packet.ComponentsId)
             {
                 PacketToComponents packetTo = new PacketToComponents
                 {
-                    PacketId = packetVm.PacketID,
+                    PacketId = packet.PacketID,
                     componentsId = item
                 };
                 _dbcontext.packetToComponents.Add(packetTo);
             }
             await _dbcontext.SaveChangesAsync();
-            return Redirect("/Admin/Packet/Index");
+            return Redirect("/Admin/packet/Index");
         }
+        //[HttpGet]
+        //public IActionResult Edit(int? id)
+        //{
+        //    if (id==null)
+        //    {
+        //        return NotFound();
+        //    }
+        //    var packet = _dbcontext.Packets.FirstOrDefault(dr => dr.Id == id);
+        //    if (packet==null)
+        //    {
+        //        return NotFound();
+        //    }
+        //    var components = _dbcontext.packetToComponents.Where(e => e.PacketId == id).Select(z => z.componentsId).ToList();
+        //    PacketVm packetVm = new PacketVm
+        //    {
+        //        Packets=_dbcontext.Packets.ToList(),
+        //        Components=_dbcontext.Components.ToList(),
+        //        PacketID=packet.Id,
+        //        ComponentsId=components
+        //    };
+        //    return View(packetVm);
+        //}
+        //[HttpPost]
+        //public async Task<IActionResult> Edit(PacketVm packetVm)
+        //{
+        //    var package = _dbcontext.packetToComponents.Where(a => a.PacketId == packetVm.PacketID).ToList();
+        //    foreach (var item in package)
+        //    {
+        //        _dbcontext.packetToComponents.Remove(item);
+        //    }
+        //    await _dbcontext.SaveChangesAsync();
+        //    foreach (var item in packetVm.ComponentsId)
+        //    {
+        //        PacketToComponents packetTo = new PacketToComponents
+        //        {
+        //            PacketId = packetVm.PacketID,
+        //            componentsId = item
+        //        };
+        //        _dbcontext.packetToComponents.Add(packetTo);
+        //    }
+        //    await _dbcontext.SaveChangesAsync();
+        //    return Redirect("/Admin/Packet/Index");
+        //}
     }
 }

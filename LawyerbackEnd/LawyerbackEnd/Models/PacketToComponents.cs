@@ -9,7 +9,7 @@ namespace LawyerbackEnd.Models
     {
         public int PacketId { get; set; }
         public int componentsId { get; set; }
-        public Components components { get; set; }
-        public Packet packet { get; set; }
+        public virtual Components components { get; set; }
+        public virtual Packet packet { get; set; }
     }
 }
