@@ -1,0 +1,26 @@
+﻿@model IList<PacketToComponents>
+
+<div>
+    <a href="/Admin/Packet/Create" style="width:100%" class="btn btn-success">Add</a>
+</div>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Packet Name</th>
+            <th>components</th>
+            <th>CRUD</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+<tr>
+    <th scope="row">@item.packet.Name</th>
+    <th scope="row">@item.components.Name</th>
+    <td>
+            <a href="/Admin/Packet/Edit/@item.PacketId" style="color:green"><i class="fas fa-edit"></i></a>
+            <a href="/Admin/Packet/Delete/@item.PacketId" onclick="return confirm('Are you delete?')" style="color:red"><i class="fas fa-trash-alt"></i></a>
+        </td>
+</tr>}
+    </tbody>
+</table>

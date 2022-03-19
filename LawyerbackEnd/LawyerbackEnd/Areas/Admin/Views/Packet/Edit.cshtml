@@ -1,0 +1,26 @@
+﻿
+@model PacketVm
+
+<form method="post" enctype="multipart/form-data">
+    <div>
+        <label asp-for="PacketID">Techer</label>
+        <select class="form-select" asp-for="PacketID" aria-label="Default select example">
+            @foreach (var item in Model.Packets)
+            {
+                <option value="@item.Id">@item.Name</option>
+            }
+        </select>
+    </div>
+    <div>
+        <label asp-for="ComponentsId">Hobby</label>
+        <select class="form-select" asp-for="ComponentsId" multiple aria-label="multiple select example">
+            @foreach (var item in Model.Components)
+            {
+                <option value="@item.Id">@item.Name</option>
+            }
+        </select>
+    </div>
+    <button class="btn btn-black btn-success">
+        Submit
+    </button>
+</form>

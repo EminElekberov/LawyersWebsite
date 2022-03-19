@@ -38,49 +38,24 @@
 <section class="section-holder">
     <div class="container">
         <div class="row">
-            <div class="col-md-4 margin-bm32">
-                <div class="pricing-col">
-                    <h3 class="margin-b32">Basic</h3>
-                    <h2 class="price-title">$20<sup>/monthly</sup></h2>
-                    <ul class="price-features">
-                        <li>Auto Accidents</li>
-                        <li>Business Litigation</li>
-                        <li>Family Law</li>
-                        <li>Tax Disputes</li>
-                    </ul>
-                    <div class="view-more"><a href="#">Learn More</a></div>
+            @foreach (var item in Model.packetToComponents)
+            {
+                <div class="col-md-4 margin-bm32">
+
+                    <div class="pricing-col">
+                        <h3 class="margin-b32">@item.packet.Name</h3>
+                        <h2 class="price-title">@item.packet.Price<sup>/monthly</sup></h2>
+                        <ul class="price-features">
+                            <li>@item.components.Name</li>
+                        </ul>
+                        <div class="view-more"><a href="#">Learn More</a></div>
+                    </div>
+                    
+
+                    <!-- /pricing-col -->
                 </div>
-                <!-- /pricing-col -->
+            }
             </div>
-            <div class="col-md-4 margin-bm32">
-                <div class="pricing-col">
-                    <h3 class="margin-b32">Standard</h3>
-                    <h2 class="price-title">$40<sup>/monthly</sup></h2>
-                    <ul class="price-features">
-                        <li>Auto Accidents</li>
-                        <li>Business Litigation</li>
-                        <li>Family Law</li>
-                        <li>Tax Disputes</li>
-                    </ul>
-                    <div class="view-more"><a href="#">Learn More</a></div>
-                </div>
-                <!-- /pricing-col -->
-            </div>
-            <div class="col-md-4 margin-bm32">
-                <div class="pricing-col">
-                    <h3 class="margin-b32">Premium</h3>
-                    <h2 class="price-title">$60<sup>/monthly</sup></h2>
-                    <ul class="price-features">
-                        <li>Auto Accidents</li>
-                        <li>Business Litigation</li>
-                        <li>Family Law</li>
-                        <li>Tax Disputes</li>
-                    </ul>
-                    <div class="view-more"><a href="#">Learn More</a></div>
-                </div>
-                <!-- /pricing-col -->
-            </div>
-        </div>
         <!-- /row -->
     </div>
     <!-- /container -->

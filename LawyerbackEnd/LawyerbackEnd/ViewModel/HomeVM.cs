@@ -34,6 +34,9 @@ namespace LawyerbackEnd.ViewModel
         public List<Case> cases { get; set; }
         public List<Categorys> categorys { get; set; }
         public List<Contact> contacts { get; set; }
+        public List<Packet> packets { get; set; }
+        public List<Components> components { get; set; }
+        public List<PacketToComponents> packetToComponents { get; set; }
         public Contact  contact { get; set; }
 
     }
