@@ -11,9 +11,10 @@
 
 <section class="section-holder">
     <div class="container">
-        <div class="row">
-            @foreach (var item in Model.biographies)
-            {
+        @foreach (var item in Model.biographies)
+        {
+            <div class="row">
+
                 <div class="col-lg-7">
                     <span class="heading-subtitle">Pricing Plans</span>
                     <h2 class="section-heading-title margin-b16">@Html.Raw(item.EducationHeader)</h2>
@@ -26,27 +27,35 @@
                 <div class="col-lg-5 margin-bm54">
                     <img class="img-fluid" src="~/images/attorneys/@item.Image" alt="">
                 </div>
-            }
+                
 
 
+            </div>
+        }
+            <!-- /row -->
         </div>
-        <!-- /row -->
-    </div>
     <!-- /container -->
 </section>
 
 <section class="section-holder">
     <div class="container">
         <div class="row">
-            @foreach (var item in Model.packetToComponents)
+            @foreach (var item in Model.packets)
             {
                 <div class="col-md-4 margin-bm32">
 
                     <div class="pricing-col">
-                        <h3 class="margin-b32">@item.packet.Name</h3>
-                        <h2 class="price-title">@item.packet.Price<sup>/monthly</sup></h2>
+                        <h3 class="margin-b32">@item.Name</h3>
+                        <h2 class="price-title">@item.Price<sup>/monthly</sup></h2>
                         <ul class="price-features">
-                            <li>@item.components.Name</li>
+                            @foreach (var item2 in Model.packetToComponents)
+                            {
+                                if (item.Id == item2.PacketId)
+                                {
+                                    <li>@item2.components.Name</li>
+
+                                }
+                            }
                         </ul>
                         <div class="view-more"><a href="#">Learn More</a></div>
                     </div>

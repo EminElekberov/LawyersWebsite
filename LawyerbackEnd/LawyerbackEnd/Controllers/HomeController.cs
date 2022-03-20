@@ -189,7 +189,7 @@ namespace LawyerbackEnd.Controllers
             HomeVM home = new HomeVM
             {
                 biographies = _dbcontext.Biographies.ToList(),
-                packetToComponents=_dbcontext.packetToComponents.ToList(),
+                packetToComponents=_dbcontext.packetToComponents.Include(x=>x.components).ToList(),
                 components=_dbcontext.Components.ToList(),
                 packets=_dbcontext.Packets.ToList()
                 

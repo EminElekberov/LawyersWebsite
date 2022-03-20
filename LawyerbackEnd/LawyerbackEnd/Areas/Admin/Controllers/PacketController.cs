@@ -19,8 +19,8 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
         }
         public IActionResult Index()
         {
-            var group = _dbcontext.packetToComponents.Include(x => x.components).Include(y => y.packet).ToList();
-            return View(group);
+            ViewBag.PacketToComponents = _dbcontext.packetToComponents.Include(x => x.components).Include(y => y.packet).ToList();
+            return View(_dbcontext.Packets.Include(x=>x.packetToComponents).ToList());
         }
         [HttpGet]
         public IActionResult Create()
