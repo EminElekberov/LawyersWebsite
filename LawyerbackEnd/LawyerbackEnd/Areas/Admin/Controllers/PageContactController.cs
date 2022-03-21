@@ -37,8 +37,36 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
             await _dbcontext.SaveChangesAsync();
             return Redirect("/Admin/PageContact/Index");
         }
-
         [HttpGet]
+        public IActionResult CreateModal()
+        {
+            return View();
+        }
+        [HttpPost]
+        public JsonResult CreateModal(string description, string buttontext, string buttonLink)
+        {
+            if ( description == null || buttonLink == null || buttontext == null)
+            {
+                return Json(new
+                {
+                    status = 400
+                });
+            }
+            PageContact pageContact = new PageContact
+            {
+                Link = description,
+                LinkDescription = buttontext,
+                Description = buttonLink
+            };
+            _dbcontext.PageContacts.Add(pageContact);
+            _dbcontext.SaveChanges();
+            return Json(new
+            {
+                status = 200
+            });
+        }
+
+            [HttpGet]
         public IActionResult Edit(int? id)
         {
             if (id == null)
