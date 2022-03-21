@@ -128,10 +128,10 @@ namespace LawyerbackEnd.Controllers
             }
             return Redirect("/Account/Login");
         }
-        public IActionResult Logout()
+        public async Task<IActionResult> Logout()
         {
-            _signInManager.SignOutAsync();
-            return Redirect("Account/Login");
+            await _signInManager.SignOutAsync();
+            return RedirectToAction("Index", "Home");
         }
     }
 }
