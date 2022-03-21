@@ -50,7 +50,7 @@ namespace LawyerbackEnd.Controllers
             }
             _dbcontext.Contacts.Add(contact);
             _dbcontext.SaveChanges();
-            return Redirect("/Home/Index");
+            return Redirect("/Home/Attorneys");
         }
         public IActionResult Pages()
         {
@@ -150,7 +150,7 @@ namespace LawyerbackEnd.Controllers
             }
             _dbcontext.Contacts.Add(contact);
             _dbcontext.SaveChanges();
-            return Redirect("/Home/Contact");
+            return RedirectToAction("Attorneys","Home");
         }
 
         public IActionResult CaseStudies()
