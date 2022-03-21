@@ -43,9 +43,9 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
             return View();
         }
         [HttpPost]
-        public JsonResult CreateModal(string description, string buttontext, string buttonLink)
+        public JsonResult CreateModal(string link, string buttontext, string description)
         {
-            if ( description == null || buttonLink == null || buttontext == null)
+            if ( link == null || description == null || buttontext == null)
             {
                 return Json(new
                 {
@@ -54,9 +54,9 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
             }
             PageContact pageContact = new PageContact
             {
-                Link = description,
+                Link = link,
                 LinkDescription = buttontext,
-                Description = buttonLink
+                Description = description
             };
             _dbcontext.PageContacts.Add(pageContact);
             _dbcontext.SaveChanges();
@@ -93,6 +93,15 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
             sliderdb.Link = slider.Link;
             sliderdb.LinkDescription = slider.LinkDescription;
             sliderdb.Description = slider.Description;
+            await _dbcontext.SaveChangesAsync();
+            return Redirect("/Admin/PageContact/Index");
+        }
+        public async Task<IActionResult> Delete(int? id)
+        {
+            if (id == null) return NotFound();
+            PageContact work = await _dbcontext.PageContacts.FindAsync(id);
+            if (work == null) return NotFound();
+            _dbcontext.PageContacts.Remove(work);
             await _dbcontext.SaveChangesAsync();
             return Redirect("/Admin/PageContact/Index");
         }

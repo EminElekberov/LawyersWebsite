@@ -60,7 +60,32 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
             await _dbcontext.SaveChangesAsync();
             return Redirect("/Admin/packet/Index");
         }
-        [HttpGet]
+        public IActionResult CreateModal()
+        {
+            return View();
+        }
+        [HttpPost]
+        public JsonResult CreateModal(string name)
+        {
+            if (name == null)
+            {
+                return Json(new
+                {
+                    status = 400
+                });
+            }
+            Packet packet = new Packet
+            {
+                Name = name
+            };
+            _dbcontext.Packets.Add(packet);
+            _dbcontext.SaveChanges();
+            return Json(new
+            {
+                status = 200
+            });
+        }
+            [HttpGet]
         public IActionResult ComponentsCreate()
         {
             return View();
