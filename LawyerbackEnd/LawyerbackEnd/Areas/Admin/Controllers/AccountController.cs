@@ -138,6 +138,7 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
         }
         public IActionResult ResetPassword(string token,string email)
         {
+            //
             ResetPassword reset = new ResetPassword
             {
                 Token=token,
