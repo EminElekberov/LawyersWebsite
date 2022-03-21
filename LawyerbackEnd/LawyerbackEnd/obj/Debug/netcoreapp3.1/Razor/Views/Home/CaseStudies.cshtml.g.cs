@@ -33,8 +33,15 @@ using LawyerbackEnd.ViewModel;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 4 "C:\Users\EMIN\Desktop\lawyersWebsite\LawyerbackEnd\LawyerbackEnd\Views\_ViewImports.cshtml"
+using LawyerbackEnd.Models.AdminAccount;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"2e3540871b4adcb24ea30ee50c81c657ce8807f5", @"/Views/Home/CaseStudies.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"570044c05515502c266d0a079be9cd498cbe35cc", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"b775534a9fd6fa373aceda92e0937edb1015c4c5", @"/Views/_ViewImports.cshtml")]
     public class Views_Home_CaseStudies : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<List<Case>>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-controller", "Home", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -110,7 +117,7 @@ WriteAttributeValue(" ", 1260, item.categorys.className, 1261, 25, false);
 #nullable disable
             EndWriteAttribute();
             WriteLiteral(">\r\n                    <div class=\"case-img-holder\">\r\n                        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2e3540871b4adcb24ea30ee50c81c657ce8807f56749", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2e3540871b4adcb24ea30ee50c81c657ce8807f56962", async() => {
                 WriteLiteral("\r\n                            <div class=\"case-img\"");
                 BeginWriteAttribute("style", " style=\"", 1497, "\"", 1559, 3);
                 WriteAttributeValue("", 1505, "background-image:url(../images/aboutCase/", 1505, 41, true);
@@ -163,7 +170,7 @@ WriteAttributeValue("", 1546, item.Image, 1546, 11, false);
 #line hidden
 #nullable disable
             WriteLiteral("</li>\r\n                        </ul>\r\n                        <h4>");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2e3540871b4adcb24ea30ee50c81c657ce8807f510319", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2e3540871b4adcb24ea30ee50c81c657ce8807f510532", async() => {
 #nullable restore
 #line 38 "C:\Users\EMIN\Desktop\lawyersWebsite\LawyerbackEnd\LawyerbackEnd\Views\Home\CaseStudies.cshtml"
                                                                                              Write(item.Title);

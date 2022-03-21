@@ -1,6 +1,7 @@
 ﻿using LawyerbackEnd.Extension;
 using LawyerbackEnd.Models;
 using LawyerbackEnd.ViewModel;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -12,6 +13,8 @@ using System.Threading.Tasks;
 namespace LawyerbackEnd.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize(Roles = "Admin")]
+
     public class CaseController : Controller
     {
         private readonly LawyerDbcontext _dbcontext;

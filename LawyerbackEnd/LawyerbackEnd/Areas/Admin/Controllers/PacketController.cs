@@ -1,5 +1,6 @@
 ﻿using LawyerbackEnd.Models;
 using LawyerbackEnd.ViewModel;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -10,6 +11,8 @@ using System.Threading.Tasks;
 namespace LawyerbackEnd.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize(Roles = "Admin")]
+
     public class PacketController : Controller
     {
         private readonly LawyerDbcontext _dbcontext;
@@ -57,6 +60,24 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
             await _dbcontext.SaveChangesAsync();
             return Redirect("/Admin/packet/Index");
         }
+        [HttpGet]
+        public IActionResult ComponentsCreate()
+        {
+            return View();
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> ComponentsCreate(Components components)
+        {
+            if (components==null)
+            {
+                return NotFound();
+            }
+            _dbcontext.Components.Add(components);
+            _dbcontext.SaveChanges();
+            return Redirect("/Admin/packet/index");
+        }
+
         //[HttpGet]
         //public IActionResult Edit(int? id)
         //{
@@ -100,5 +121,39 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
         //    await _dbcontext.SaveChangesAsync();
         //    return Redirect("/Admin/Packet/Index");
         //}
+        public IActionResult Edit(int? id)
+        {
+            ViewBag.Practices = _dbcontext.Components.ToList();
+            ViewBag.PacketToComponents = _dbcontext.packetToComponents.Where(k => k.PacketId == id).ToList();
+
+            Packet price = _dbcontext.Packets.FirstOrDefault(i => i.Id == id);
+            return View(price);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit(Packet price)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(price);
+            }
+
+            List<PacketToComponents> teacherHobbies = await _dbcontext.packetToComponents.Where(t => t.PacketId == price.Id).ToListAsync();
+            _dbcontext.packetToComponents.RemoveRange(teacherHobbies);
+            price.packetToComponents = new List<PacketToComponents>();
+            foreach (var id in price.ComponentsID)
+            {
+                PacketToComponents ppracitce = new PacketToComponents
+                {
+                    PacketId = price.Id,
+                    componentsId = id
+                };
+                _dbcontext.packetToComponents.Add(ppracitce);
+            }
+            await _dbcontext.SaveChangesAsync();
+
+            return LocalRedirect("/Admin/Packet/Index");
+        }
     }
 }

@@ -1,0 +1,20 @@
+﻿@model Components
+
+
+@section styles{ @*bunu ona gore yazdiqki burda yazilan css shared papkasinda loayout.cshtml icerisinde render ede bilek*@
+<style>
+    label {
+        color: red;
+    }
+</style>
+}
+<form method="post" enctype="multipart/form-data">
+    <div class="mb-3">
+        <label>Components name</label>
+        <textarea asp-for="Name" class="form-control"></textarea>
+        <span asp-validation-for="Name" style="color:red"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+

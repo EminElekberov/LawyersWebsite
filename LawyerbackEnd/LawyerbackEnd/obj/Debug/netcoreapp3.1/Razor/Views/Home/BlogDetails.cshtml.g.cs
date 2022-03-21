@@ -33,8 +33,15 @@ using LawyerbackEnd.ViewModel;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 4 "C:\Users\EMIN\Desktop\lawyersWebsite\LawyerbackEnd\LawyerbackEnd\Views\_ViewImports.cshtml"
+using LawyerbackEnd.Models.AdminAccount;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"fe45a3998cf1e4a3b44755ad052becf4fd50dccd", @"/Views/Home/BlogDetails.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"570044c05515502c266d0a079be9cd498cbe35cc", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"b775534a9fd6fa373aceda92e0937edb1015c4c5", @"/Views/_ViewImports.cshtml")]
     public class Views_Home_BlogDetails : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<BlogDetails>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("class", new global::Microsoft.AspNetCore.Html.HtmlString("img-fluid"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -83,7 +90,7 @@ using LawyerbackEnd.ViewModel;
                 <article class=""single-article-container"">
 
                     <div class=""post-image""> ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "fe45a3998cf1e4a3b44755ad052becf4fd50dccd7015", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "fe45a3998cf1e4a3b44755ad052becf4fd50dccd7228", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -221,7 +228,7 @@ WriteAttributeValue("", 730, Model.ButtonLink2, 730, 18, false);
                     <div class=""tags-single-page""> <a href=""#"" rel=""tag"">accident</a> <a href=""#"" rel=""tag"">attorney</a> <a href=""#"" rel=""tag"">justice</a> <a href=""#"" rel=""tag"">lawyer</a> <a href=""#"" rel=""tag"">tax</a></div>
                     <div class=""author-single-page"">
                         <div class=""author-avatar""> ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "fe45a3998cf1e4a3b44755ad052becf4fd50dccd13955", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "fe45a3998cf1e4a3b44755ad052becf4fd50dccd14168", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -270,7 +277,7 @@ WriteAttributeValue("", 730, Model.ButtonLink2, 730, 18, false);
                             <h5 class=""widgettitle"">About Us</h5>
                             <div class=""textwidget"">
                                 <p>");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "fe45a3998cf1e4a3b44755ad052becf4fd50dccd16556", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "fe45a3998cf1e4a3b44755ad052becf4fd50dccd16769", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -303,7 +310,7 @@ AddHtmlAttributeValue("", 2757, Model.Image, 2757, 12, false);
 #line hidden
 #nullable disable
             WriteLiteral("</p>\r\n                            </div>\r\n                        </li>\r\n                        <li class=\"widget\">\r\n                            ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "fe45a3998cf1e4a3b44755ad052becf4fd50dccd18682", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "fe45a3998cf1e4a3b44755ad052becf4fd50dccd18895", async() => {
                 WriteLiteral(" <span><input type=\"text\" name=\"s\" id=\"search-string\" placeholder=\"type and hit enter\"></span>");
             }
             );

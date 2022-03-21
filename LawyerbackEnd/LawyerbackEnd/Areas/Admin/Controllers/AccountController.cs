@@ -136,13 +136,12 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
             _emailSend.SendMEssage(user.Email, "Reset Password", body);
             return Redirect("/Admin/Account/Login");
         }
-        [HttpGet]
         public IActionResult ResetPassword(string token,string email)
         {
             ResetPassword reset = new ResetPassword
             {
-                Email=email,
-                Token=token
+                Token=token,
+                Email=email
             };
             return View(reset);
         }

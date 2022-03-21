@@ -3,7 +3,7 @@
     List<PacketToComponents> packetToComponents = ViewBag.PacketToComponents;
 }
 <div>
-    <a href="/Admin/Packet/Create" style="width:100%" class="btn btn-success">Add</a>
+    <a href="/Admin/Packet/ComponentsCreate" style="width:100%" class="btn btn-success">Add Components</a>
 </div>
 <table class="table table-bordered">
     <thead>
@@ -23,7 +23,7 @@
     {
         if (item.Id==item2.PacketId)
         {
-            @(item2.components.Name+ " ")
+            @(item2.components.Name+ ",")
         }
     }</th>
     <td>
