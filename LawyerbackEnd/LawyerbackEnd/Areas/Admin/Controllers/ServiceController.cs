@@ -38,6 +38,37 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
             await _dbcontext.SaveChangesAsync();
             return Redirect("/Admin/Service/Index");
         }
+        [HttpGet]
+        public IActionResult CreateModal()
+        {
+            return View();
+        }
+        [HttpPost]
+        public JsonResult CreateModal(string name,string title,string description,string buttontext,string buttonLink)
+        {
+            if (name==null || title==null || description==null || buttonLink==null || buttontext==null)
+            {
+                return Json(new
+                {
+                    status = 400
+                }) ;
+            }
+            Service service = new Service
+            {
+                Header = name,
+                Title = title,
+                Description = description,
+                Buttontext = buttontext,
+                ButtonLink = buttonLink
+            };
+            _dbcontext.Services.Add(service);
+            _dbcontext.SaveChanges();
+            return Json(new
+            {
+                status = 200
+            }); ;
+
+        }
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
