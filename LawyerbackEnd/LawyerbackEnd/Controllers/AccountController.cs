@@ -11,14 +11,14 @@ using System.Threading.Tasks;
 
 namespace LawyerbackEnd.Controllers
 {
-    public class AccountsController : Controller
+    public class AccountController : Controller
     {
         private readonly LawyerDbcontext _dbcontext;
         private readonly UserManager<User> _userManager;
         private readonly RoleManager<IdentityRole> _roleManager;
         private readonly SignInManager<User> _signInManager;
         private readonly IEmailSendMessage _emailSend;
-        public AccountsController(LawyerDbcontext portoDbContext,
+        public AccountController(LawyerDbcontext portoDbContext,
             UserManager<User> userManager,
             RoleManager<IdentityRole> roleManager,
             SignInManager<User> signInManager,
@@ -71,7 +71,7 @@ namespace LawyerbackEnd.Controllers
                 {
                     _userManager.AddToRoleAsync(user, "User").Wait();
                     await _signInManager.SignInAsync(user, false);
-                    return Redirect("/Admin/Account/Login");
+                    return Redirect("/Account/Login");
                 }
             }
             return View(register);
@@ -101,7 +101,7 @@ namespace LawyerbackEnd.Controllers
             }
             body = body.Replace("{{url}}", call);
             _emailSend.SendMEssage(user.Email, "Reset Password", body);
-            return Redirect("/Admin/Account/Login");
+            return Redirect("/Account/Login");
         }
         public IActionResult ResetPassword(string token, string email)
         {
@@ -126,7 +126,12 @@ namespace LawyerbackEnd.Controllers
             {
                 return NotFound();
             }
-            return Redirect("/Admin/Account/Login");
+            return Redirect("/Account/Login");
+        }
+        public IActionResult Logout()
+        {
+            _signInManager.SignOutAsync();
+            return Redirect("Account/Login");
         }
     }
 }

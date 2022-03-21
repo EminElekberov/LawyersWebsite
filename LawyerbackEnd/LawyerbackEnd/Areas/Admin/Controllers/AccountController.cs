@@ -110,57 +110,57 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
                 }
             }
         }
-        [HttpGet]
-        public IActionResult ForgetPassword()
-        {
-            return View();
-        }
+        //[HttpGet]
+        //public IActionResult ForgetPassword()
+        //{
+        //    return View();
+        //}
 
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> ForgetPassword(ForgetPassword forgetPassword)
-        {
-            User user = await _userManager.FindByEmailAsync(forgetPassword.Email);
-            if (user==null)
-            {
-                return NotFound();
-            }
-            string token = await _userManager.GeneratePasswordResetTokenAsync(user);
-            string call = Url.Action("resetpassword", "account", new { token, email = user.Email }, Request.Scheme);
-            string body = string.Empty;
-            using (StreamReader stream=new StreamReader("wwwroot/templates/forgetpasswod.html"))
-            {
-                body = stream.ReadToEnd();
-            }
-            body = body.Replace("{{url}}", call);
-            _emailSend.SendMEssage(user.Email, "Reset Password", body);
-            return Redirect("/Admin/Account/Login");
-        }
-        public IActionResult ResetPassword(string token,string email)
-        {
-            //
-            ResetPassword reset = new ResetPassword
-            {
-                Token=token,
-                Email=email
-            };
-            return View(reset);
-        }
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> ResetPassword(ResetPassword reset)
-        {
-            if (!ModelState.IsValid)
-            {
-                return NotFound();
-            }
-            User user = await _userManager.FindByEmailAsync(reset.Email);
-            var result = await _userManager.ResetPasswordAsync(user, reset.Token, reset.Password);
-            if (!result.Succeeded)
-            {
-                return NotFound();
-            }
-            return Redirect("/Admin/Account/Login");
-        }
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public async Task<IActionResult> ForgetPassword(ForgetPassword forgetPassword)
+        //{
+        //    User user = await _userManager.FindByEmailAsync(forgetPassword.Email);
+        //    if (user==null)
+        //    {
+        //        return NotFound();
+        //    }
+        //    string token = await _userManager.GeneratePasswordResetTokenAsync(user);
+        //    string call = Url.Action("resetpassword", "account", new { token, email = user.Email }, Request.Scheme);
+        //    string body = string.Empty;
+        //    using (StreamReader stream=new StreamReader("wwwroot/templates/forgetpasswod.html"))
+        //    {
+        //        body = stream.ReadToEnd();
+        //    }
+        //    body = body.Replace("{{url}}", call);
+        //    _emailSend.SendMEssage(user.Email, "Reset Password", body);
+        //    return Redirect("/Accounts/Login");
+        //}
+        //public IActionResult ResetPassword(string token,string email)
+        //{
+        //    //
+        //    ResetPassword reset = new ResetPassword
+        //    {
+        //        Token=token,
+        //        Email=email
+        //    };
+        //    return View(reset);
+        //}
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public async Task<IActionResult> ResetPassword(ResetPassword reset)
+        //{
+        //    if (!ModelState.IsValid)
+        //    {
+        //        return NotFound();
+        //    }
+        //    User user = await _userManager.FindByEmailAsync(reset.Email);
+        //    var result = await _userManager.ResetPasswordAsync(user, reset.Token, reset.Password);
+        //    if (!result.Succeeded)
+        //    {
+        //        return NotFound();
+        //    }
+        //    return Redirect("/Admin/Account/Login");
+        //}
     }
 }
