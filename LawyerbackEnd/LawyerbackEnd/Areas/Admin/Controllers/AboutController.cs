@@ -44,7 +44,8 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
         {
             if (id == null)
             {
-                return NotFound();
+                return Redirect("/NOtfound/ErrorPage");
+
             }
             IndexChoose choose = _dbcontext.IndexChooses.Find(id);
             if (choose == null)
@@ -80,7 +81,8 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
         {
             if (id == null)
             {
-                return NotFound();
+                return Redirect("/NOtfound/ErrorPage");
+
             }
             IndexChoose choose = await _dbcontext.IndexChooses.FindAsync(id);
             if (choose == null)
@@ -97,7 +99,8 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
         {
             if (id==null)
             {
-                return NotFound();
+                return Redirect("/NOtfound/ErrorPage");
+
             }
             var findId = _dbcontext.IndexChooses.Find(id);
             if (findId==null)

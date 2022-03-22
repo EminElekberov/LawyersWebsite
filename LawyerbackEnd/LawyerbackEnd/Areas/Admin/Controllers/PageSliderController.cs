@@ -34,7 +34,7 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
         [HttpPost]
         public async Task<IActionResult> Create(PageSlider pageSlider)
         {
-            if (!ModelState.IsValid )
+            if (!ModelState.IsValid)
             {
                 ModelState.AddModelError("Error", "Error");
                 return View();
@@ -47,7 +47,7 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
         {
             if (id == null)
             {
-                return NotFound();
+                return Redirect("/NOtfound/ErrorPage");
             }
             PageSlider pageSlider = await _dbcontext.PageSliders.FindAsync(id);
             if (pageSlider == null)
@@ -66,7 +66,7 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
             {
                 return View();
             }
-            PageSlider pageSlider =  _dbcontext.PageSliders.Find(id);
+            PageSlider pageSlider = _dbcontext.PageSliders.Find(id);
             if (pageSlider == null)
             {
                 return Redirect("/NOtfound/index");
@@ -79,7 +79,7 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
         {
             if (id == null)
             {
-                return NotFound();
+                return Redirect("/NOtfound/ErrorPage");
             }
             PageSlider pageSlider = _dbcontext.PageSliders.Find(id);
             if (pageSlider == null)

@@ -36,7 +36,7 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
         {
             if (!ModelState.IsValid)
             {
-                return NotFound();
+                return Redirect("/NOtfound/ErrorPage");
             }
             if (!category.Photo.IsImage())
             {
@@ -49,12 +49,12 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
             await _dbcontext.Categories.AddAsync(category);
             await _dbcontext.SaveChangesAsync();
             return Redirect("Index");
-        } 
+        }
         public IActionResult Delete(int? id)
         {
             if (id == null)
             {
-                return NotFound();
+                return Redirect("/NOtfound/ErrorPage");
             }
             var category = _dbcontext.Categories.Find(id);
             if (category == null)
@@ -69,23 +69,23 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
         }
         public IActionResult Details(int? id)
         {
-            if (id==null)
+            if (id == null)
             {
-                return NotFound();
+                return Redirect("/NOtfound/ErrorPage");
             }
             var category = _dbcontext.Categories.Find(id);
-            if (category==null)
+            if (category == null)
             {
-                return NotFound();
+                return Redirect("/NOtfound/ErrorPage");
             }
             return View(category);
         }
         [HttpGet]
         public IActionResult Edit(int? id)
         {
-            if (id==null)
+            if (id == null)
             {
-                return NotFound();
+                return Redirect("/NOtfound/ErrorPage");
             }
             var category = _dbcontext.Categories.Find(id);
             if (category == null)
@@ -109,7 +109,7 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
             //    ModelState.AddModelError("photo", "Img formati dogru deyil");
             //    return View(category);
             //}
-            if (category.Photo!=null)
+            if (category.Photo != null)
             {
                 try
                 {

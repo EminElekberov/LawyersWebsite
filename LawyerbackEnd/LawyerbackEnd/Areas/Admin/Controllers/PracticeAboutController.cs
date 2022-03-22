@@ -46,7 +46,7 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
         {
             if (id == null)
             {
-                return NotFound();
+                return Redirect("/NOtfound/ErrorPage");
             }
             PracticeAbout practice = await _dbcontext.PracticeAbouts.FindAsync(id);
             if (practice == null)
@@ -78,7 +78,7 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
         {
             if (id == null)
             {
-                return NotFound();
+                return Redirect("/NOtfound/ErrorPage");
             }
             PracticeAbout practice = _dbcontext.PracticeAbouts.Find(id);
             if (practice == null)

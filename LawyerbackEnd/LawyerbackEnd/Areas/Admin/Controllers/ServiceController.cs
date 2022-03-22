@@ -32,7 +32,7 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
         {
             if (!ModelState.IsValid)
             {
-                return NotFound();
+                return Redirect("/NOtfound/ErrorPage");
             }
             await _dbcontext.Services.AddAsync(service);
             await _dbcontext.SaveChangesAsync();
@@ -44,14 +44,14 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
             return View();
         }
         [HttpPost]
-        public JsonResult CreateModal(string name,string title,string description,string buttontext,string buttonLink)
+        public JsonResult CreateModal(string name, string title, string description, string buttontext, string buttonLink)
         {
-            if (name==null || title==null || description==null || buttonLink==null || buttontext==null)
+            if (name == null || title == null || description == null || buttonLink == null || buttontext == null)
             {
                 return Json(new
                 {
                     status = 400
-                }) ;
+                });
             }
             Service service = new Service
             {
@@ -73,7 +73,7 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
         {
             if (id == null)
             {
-                return NotFound();
+                return Redirect("/NOtfound/ErrorPage");
             }
             Service service = await _dbcontext.Services.FindAsync(id);
             if (service == null)
@@ -106,7 +106,7 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
         {
             if (id == null)
             {
-                return NotFound();
+                return Redirect("/NOtfound/ErrorPage");
             }
             Service service = _dbcontext.Services.Find(id);
             if (service == null)

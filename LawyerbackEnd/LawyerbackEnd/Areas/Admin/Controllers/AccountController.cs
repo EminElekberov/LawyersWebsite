@@ -19,9 +19,9 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
         private readonly RoleManager<IdentityRole> _roleManager;
         private readonly SignInManager<User> _signInManager;
         private readonly IEmailSendMessage _emailSend;
-        public AccountController(LawyerDbcontext portoDbContext, 
-            UserManager<User> userManager, 
-            RoleManager<IdentityRole> roleManager, 
+        public AccountController(LawyerDbcontext portoDbContext,
+            UserManager<User> userManager,
+            RoleManager<IdentityRole> roleManager,
             SignInManager<User> signInManager,
             IEmailSendMessage emailSend)
         {
@@ -47,7 +47,7 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
         {
             if (!ModelState.IsValid)
             {
-                return NotFound();
+                return Redirect("/NOtfound/ErrorPage");
             }
             var result = await _signInManager.PasswordSignInAsync(user.Email, user.PasswordHash, false, false);
             if (result.Succeeded)
@@ -126,7 +126,7 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
         //    User user = await _userManager.FindByEmailAsync(forgetPassword.Email);
         //    if (user==null)
         //    {
-        //        return NotFound();
+        //                        return Redirect("/NOtfound/ErrorPage");
         //    }
         //    string token = await _userManager.GeneratePasswordResetTokenAsync(user);
         //    string call = Url.Action("resetpassword", "account", new { token, email = user.Email }, Request.Scheme);
@@ -155,13 +155,13 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
         //{
         //    if (!ModelState.IsValid)
         //    {
-        //        return NotFound();
+        //                        return Redirect("/NOtfound/ErrorPage");
         //    }
         //    User user = await _userManager.FindByEmailAsync(reset.Email);
         //    var result = await _userManager.ResetPasswordAsync(user, reset.Token, reset.Password);
         //    if (!result.Succeeded)
         //    {
-        //        return NotFound();
+        //                        return Redirect("/NOtfound/ErrorPage");
         //    }
         //    return Redirect("/Admin/Account/Login");
         //}

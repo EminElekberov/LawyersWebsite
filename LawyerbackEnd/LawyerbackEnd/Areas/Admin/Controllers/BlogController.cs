@@ -55,7 +55,7 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
         {
             if (id == null)
             {
-                return NotFound();
+                return Redirect("/NOtfound/ErrorPage");
             }
             BlogDetails blog = await _dbcontext.BlogDetails.FindAsync(id);
             if (blog == null)
@@ -87,13 +87,13 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
         {
             if (id == null)
             {
-                return NotFound();
+                return Redirect("/NOtfound/ErrorPage");
             }
             BlogDetails blog = _dbcontext.BlogDetails.Find(id);
             if (blog == null)
             {
                 return Redirect("/NOtfound/index");
-                
+
             }
             return View(blog);
         }

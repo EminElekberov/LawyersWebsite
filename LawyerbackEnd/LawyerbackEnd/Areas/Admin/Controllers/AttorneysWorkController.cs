@@ -32,7 +32,7 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
         {
             if (!ModelState.IsValid)
             {
-                return NotFound();
+                return Redirect("/NOtfound/ErrorPage");
             }
             await _dbcontext.AttorneyWorks.AddAsync(service);
             await _dbcontext.SaveChangesAsync();
@@ -42,7 +42,7 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
         {
             if (id == null)
             {
-                return NotFound();
+                return Redirect("/NOtfound/ErrorPage");
             }
             AttorneyWork service = await _dbcontext.AttorneyWorks.FindAsync(id);
             if (service == null)
@@ -75,7 +75,7 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
         {
             if (id == null)
             {
-                return NotFound();
+                return Redirect("/NOtfound/ErrorPage");
             }
             AttorneyWork service = _dbcontext.AttorneyWorks.Find(id);
             if (service == null)

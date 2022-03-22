@@ -96,7 +96,8 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
         {
             if (components==null)
             {
-                return NotFound();
+                return Redirect("/NOtfound/ErrorPage");
+
             }
             _dbcontext.Components.Add(components);
             _dbcontext.SaveChanges();

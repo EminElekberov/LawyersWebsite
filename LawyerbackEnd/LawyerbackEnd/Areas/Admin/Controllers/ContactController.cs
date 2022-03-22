@@ -31,7 +31,7 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
         {
             if (id == null)
             {
-                return NotFound();
+                return Redirect("/NOtfound/ErrorPage");
             }
             Contact contact = _dbcontext.Contacts.Find(id);
             if (contact == null)
@@ -68,7 +68,7 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
         {
             if (id == null)
             {
-                return NotFound();
+                return Redirect("/NOtfound/ErrorPage");
             }
             Contact contact = await _dbcontext.Contacts.FindAsync(id);
             if (contact == null)
@@ -100,7 +100,7 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
         {
             if (id == null)
             {
-                return NotFound();
+                return Redirect("/NOtfound/ErrorPage");
             }
             Contact contact = _dbcontext.Contacts.Find(id);
             if (contact == null)

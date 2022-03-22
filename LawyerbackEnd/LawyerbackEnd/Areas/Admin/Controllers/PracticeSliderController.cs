@@ -29,12 +29,12 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
         {
             if (id == null)
             {
-                return NotFound();
+                return Redirect("/NOtfound/ErrorPage");
             }
             PracticeSlider pageSlider = await _dbcontext.PracticeSliders.FindAsync(id);
             if (pageSlider == null)
             {
-                return NotFound();
+                return Redirect("/NOtfound/ErrorPage");
             }
             _dbcontext.PracticeSliders.Remove(pageSlider);
             await _dbcontext.SaveChangesAsync();
@@ -60,7 +60,7 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
         {
             if (id == null)
             {
-                return NotFound();
+                return Redirect("/NOtfound/ErrorPage");
             }
             PracticeSlider pageSlider = _dbcontext.PracticeSliders.Find(id);
             if (pageSlider == null)

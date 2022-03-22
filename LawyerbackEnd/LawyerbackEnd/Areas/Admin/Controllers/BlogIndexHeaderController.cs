@@ -46,7 +46,7 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
         {
             if (id == null)
             {
-                return NotFound();
+                return Redirect("/NOtfound/ErrorPage");
             }
             BlogIndexAbout blog = await _dbcontext.BlogIndexAbouts.FindAsync(id);
             if (blog == null)
@@ -68,7 +68,7 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
             BlogIndexAbout blog = _dbcontext.BlogIndexAbouts.Find(id);
             if (blog == null)
             {
-                return NotFound();
+                return Redirect("/NOtfound/ErrorPage");
             }
             return View(blog);
         }
@@ -77,7 +77,7 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
         {
             if (id == null)
             {
-                return NotFound();
+                return Redirect("/NOtfound/ErrorPage");
             }
             BlogIndexAbout blog = _dbcontext.BlogIndexAbouts.Find(id);
             if (blog == null)
@@ -95,7 +95,7 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
                 return View(blog);
             }
             var blogDb = _dbcontext.BlogIndexAbouts.Find(blog.Id);
-           
+
             blogDb.AboutHeadder = blog.AboutHeadder;
             blogDb.ABoutDescription = blog.ABoutDescription;
             blogDb.RecetHeader = blog.RecetHeader;

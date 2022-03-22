@@ -56,7 +56,7 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
         {
             if (id == null)
             {
-                return NotFound();
+                                return Redirect("/NOtfound/ErrorPage");
             }
             AttorneysLogo logo = await _dbcontext.AttorneysLogos.FindAsync(id);
             if (logo == null)
@@ -88,7 +88,7 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
         {
             if (id == null)
             {
-                return NotFound();
+                                return Redirect("/NOtfound/ErrorPage");
             }
             AttorneysLogo logo = _dbcontext.AttorneysLogos.Find(id);
             if (logo == null)

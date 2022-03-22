@@ -29,7 +29,7 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
         {
             if (id == null)
             {
-                return NotFound();
+                return Redirect("/NOtfound/ErrorPage");
             }
             AttorneysSlider attorneys = await _dbcontext.AttorneysSliders.FindAsync(id);
             if (attorneys == null)
@@ -61,7 +61,7 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
         {
             if (id == null)
             {
-                return NotFound();
+                return Redirect("/NOtfound/ErrorPage");
             }
             AttorneysSlider attorneys = _dbcontext.AttorneysSliders.Find(id);
             if (attorneys == null)

@@ -46,7 +46,7 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
         {
             if (id == null)
             {
-                return NotFound();
+                return Redirect("/NOtfound/ErrorPage");
             }
             var parctise = _dbcontext.Practises.Find(id);
             if (parctise == null)
@@ -61,7 +61,7 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
         {
             if (!ModelState.IsValid)
             {
-                return NotFound();
+                return Redirect("/NOtfound/ErrorPage");
             }
             var pr = _dbcontext.Practises.Find(practise.Id);
             if (pr == null)
@@ -77,12 +77,12 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
 
         public IActionResult Details(int? id)
         {
-            if (id==null)
+            if (id == null)
             {
-                return NotFound();
+                return Redirect("/NOtfound/ErrorPage");
             }
             var search = _dbcontext.Practises.Find(id);
-            if (search==null)
+            if (search == null)
             {
                 return Redirect("/NOtfound/index");
 
@@ -94,7 +94,7 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
         {
             if (id == null)
             {
-                return NotFound();
+                return Redirect("/NOtfound/ErrorPage");
             }
             var search = _dbcontext.Practises.Find(id);
             if (search == null)

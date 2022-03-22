@@ -42,7 +42,7 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
         {
             if (!ModelState.IsValid && cases.Photo == null)
             {
-                return NotFound();
+                return Redirect("/NOtfound/ErrorPage");
             }
             if (!cases.Photo.IsImage())
             {
@@ -60,7 +60,7 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
         {
             if (id == null)
             {
-                return NotFound();
+                return Redirect("/NOtfound/ErrorPage");
             }
             Case cases = await _dbcontext.Cases.FindAsync(id);
             if (cases == null)
@@ -78,7 +78,7 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
         {
             if (id == null)
             {
-                return NotFound();
+                return Redirect("/NOtfound/ErrorPage");
             }
             Case cases = _dbcontext.Cases.Find(id);
             if (cases == null)

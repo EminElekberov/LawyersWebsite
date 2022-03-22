@@ -55,7 +55,7 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
         {
             if (id == null)
             {
-                return NotFound();
+                return Redirect("/NOtfound/ErrorPage");
             }
             Biography biography = await _dbcontext.Biographies.FindAsync(id);
             if (biography == null)
@@ -87,7 +87,7 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
         {
             if (id == null)
             {
-                return NotFound();
+                return Redirect("/NOtfound/ErrorPage");
             }
             Biography biography = _dbcontext.Biographies.Find(id);
             if (biography == null)

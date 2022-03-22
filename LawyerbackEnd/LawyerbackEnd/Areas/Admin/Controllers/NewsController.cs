@@ -36,7 +36,7 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
         {
             if (!ModelState.IsValid)
             {
-                return NotFound();
+                return Redirect("/NOtfound/ErrorPage");
             }
             if (!news.Photo.IsImage())
             {
@@ -54,7 +54,7 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
         {
             if (id == null)
             {
-                return NotFound();
+                return Redirect("/NOtfound/ErrorPage");
             }
             News news = await _dbcontext.News.FindAsync(id);
             if (news == null)
@@ -71,7 +71,7 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
         {
             if (id == null)
             {
-                return NotFound();
+                return Redirect("/NOtfound/ErrorPage");
             }
             News news = await _dbcontext.News.FindAsync(id);
             if (news == null)
@@ -84,12 +84,12 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
         [HttpGet]
         public IActionResult Edit(int? id)
         {
-            if (id==null)
+            if (id == null)
             {
-                return NotFound();
+                return Redirect("/NOtfound/ErrorPage");
             }
             var news = _dbcontext.News.Find(id);
-            if (news==null)
+            if (news == null)
             {
                 return Redirect("/NOtfound/index");
 

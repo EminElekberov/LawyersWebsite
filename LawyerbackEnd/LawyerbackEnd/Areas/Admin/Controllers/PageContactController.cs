@@ -20,7 +20,7 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
         }
         public IActionResult Index()
         {
-            return View(_dbcontext.PageContacts.ToList()) ;
+            return View(_dbcontext.PageContacts.ToList());
         }
         public IActionResult Create()
         {
@@ -31,7 +31,7 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
         {
             if (!ModelState.IsValid)
             {
-                return NotFound();
+                return Redirect("/NOtfound/ErrorPage");
             }
             await _dbcontext.PageContacts.AddAsync(pageContact);
             await _dbcontext.SaveChangesAsync();
@@ -45,7 +45,7 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
         [HttpPost]
         public JsonResult CreateModal(string link, string buttontext, string description)
         {
-            if ( link == null || description == null || buttontext == null)
+            if (link == null || description == null || buttontext == null)
             {
                 return Json(new
                 {
@@ -66,12 +66,12 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
             });
         }
 
-            [HttpGet]
+        [HttpGet]
         public IActionResult Edit(int? id)
         {
             if (id == null)
             {
-                return NotFound();
+                return Redirect("/NOtfound/ErrorPage");
             }
             PageContact slider = _dbcontext.PageContacts.Find(id);
             if (slider == null)
@@ -99,9 +99,9 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
         }
         public async Task<IActionResult> Delete(int? id)
         {
-            if (id == null) return NotFound();
+            if (id == null) return Redirect("/NOtfound/ErrorPage");
             PageContact work = await _dbcontext.PageContacts.FindAsync(id);
-            if (work == null) return NotFound();
+            if (work == null) return Redirect("/NOtfound/ErrorPage");
             _dbcontext.PageContacts.Remove(work);
             await _dbcontext.SaveChangesAsync();
             return Redirect("/Admin/PageContact/Index");

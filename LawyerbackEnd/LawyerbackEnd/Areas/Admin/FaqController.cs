@@ -53,7 +53,7 @@ namespace LawyerbackEnd.Areas.Admin
         {
             if (id == null)
             {
-                return NotFound();
+                return Redirect("/NOtfound/ErrorPage");
             }
             Faq faqs = await _dbcontext.Faqs.FindAsync(id);
             if (faqs == null)
@@ -76,7 +76,7 @@ namespace LawyerbackEnd.Areas.Admin
             Faq faqs = _dbcontext.Faqs.Find(id);
             if (faqs == null)
             {
-                return NotFound();
+                return Redirect("/NOtfound/ErrorPage");
             }
             return View(faqs);
         }
@@ -85,12 +85,12 @@ namespace LawyerbackEnd.Areas.Admin
         {
             if (id == null)
             {
-                return NotFound();
+                return Redirect("/NOtfound/ErrorPage");
             }
             Faq faqs = _dbcontext.Faqs.Find(id);
             if (faqs == null)
             {
-                return NotFound();
+                return Redirect("/NOtfound/ErrorPage");
             }
             return View(faqs);
         }

@@ -33,7 +33,7 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
         {
             if (!ModelState.IsValid)
             {
-                return NotFound();
+                return Redirect("/NOtfound/ErrorPage");
             }
             await _dbcontext.OurAbouts.AddAsync(ourAbout);
             await _dbcontext.SaveChangesAsync();
@@ -43,7 +43,7 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
         {
             if (id == null)
             {
-                return NotFound();
+                return Redirect("/NOtfound/ErrorPage");
             }
             OurAbout choose = await _dbcontext.OurAbouts.FindAsync(id);
             if (choose == null)
@@ -59,12 +59,12 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
         [HttpGet]
         public IActionResult Edit(int? id)
         {
-            if (id==null)
+            if (id == null)
             {
-                return NotFound();
+                return Redirect("/NOtfound/ErrorPage");
             }
             OurAbout ourAbout = _dbcontext.OurAbouts.Find(id);
-            if (ourAbout==null)
+            if (ourAbout == null)
             {
                 return Redirect("/NOtfound/index");
 
@@ -74,12 +74,12 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
         [HttpPost]
         public async Task<IActionResult> Edit(OurAbout ourAbout)
         {
-            if (ourAbout==null)
+            if (ourAbout == null)
             {
-                return NotFound();
+                return Redirect("/NOtfound/ErrorPage");
             }
             OurAbout our = _dbcontext.OurAbouts.Find(ourAbout.Id);
-            if (our==null)
+            if (our == null)
             {
                 return Redirect("/NOtfound/index");
 

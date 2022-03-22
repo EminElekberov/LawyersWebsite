@@ -22,7 +22,7 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
         {
             return View(_dbcontext.AllContactsAreas.ToList());
         }
-       
+
         public IActionResult Details(int? id)
         {
             if (id == null)
@@ -42,7 +42,7 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
         {
             if (id == null)
             {
-                return NotFound();
+                return Redirect("/NOtfound/ErrorPage");
             }
             AllContactsAreas contact = _dbcontext.AllContactsAreas.Find(id);
             if (contact == null)
