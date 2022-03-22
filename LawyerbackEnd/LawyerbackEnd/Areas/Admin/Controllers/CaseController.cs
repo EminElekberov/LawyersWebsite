@@ -65,7 +65,8 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
             Case cases = await _dbcontext.Cases.FindAsync(id);
             if (cases == null)
             {
-                return NotFound();
+                return Redirect("/NOtfound/index");
+
             }
             _dbcontext.Cases.Remove(cases);
             await _dbcontext.SaveChangesAsync();
@@ -82,7 +83,8 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
             Case cases = _dbcontext.Cases.Find(id);
             if (cases == null)
             {
-                return NotFound();
+                return Redirect("/NOtfound/index");
+
             }
             return View(cases);
         }

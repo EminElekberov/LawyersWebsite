@@ -36,7 +36,8 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
             Contact contact = _dbcontext.Contacts.Find(id);
             if (contact == null)
             {
-                return NotFound();
+                return Redirect("/NOtfound/index");
+
             }
             return View(contact);
         }
@@ -72,7 +73,8 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
             Contact contact = await _dbcontext.Contacts.FindAsync(id);
             if (contact == null)
             {
-                return NotFound();
+                return Redirect("/NOtfound/index");
+
             }
             _dbcontext.Contacts.Remove(contact);
             await _dbcontext.SaveChangesAsync();
@@ -88,7 +90,8 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
             Contact contact = _dbcontext.Contacts.Find(id);
             if (contact == null)
             {
-                return NotFound();
+                return Redirect("/NOtfound/index");
+
             }
             return View(contact);
         }
@@ -102,7 +105,8 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
             Contact contact = _dbcontext.Contacts.Find(id);
             if (contact == null)
             {
-                return NotFound();
+                return Redirect("/NOtfound/index");
+
             }
             return View(contact);
         }

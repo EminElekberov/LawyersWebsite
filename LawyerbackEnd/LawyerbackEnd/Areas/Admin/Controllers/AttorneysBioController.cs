@@ -60,7 +60,8 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
             Biography biography = await _dbcontext.Biographies.FindAsync(id);
             if (biography == null)
             {
-                return NotFound();
+                return Redirect("/NOtfound/index");
+
             }
             _dbcontext.Biographies.Remove(biography);
             await _dbcontext.SaveChangesAsync();
@@ -76,7 +77,8 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
             Biography biography = _dbcontext.Biographies.Find(id);
             if (biography == null)
             {
-                return NotFound();
+                return Redirect("/NOtfound/index");
+
             }
             return View(biography);
         }
@@ -90,7 +92,8 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
             Biography biography = _dbcontext.Biographies.Find(id);
             if (biography == null)
             {
-                return NotFound();
+                return Redirect("/NOtfound/index");
+
             }
             return View(biography);
         }

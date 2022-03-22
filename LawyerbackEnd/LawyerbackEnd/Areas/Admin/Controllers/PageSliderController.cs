@@ -52,7 +52,8 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
             PageSlider pageSlider = await _dbcontext.PageSliders.FindAsync(id);
             if (pageSlider == null)
             {
-                return NotFound();
+                return Redirect("/NOtfound/index");
+
             }
             _dbcontext.PageSliders.Remove(pageSlider);
             await _dbcontext.SaveChangesAsync();
@@ -68,7 +69,8 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
             PageSlider pageSlider =  _dbcontext.PageSliders.Find(id);
             if (pageSlider == null)
             {
-                return NotFound();
+                return Redirect("/NOtfound/index");
+
             }
             return View(pageSlider);
         }
@@ -82,7 +84,8 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
             PageSlider pageSlider = _dbcontext.PageSliders.Find(id);
             if (pageSlider == null)
             {
-                return NotFound();
+                return Redirect("/NOtfound/index");
+
             }
             return View(pageSlider);
         }

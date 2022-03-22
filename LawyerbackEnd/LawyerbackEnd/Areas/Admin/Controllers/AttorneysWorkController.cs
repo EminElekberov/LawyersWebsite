@@ -47,7 +47,8 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
             AttorneyWork service = await _dbcontext.AttorneyWorks.FindAsync(id);
             if (service == null)
             {
-                return NotFound();
+                return Redirect("/NOtfound/index");
+
             }
             _dbcontext.AttorneyWorks.Remove(service);
             await _dbcontext.SaveChangesAsync();
@@ -63,7 +64,8 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
             AttorneyWork service = _dbcontext.AttorneyWorks.Find(id);
             if (service == null)
             {
-                return NotFound();
+                return Redirect("/NOtfound/index");
+
             }
             return View(service);
         }
@@ -78,7 +80,8 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
             AttorneyWork service = _dbcontext.AttorneyWorks.Find(id);
             if (service == null)
             {
-                return NotFound();
+                return Redirect("/NOtfound/index");
+
             }
             return View(service);
         }

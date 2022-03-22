@@ -32,7 +32,8 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
             AllContactsAreas contact = _dbcontext.AllContactsAreas.Find(id);
             if (contact == null)
             {
-                return NotFound();
+                return Redirect("/NOtfound/index");
+
             }
             return View(contact);
         }
@@ -46,7 +47,8 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
             AllContactsAreas contact = _dbcontext.AllContactsAreas.Find(id);
             if (contact == null)
             {
-                return NotFound();
+                return Redirect("/NOtfound/index");
+
             }
             return View(contact);
         }

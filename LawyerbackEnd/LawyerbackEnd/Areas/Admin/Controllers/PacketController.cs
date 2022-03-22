@@ -103,49 +103,6 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
             return Redirect("/Admin/packet/index");
         }
 
-        //[HttpGet]
-        //public IActionResult Edit(int? id)
-        //{
-        //    if (id==null)
-        //    {
-        //        return NotFound();
-        //    }
-        //    var packet = _dbcontext.Packets.FirstOrDefault(dr => dr.Id == id);
-        //    if (packet==null)
-        //    {
-        //        return NotFound();
-        //    }
-        //    var components = _dbcontext.packetToComponents.Where(e => e.PacketId == id).Select(z => z.componentsId).ToList();
-        //    PacketVm packetVm = new PacketVm
-        //    {
-        //        Packets=_dbcontext.Packets.ToList(),
-        //        Components=_dbcontext.Components.ToList(),
-        //        PacketID=packet.Id,
-        //        ComponentsId=components
-        //    };
-        //    return View(packetVm);
-        //}
-        //[HttpPost]
-        //public async Task<IActionResult> Edit(PacketVm packetVm)
-        //{
-        //    var package = _dbcontext.packetToComponents.Where(a => a.PacketId == packetVm.PacketID).ToList();
-        //    foreach (var item in package)
-        //    {
-        //        _dbcontext.packetToComponents.Remove(item);
-        //    }
-        //    await _dbcontext.SaveChangesAsync();
-        //    foreach (var item in packetVm.ComponentsId)
-        //    {
-        //        PacketToComponents packetTo = new PacketToComponents
-        //        {
-        //            PacketId = packetVm.PacketID,
-        //            componentsId = item
-        //        };
-        //        _dbcontext.packetToComponents.Add(packetTo);
-        //    }
-        //    await _dbcontext.SaveChangesAsync();
-        //    return Redirect("/Admin/Packet/Index");
-        //}
         public IActionResult Edit(int? id)
         {
             ViewBag.Practices = _dbcontext.Components.ToList();

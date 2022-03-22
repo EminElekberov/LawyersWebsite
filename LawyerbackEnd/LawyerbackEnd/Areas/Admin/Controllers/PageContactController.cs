@@ -76,7 +76,8 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
             PageContact slider = _dbcontext.PageContacts.Find(id);
             if (slider == null)
             {
-                return NotFound();
+                return Redirect("/NOtfound/index");
+
             }
             return View(slider);
         }

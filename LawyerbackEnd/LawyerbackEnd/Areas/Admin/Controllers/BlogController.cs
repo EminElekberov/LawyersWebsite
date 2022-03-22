@@ -60,7 +60,8 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
             BlogDetails blog = await _dbcontext.BlogDetails.FindAsync(id);
             if (blog == null)
             {
-                return NotFound();
+                return Redirect("/NOtfound/index");
+
             }
             _dbcontext.BlogDetails.Remove(blog);
             await _dbcontext.SaveChangesAsync();
@@ -76,7 +77,8 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
             BlogDetails blog = _dbcontext.BlogDetails.Find(id);
             if (blog == null)
             {
-                return NotFound();
+                return Redirect("/NOtfound/index");
+
             }
             return View(blog);
         }
@@ -90,7 +92,8 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
             BlogDetails blog = _dbcontext.BlogDetails.Find(id);
             if (blog == null)
             {
-                return NotFound();
+                return Redirect("/NOtfound/index");
+                
             }
             return View(blog);
         }

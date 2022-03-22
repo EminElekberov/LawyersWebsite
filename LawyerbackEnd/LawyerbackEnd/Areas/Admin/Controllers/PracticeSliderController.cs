@@ -50,7 +50,8 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
             PracticeSlider pageSlider = _dbcontext.PracticeSliders.Find(id);
             if (pageSlider == null)
             {
-                return NotFound();
+                return Redirect("/NOtfound/index");
+
             }
             return View(pageSlider);
         }
@@ -64,7 +65,8 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
             PracticeSlider pageSlider = _dbcontext.PracticeSliders.Find(id);
             if (pageSlider == null)
             {
-                return NotFound();
+                return Redirect("/NOtfound/index");
+
             }
             return View(pageSlider);
         }

@@ -110,6 +110,9 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
                 }
             }
         }
+
+
+        #region Other Codes
         //[HttpGet]
         //public IActionResult ForgetPassword()
         //{
@@ -162,5 +165,6 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
         //    }
         //    return Redirect("/Admin/Account/Login");
         //}
+        #endregion
     }
 }

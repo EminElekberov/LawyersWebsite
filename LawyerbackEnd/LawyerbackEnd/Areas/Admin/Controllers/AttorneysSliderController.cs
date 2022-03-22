@@ -34,7 +34,8 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
             AttorneysSlider attorneys = await _dbcontext.AttorneysSliders.FindAsync(id);
             if (attorneys == null)
             {
-                return NotFound();
+                return Redirect("/NOtfound/index");
+
             }
             _dbcontext.AttorneysSliders.Remove(attorneys);
             await _dbcontext.SaveChangesAsync();
@@ -50,7 +51,8 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
             AttorneysSlider attorneys = _dbcontext.AttorneysSliders.Find(id);
             if (attorneys == null)
             {
-                return NotFound();
+                return Redirect("/NOtfound/index");
+
             }
             return View(attorneys);
         }
@@ -64,7 +66,8 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
             AttorneysSlider attorneys = _dbcontext.AttorneysSliders.Find(id);
             if (attorneys == null)
             {
-                return NotFound();
+                return Redirect("/NOtfound/index");
+
             }
             return View(attorneys);
         }
@@ -73,7 +76,8 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
         {
             if (!ModelState.IsValid)
             {
-                return View(pageSlider);
+                return Redirect("/NOtfound/index");
+
             }
             var sliderdb = _dbcontext.AttorneysSliders.Find(pageSlider.Id);
             sliderdb.Name = pageSlider.Name;

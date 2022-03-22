@@ -59,9 +59,10 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
             News news = await _dbcontext.News.FindAsync(id);
             if (news == null)
             {
-                return NotFound();
+                return Redirect("/NOtfound/index");
+
             }
-             _dbcontext.News.Remove(news);
+            _dbcontext.News.Remove(news);
             await _dbcontext.SaveChangesAsync();
             TempData["Success"] = "Slider silindi";
             return Redirect("/Admin/News/Index");
@@ -75,7 +76,8 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
             News news = await _dbcontext.News.FindAsync(id);
             if (news == null)
             {
-                return NotFound();
+                return Redirect("/NOtfound/index");
+
             }
             return View(news);
         }
@@ -89,7 +91,8 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
             var news = _dbcontext.News.Find(id);
             if (news==null)
             {
-                return NotFound();
+                return Redirect("/NOtfound/index");
+
             }
             return View(news);
         }

@@ -78,7 +78,8 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
             Service service = await _dbcontext.Services.FindAsync(id);
             if (service == null)
             {
-                return NotFound();
+                return Redirect("/NOtfound/index");
+
             }
             _dbcontext.Services.Remove(service);
             await _dbcontext.SaveChangesAsync();
@@ -94,7 +95,8 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
             Service service = _dbcontext.Services.Find(id);
             if (service == null)
             {
-                return NotFound();
+                return Redirect("/NOtfound/index");
+
             }
             return View(service);
         }
@@ -109,7 +111,8 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
             Service service = _dbcontext.Services.Find(id);
             if (service == null)
             {
-                return NotFound();
+                return Redirect("/NOtfound/index");
+
             }
             return View(service);
         }

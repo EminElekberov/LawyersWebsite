@@ -48,7 +48,8 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
             OurAbout choose = await _dbcontext.OurAbouts.FindAsync(id);
             if (choose == null)
             {
-                return NotFound();
+                return Redirect("/NOtfound/index");
+
             }
             _dbcontext.OurAbouts.Remove(choose);
             await _dbcontext.SaveChangesAsync();
@@ -65,7 +66,8 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
             OurAbout ourAbout = _dbcontext.OurAbouts.Find(id);
             if (ourAbout==null)
             {
-                return NotFound();
+                return Redirect("/NOtfound/index");
+
             }
             return View(ourAbout);
         }
@@ -79,7 +81,8 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
             OurAbout our = _dbcontext.OurAbouts.Find(ourAbout.Id);
             if (our==null)
             {
-                return NotFound();
+                return Redirect("/NOtfound/index");
+
             }
             our.Header = ourAbout.Header;
             our.headerUndeer = ourAbout.headerUndeer;

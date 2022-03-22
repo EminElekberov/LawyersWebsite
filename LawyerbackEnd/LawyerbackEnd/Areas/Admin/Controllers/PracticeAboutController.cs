@@ -51,7 +51,8 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
             PracticeAbout practice = await _dbcontext.PracticeAbouts.FindAsync(id);
             if (practice == null)
             {
-                return NotFound();
+                return Redirect("/NOtfound/index");
+
             }
             _dbcontext.PracticeAbouts.Remove(practice);
             await _dbcontext.SaveChangesAsync();
@@ -67,7 +68,8 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
             PracticeAbout practice = _dbcontext.PracticeAbouts.Find(id);
             if (practice == null)
             {
-                return NotFound();
+                return Redirect("/NOtfound/index");
+
             }
             return View(practice);
         }
@@ -81,7 +83,8 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
             PracticeAbout practice = _dbcontext.PracticeAbouts.Find(id);
             if (practice == null)
             {
-                return NotFound();
+                return Redirect("/NOtfound/index");
+
             }
             return View(practice);
         }

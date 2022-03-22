@@ -60,7 +60,7 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
             Slider slider = await _dbcontext.Sliders.FindAsync(id);
             if (slider == null)
             {
-                return NotFound();
+                return Redirect("/NOtfound/index");
             }
             _dbcontext.Sliders.Remove(slider);
             await _dbcontext.SaveChangesAsync();
@@ -90,7 +90,8 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
             Slider slider = _dbcontext.Sliders.Find(id);
             if (slider == null)
             {
-                return NotFound();
+                return Redirect("/NOtfound/index");
+
             }
             return View(slider);
         }
@@ -99,7 +100,8 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
         {
             if (!ModelState.IsValid)
             {
-                return View(slider);
+                return Redirect("/NOtfound/index");
+
             }
             var sliderdb = _dbcontext.Sliders.Find(slider.Id);
             if (slider.Photo != null)

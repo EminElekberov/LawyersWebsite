@@ -58,7 +58,8 @@ namespace LawyerbackEnd.Areas.Admin
             Faq faqs = await _dbcontext.Faqs.FindAsync(id);
             if (faqs == null)
             {
-                return NotFound();
+                return Redirect("/NOtfound/index");
+
             }
             _dbcontext.Faqs.Remove(faqs);
             await _dbcontext.SaveChangesAsync();

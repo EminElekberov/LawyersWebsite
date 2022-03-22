@@ -51,7 +51,8 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
             BlogIndexAbout blog = await _dbcontext.BlogIndexAbouts.FindAsync(id);
             if (blog == null)
             {
-                return NotFound();
+                return Redirect("/NOtfound/index");
+
             }
             _dbcontext.BlogIndexAbouts.Remove(blog);
             await _dbcontext.SaveChangesAsync();
@@ -81,7 +82,8 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
             BlogIndexAbout blog = _dbcontext.BlogIndexAbouts.Find(id);
             if (blog == null)
             {
-                return NotFound();
+                return Redirect("/NOtfound/index");
+
             }
             return View(blog);
         }

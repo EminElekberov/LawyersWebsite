@@ -61,7 +61,8 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
             AttorneysLogo logo = await _dbcontext.AttorneysLogos.FindAsync(id);
             if (logo == null)
             {
-                return NotFound();
+                return Redirect("/NOtfound/index");
+
             }
             _dbcontext.AttorneysLogos.Remove(logo);
             await _dbcontext.SaveChangesAsync();
@@ -77,7 +78,8 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
             AttorneysLogo logo = _dbcontext.AttorneysLogos.Find(id);
             if (logo == null)
             {
-                return NotFound();
+                return Redirect("/NOtfound/index");
+
             }
             return View(logo);
         }
@@ -91,7 +93,8 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
             AttorneysLogo logo = _dbcontext.AttorneysLogos.Find(id);
             if (logo == null)
             {
-                return NotFound();
+                return Redirect("/NOtfound/index");
+
             }
             return View(logo);
         }

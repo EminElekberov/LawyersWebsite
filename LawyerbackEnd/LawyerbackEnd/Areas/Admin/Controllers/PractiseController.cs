@@ -33,7 +33,8 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
         {
             if (!ModelState.IsValid)
             {
-                return NotFound();
+                return Redirect("/NOtfound/index");
+
             }
             await _dbcontext.Practises.AddAsync(practise);
             await _dbcontext.SaveChangesAsync();
@@ -50,7 +51,8 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
             var parctise = _dbcontext.Practises.Find(id);
             if (parctise == null)
             {
-                return NotFound();
+                return Redirect("/NOtfound/index");
+
             }
             return View(parctise);
         }
@@ -64,7 +66,8 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
             var pr = _dbcontext.Practises.Find(practise.Id);
             if (pr == null)
             {
-                return NotFound();
+                return Redirect("/NOtfound/index");
+
             }
             pr.Link = practise.Link;
             pr.Description = practise.Description;
@@ -81,7 +84,8 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
             var search = _dbcontext.Practises.Find(id);
             if (search==null)
             {
-                return NotFound();
+                return Redirect("/NOtfound/index");
+
             }
             return View(search);
         }
@@ -95,7 +99,8 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
             var search = _dbcontext.Practises.Find(id);
             if (search == null)
             {
-                return NotFound();
+                return Redirect("/NOtfound/index");
+
             }
             _dbcontext.Practises.Remove(search);
             _dbcontext.SaveChanges();

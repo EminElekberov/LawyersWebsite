@@ -32,7 +32,8 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
         {
             if (!ModelState.IsValid)
             {
-                return NotFound();
+                return Redirect("/NOtfound/index");
+
             }
             await _dbcontext.IndexChooses.AddAsync(indexChoose);
             await _dbcontext.SaveChangesAsync();
@@ -48,7 +49,8 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
             IndexChoose choose = _dbcontext.IndexChooses.Find(id);
             if (choose == null)
             {
-                return NotFound();
+                return Redirect("/NOtfound/index");
+
             }
             return View(choose);
         }
@@ -83,7 +85,8 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
             IndexChoose choose = await _dbcontext.IndexChooses.FindAsync(id);
             if (choose == null)
             {
-                return NotFound();
+                return Redirect("/NOtfound/index");
+
             }
             _dbcontext.IndexChooses.Remove(choose);
             await _dbcontext.SaveChangesAsync();
@@ -99,7 +102,8 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
             var findId = _dbcontext.IndexChooses.Find(id);
             if (findId==null)
             {
-                return NotFound();
+                return Redirect("/NOtfound/index");
+
             }
             return View(findId);
         }

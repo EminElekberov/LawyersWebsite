@@ -59,7 +59,8 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
             var category = _dbcontext.Categories.Find(id);
             if (category == null)
             {
-                return NotFound();
+                return Redirect("/NOtfound/index");
+
             }
             _dbcontext.Categories.Remove(category);
             _dbcontext.SaveChanges();
@@ -89,7 +90,8 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
             var category = _dbcontext.Categories.Find(id);
             if (category == null)
             {
-                return NotFound();
+                return Redirect("/NOtfound/index");
+
             }
             return View(category);
         }
