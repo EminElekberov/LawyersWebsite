@@ -74,11 +74,12 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
             chosedb.numbrThreeDesc= choose.numbrThreeDesc;
             chosedb.numbFourDesc= choose.numbFourDesc;
             await _dbcontext.SaveChangesAsync();
+        //
             return Redirect("/Admin/About/Index");
         }
         
 
-        //
+        
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
