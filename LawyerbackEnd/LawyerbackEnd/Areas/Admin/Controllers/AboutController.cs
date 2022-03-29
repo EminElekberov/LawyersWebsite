@@ -76,6 +76,8 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
             await _dbcontext.SaveChangesAsync();
             return Redirect("/Admin/About/Index");
         }
+        
+
         //
         public async Task<IActionResult> Delete(int? id)
         {
