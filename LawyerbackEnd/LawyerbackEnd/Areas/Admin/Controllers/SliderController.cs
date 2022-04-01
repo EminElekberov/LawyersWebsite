@@ -120,6 +120,7 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
                 {
                     ModelState.AddModelError("", "Unexpected error while save img");
                     throw;
+
                 }
             }
             sliderdb.Name = slider.Name;
