@@ -13,6 +13,7 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
 {
     [Area("Admin")]
 
+
     public class AccountController : Controller
     {
         private readonly LawyerDbcontext _dbcontext;
