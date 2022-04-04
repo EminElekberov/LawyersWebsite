@@ -12,10 +12,9 @@ using System.Threading.Tasks;
 namespace LawyerbackEnd.Areas.Admin.Controllers
 {
     [Area("Admin")]
-
-
     public class AccountController : Controller
     {
+
         private readonly LawyerDbcontext _dbcontext;
         private readonly UserManager<User> _userManager;
         private readonly RoleManager<IdentityRole> _roleManager;
