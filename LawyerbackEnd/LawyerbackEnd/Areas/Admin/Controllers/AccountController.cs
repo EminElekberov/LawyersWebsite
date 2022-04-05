@@ -26,6 +26,7 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
             SignInManager<User> signInManager,
             IEmailSendMessage emailSend)
         {
+
             _dbcontext = portoDbContext;
             _userManager = userManager;
             _roleManager = roleManager;
