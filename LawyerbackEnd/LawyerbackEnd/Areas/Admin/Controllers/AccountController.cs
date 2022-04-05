@@ -36,6 +36,7 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
         {
             return View();
         }
+
         [HttpGet]
         public IActionResult Login()
         {
