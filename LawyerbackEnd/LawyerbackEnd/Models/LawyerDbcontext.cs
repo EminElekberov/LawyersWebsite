@@ -11,6 +11,7 @@ namespace LawyerbackEnd.Models
     {
         public LawyerDbcontext(DbContextOptions<LawyerDbcontext> options) : base(options) { }
 
+
         public DbSet<Slider> Sliders { get; set; }
         public DbSet<Holder> Holders{ get; set; }
         public DbSet<PictureSlider> pictureSliders{ get; set; }
