@@ -9,8 +9,6 @@ namespace LawyerbackEnd.Models
 {
     public class LawyerDbcontext : IdentityDbContext<User>
     {
-
-
         public LawyerDbcontext(DbContextOptions<LawyerDbcontext> options) : base(options) { }
 
         public DbSet<Slider> Sliders { get; set; }
