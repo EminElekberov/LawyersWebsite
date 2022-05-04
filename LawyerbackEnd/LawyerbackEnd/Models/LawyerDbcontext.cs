@@ -9,7 +9,6 @@ namespace LawyerbackEnd.Models
 {
     public class LawyerDbcontext : IdentityDbContext<User>
     {
-
         public DbSet<Slider> Sliders { get; set; }
         public DbSet<Holder> Holders{ get; set; }
         public DbSet<PictureSlider> pictureSliders{ get; set; }
