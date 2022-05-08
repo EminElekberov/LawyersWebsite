@@ -8,6 +8,7 @@ namespace LawyerbackEnd.Models
 {
     public class Components
     {
+
         [Key]
         public int Id { get; set; }
         public string Name { get; set; }
