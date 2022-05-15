@@ -52,6 +52,7 @@ namespace LawyerbackEnd.Models
             },
             new Slider
             {
+
                 Id = 2,
                 Image = "slider2.jpeg",
                 Name = "We provide legal",
