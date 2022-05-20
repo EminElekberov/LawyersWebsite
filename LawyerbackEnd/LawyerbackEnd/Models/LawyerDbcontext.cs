@@ -51,7 +51,6 @@ namespace LawyerbackEnd.Models
                 Description= "Moto Car"
             },
             new Slider
-
             {
                 Id = 2,
                 Image = "slider2.jpeg",
