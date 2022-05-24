@@ -57,7 +57,6 @@ namespace LawyerbackEnd.Models
                 Name = "We provide legal",
                 Description = "Auto Accidents"
             });
-
             modelBuilder.Entity<PacketToComponents>()
                 .HasOne(a => a.packet)
                 .WithMany(b => b.packetToComponents)
