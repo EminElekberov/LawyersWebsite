@@ -50,6 +50,7 @@ namespace LawyerbackEnd.Models
                 Name= "We provide legal",
                 Description= "Moto Car"
             },
+
             new Slider
             {
                 Id = 2,
