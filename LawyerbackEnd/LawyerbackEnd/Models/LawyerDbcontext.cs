@@ -66,7 +66,6 @@ namespace LawyerbackEnd.Models
                 .HasOne(a => a.components)
                 .WithMany(b => b.PacketToComponents)
                 .HasForeignKey(a => a.componentsId);
-
             modelBuilder.Entity<PacketToComponents>()
                .HasKey(bc => new { bc.PacketId, bc.componentsId });
         }
