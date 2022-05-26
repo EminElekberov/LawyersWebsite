@@ -70,5 +70,4 @@ namespace LawyerbackEnd.Models
                .HasKey(bc => new { bc.PacketId, bc.componentsId });
         }
     }
-
 }
