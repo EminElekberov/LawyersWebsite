@@ -56,7 +56,6 @@ namespace LawyerbackEnd.Controllers
         {
             return View();
         }
-
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Register(Register register)
