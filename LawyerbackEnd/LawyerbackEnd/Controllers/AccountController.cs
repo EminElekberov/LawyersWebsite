@@ -61,6 +61,7 @@ namespace LawyerbackEnd.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Register(Register register)
         {
+
             if (_userManager.FindByEmailAsync(register.Email).Result == null)
             {
                 User user = new User
