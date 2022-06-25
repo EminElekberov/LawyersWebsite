@@ -9,7 +9,7 @@ namespace LawyerbackEnd.Models
 {
     public class LawyerDbcontext : IdentityDbContext<User>
     {
-       // public LawyerDbcontext(DbContextOptions<LawyerDbcontext> options) : base(options) { }
+        public LawyerDbcontext(DbContextOptions<LawyerDbcontext> options) : base(options) { }
         public DbSet<Slider> Sliders { get; set; }
         public DbSet<Holder> Holders{ get; set; }
         public DbSet<PictureSlider> pictureSliders{ get; set; }
@@ -40,11 +40,11 @@ namespace LawyerbackEnd.Models
         public DbSet<Packet> Packets{ get; set; }
         public DbSet<PacketToComponents> packetToComponents{ get; set; }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            base.OnConfiguring(optionsBuilder);
-            optionsBuilder.UseSqlite("Data Source=C:\\Users\\EMIN\\Desktop\\lawyersWebsite\\LawyerbackEnd\\LawyerbackEnd\\lawyerDb.db;");
-        }
+        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        //{
+        //    base.OnConfiguring(optionsBuilder);
+        //    optionsBuilder.UseSqlite("Data Source=C:\\Users\\EMIN\\Desktop\\lawyersWebsite\\LawyerbackEnd\\LawyerbackEnd\\lawyerDb.db;");
+        //}
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);

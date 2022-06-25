@@ -28,10 +28,10 @@ namespace LawyerbackEnd
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-            //services.AddDbContext<LawyerDbcontext>(options =>
-            //{
-            //    options.UseSqlite(Configuration.GetConnectionString("Lite"));
-            //});
+            services.AddDbContext<LawyerDbcontext>(options =>
+            {
+                options.UseSqlServer(Configuration.GetConnectionString("Server"));
+            });
 
             services.AddScoped<LawyerDbcontext>();
 
