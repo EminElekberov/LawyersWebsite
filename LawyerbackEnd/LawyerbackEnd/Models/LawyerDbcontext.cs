@@ -48,7 +48,6 @@ namespace LawyerbackEnd.Models
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-
             modelBuilder.Entity<Slider>().HasData(
             new Slider
             {
