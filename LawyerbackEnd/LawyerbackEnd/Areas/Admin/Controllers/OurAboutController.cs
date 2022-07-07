@@ -72,6 +72,7 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
             return View(ourAbout);
         }
         [HttpPost]
+
         public async Task<IActionResult> Edit(OurAbout ourAbout)
         {
             if (ourAbout == null)
