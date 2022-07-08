@@ -56,7 +56,6 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
             TempData["Success"] = "Slider silindi";
             return Redirect("/Admin/OurAbout/Index");
         }
-
         [HttpGet]
         public IActionResult Edit(int? id)
         {
