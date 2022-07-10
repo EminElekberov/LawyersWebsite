@@ -117,6 +117,7 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
             {
                 return View(contact);
             }
+
             //var contactdb = _dbcontext.Contacts.Find(contact.Id);
             //contactdb.AddressHeader = contact.AddressHeader;
             //contactdb.Address = contact.Address;
