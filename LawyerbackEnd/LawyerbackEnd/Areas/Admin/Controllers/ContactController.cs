@@ -129,5 +129,6 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
             await _dbcontext.SaveChangesAsync();
             return Redirect("/Admin/Contact/Index");
         }
+
     }
 }
