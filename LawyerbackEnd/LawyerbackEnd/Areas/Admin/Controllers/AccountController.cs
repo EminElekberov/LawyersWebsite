@@ -84,6 +84,7 @@ namespace LawyerbackEnd.Areas.Admin.Controllers
             }
             return View(register);
         }
+
         public async Task SeedRoles()
         {
             if (!await _roleManager.RoleExistsAsync(roleName: "Admin"))
