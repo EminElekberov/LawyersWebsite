@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 
 namespace LawyerbackEnd.Areas.Admin.Controllers
 {
+
     [Area("Admin")]
     public class AccountController : Controller
     {
