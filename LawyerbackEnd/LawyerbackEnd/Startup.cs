@@ -29,7 +29,6 @@ namespace LawyerbackEnd
         {
             services.AddControllersWithViews();
             services.AddDbContext<LawyerDbcontext>(options =>
-
             {
                 options.UseSqlServer(Configuration.GetConnectionString("LawyerConnection"));
             });
