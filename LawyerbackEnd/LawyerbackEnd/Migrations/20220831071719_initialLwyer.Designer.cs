@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LawyerbackEnd.Migrations
 {
     [DbContext(typeof(LawyerDbcontext))]
-    [Migration("20220624185928_IntialCreateDb")]
-    partial class IntialCreateDb
+    [Migration("20220831071719_initialLwyer")]
+    partial class initialLwyer
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

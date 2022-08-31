@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace LawyerbackEnd.Migrations
 {
-    public partial class IntialCreateDb : Migration
+    public partial class initialLwyer : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
