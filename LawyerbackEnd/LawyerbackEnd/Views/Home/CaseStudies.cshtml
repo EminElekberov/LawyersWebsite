@@ -25,6 +25,7 @@
         <div class="case-studies-holder case-studies-short layout-masonry ">
             @foreach (var item in Model)
             {
+
                 <div class="case-study case-4col blog-item-masonry @item.categorys.className">
                     <div class="case-img-holder">
                         <a asp-controller="Home" asp-action="CaseStudiesDetails" asp-route-id="@item.Id">
